@@ -1,19 +1,76 @@
 <script>
+import Navbar from "@/components/navbar.vue";
 
+export default{
+  components: {
+    Navbar
+  },
+}
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <router-view></router-view>
+
+  <Navbar/>
+  <!-- <router-link to="/">Home</router-link> -->
+
+  <div class="container">
+    <router-view></router-view>
+  </div>
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Istok Web', sans-serif;
+  font-size: 24px;
+}
+
+
+/*all buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    background: linear-gradient(180deg, #FBC75B 0%, #FA964D 100%);
+    box-shadow: 0px 19px 28px -11px #00000040;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: #FAAA53 0px 0px 0px 0px inset;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 700;
+    color: #fff;
+    text-transform: capitalize;
+
+    transition: ease-out 0.3s;
+
+}
+
+.buttons button:hover,
+.buttons button:focus, 
+.buttons button:active {
+    box-shadow: inset 205px 0px 0 0 #fff;
+    border: 1px solid #000;
+    color: #000 !important;
+}
+
+/* button no-fill */
+.buttons button.no-fill {
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+}
+
+.buttons button.no-fill:hover,
+.buttons button.no-fill:focus,
+.buttons button.no-fill:active
+ {
+    box-shadow: inset 200px 0 0 0 #FAAA53;
+    color: #fff !important;
+    border: 1.45px solid #FAAA53;
 }
 </style>
