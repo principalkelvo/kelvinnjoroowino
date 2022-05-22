@@ -3,6 +3,10 @@ import App from './App.vue'
 
 import router from '@/router'
 
+
+import {userStore} from '@/store'
+
 createApp(App)
+.use(store)
 .use(router)
 .mount('#app')
