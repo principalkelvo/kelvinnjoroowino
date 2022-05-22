@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-const userStore = createStore({
+export default createStore({
     state: {
     },
     mutations: {
