@@ -6,6 +6,11 @@
         <div class="navbar-logo">
             <p>Personal</p>
         </div>
+        <div class="mode">
+            <div class="image mode">
+                <img src="#" alt="darkmode">
+            </div>
+        </div>
         <!-- navbar items  -->
         <div class="navbar-items">
             <ul>
