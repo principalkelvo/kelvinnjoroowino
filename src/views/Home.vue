@@ -54,11 +54,19 @@
         </div>
     </div>
 
+    <Service/>
 
   </div>
 </template>
 
 <script>
+import Service from "@/components/service.vue";
+
+export default{
+  components:{
+    Service
+  },
+}
 </script>
 
 <style>
@@ -66,7 +74,7 @@
 .section {
     padding: 1em 1em;
     min-height: calc(100vh - 3.25rem);
-    width: 100vw;
+    width: 95%;
 }
 
 /* columns  */
@@ -78,6 +86,9 @@
 }
 .columns.cards {
     overflow: hidden;
+    justify-content: space-around;
+
+
 }
 .column.is-3 {
     width: 25%;
