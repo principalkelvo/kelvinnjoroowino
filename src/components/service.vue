@@ -7,11 +7,12 @@
             <div class="success">
             <div class="firstRectangle">
               <div class="secondRectangle">
+                <p>Projects done successfull</p>
 
             </div>
             <div class="circle">
               <div class="circular-progress">
-                    <div class="value-container"></div>
+                    <div class="value-container">26</div>
                 </div>
 
             </div>
@@ -23,11 +24,12 @@
             <div class="success">
             <div class="firstRectangle">
               <div class="secondRectangle">
+                <p>projects done successfull</p>
 
             </div>
             <div class="circle">
               <div class="circular-progress">
-                    <div class="value-container"></div>
+                    <div class="value-container">12</div>
                 </div>
 
             </div>
@@ -89,17 +91,31 @@ export default {
    width: 80%;
   height: 100%;
   background-color: #fff;
+  border: 1px solid #00000012;
   border-radius: .6em;
   left: 50%;
   transform: translate(-50%, 0);
   top: -20%;
+}
+.projects:last-child .success .firstRectangle{
+  background: linear-gradient(180deg, rgba(251, 199, 91, 0.5) 0%, rgba(250, 150, 77, 0.5) 100%);
+}
 
+.projects .success .firstRectangle .secondRectangle p{
+  /* font-size: 1.2em; */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  white-space: nowrap;
+  transform: translate(-50%, 0);
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 .projects .success .firstRectangle .circle{
   position: absolute;
-   width: 5em;
-  height: 5em;
-  background-color: rgb(129, 24, 24);
+   /* width: 5em;
+  height: 5em; */
+  /* border: 10px solid; */
   border-radius: 50%;
   left: 50%;
   top: -50%;
@@ -111,8 +127,9 @@ export default {
 
 .circular-progress {
     position: relative;
-    height: 4.2em;
-    width: 4.2em;
+  background: linear-gradient(205.37deg, rgba(236, 150, 171, 0.56) -2.42%, rgba(169, 137, 229, 0.8) 103.97%);
+    height: 5em;
+    width: 5em;
     border-radius: 50%;
     display: grid;
     place-items: center;
