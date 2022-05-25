@@ -52,7 +52,7 @@ export default {
 <style scoped>
 .cards .card{
   border: 1px solid black;
-  height: 20em;
+  height: 18em;
   width: 100%;
   display: flex;
   align-items: center;
@@ -63,17 +63,21 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 
 }
 .projects .success{
   width: 100%;
+  padding: 3em 0;
+  
 }
 .projects .success .firstRectangle{
   height: 5em;
+  width: 18em;
   background-color: red;
   border-radius: .6em;
   position: relative;
+  
 }
 .projects .success .firstRectangle .secondRectangle{
   position: absolute;
@@ -88,8 +92,8 @@ export default {
 }
 .projects .success .firstRectangle .circle{
   position: absolute;
-   width: 4em;
-  height: 4em;
+   width: 5em;
+  height: 5em;
   background-color: rgb(129, 24, 24);
   border-radius: 50%;
   left: 50%;
