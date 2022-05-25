@@ -10,6 +10,9 @@
 
             </div>
             <div class="circle">
+              <div class="circular-progress">
+                    <div class="value-container"></div>
+                </div>
 
             </div>
               
@@ -23,6 +26,9 @@
 
             </div>
             <div class="circle">
+              <div class="circular-progress">
+                    <div class="value-container"></div>
+                </div>
 
             </div>
               
@@ -63,7 +69,6 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
 
 }
 .projects .success{
@@ -74,7 +79,7 @@ export default {
 .projects .success .firstRectangle{
   height: 5em;
   width: 18em;
-  background-color: red;
+  background: linear-gradient(205.37deg, rgba(236, 150, 171, 0.35) -2.42%, rgba(169, 137, 229, 0.5) 103.97%);
   border-radius: .6em;
   position: relative;
   
@@ -83,7 +88,7 @@ export default {
   position: absolute;
    width: 80%;
   height: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: #fff;
   border-radius: .6em;
   left: 50%;
   transform: translate(-50%, 0);
@@ -99,6 +104,41 @@ export default {
   left: 50%;
   top: -50%;
   transform: translate(-50%, -30%);
+  display: grid;
+    place-items: center;
 
 }
+
+.circular-progress {
+    position: relative;
+    height: 4.2em;
+    width: 4.2em;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+  }
+  .circular-progress:before {
+    content: "";
+    position: absolute;
+    height: 84%;
+    width: 84%;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+   .value-container {
+    position: relative;
+    /* font-family: "Poppins", sans-serif; */
+    font-weight: 900;
+    color: #231c3d;
+  }
+
+  
+
+  .value-container {
+    position: relative;
+    /* font-family: "Poppins", sans-serif; */
+    font-weight: 900;
+    color: #231c3d;
+  }
+
 </style>
