@@ -53,7 +53,14 @@ export default{
 .buttons button:hover,
 .buttons button:focus, 
 .buttons button:active {
-    box-shadow: inset 205px 0px 0 0 #fff;
+    box-shadow: inset 9em 0px 0 0 #fff;
+    border: 1px solid #000;
+    color: #000 !important;
+}
+.buttons.small button:hover,
+.buttons.small button:focus, 
+.buttons.small button:active {
+    box-shadow: inset 6.1em 0px 0 0 #fff;
     border: 1px solid #000;
     color: #000 !important;
 }
