@@ -10,7 +10,7 @@
                     fuga culpa itaque natus dolor doloremque, dolore eligendi, vero corporis ex. Pariatur fugiat minima
                     nisi ea nobis dolorem!</p>
                 <div class="paybtn">
-                    <div class="buttons is-large">
+                    <div class="buttons small">
                         <button>Hire me</button>
                     </div>
                     <ul class="payments">
