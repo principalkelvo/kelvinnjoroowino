@@ -125,7 +125,10 @@ export default{
 }
 
 /* padding  */
-.pd-0{
+.pt-0 {
+    padding-top: 0 !important;
+}
+.pb-0{
     padding-bottom: 0 !important;
 }
 .pr-0{
@@ -133,6 +136,20 @@ export default{
 }
 .pl-0{
     padding-left: 0 !important
+}
+
+/* margins  */
+.mt-0{
+    margin-top: 0 !important
+}
+.mb-0{
+    margin-bottom: 0 !important
+}
+.mr-0{
+    margin-right: 0 !important
+}
+.ml-0{
+    margin-left: 0 !important
 }
 
 /* images */
