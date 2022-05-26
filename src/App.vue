@@ -84,7 +84,7 @@ export default{
  {
     box-shadow: inset 10em 0 0 0 #FAAA53,
                 0px 19px 28px -11px #00000040,
-                2px 4px 73px 91px #A989E540;
+                2px 4px 73px 91px #FAAA5340;
     color: #fff !important;
     border: 1.45px solid #FAAA53;
 }
