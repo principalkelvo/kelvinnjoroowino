@@ -34,11 +34,13 @@ export default{
 
 .buttons button {
     background: linear-gradient(180deg, #FBC75B 0%, #FA964D 100%);
-    box-shadow: 0px 19px 28px -11px #00000040;
+    /* box-shadow: 0px 19px 28px -11px #00000040; */
     outline: none;
     border: none;
     cursor: pointer;
-    box-shadow: #FAAA53 0px 0px 0px 0px inset;
+    box-shadow: 0px 0px 0px 0px inset #FAAA53, 
+                0px 19px 28px -11px #00000040;
+
     padding: 10px 30px;
     border-radius: 5px;
     font-size: 1em;
