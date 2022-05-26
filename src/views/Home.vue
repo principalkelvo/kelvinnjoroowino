@@ -56,16 +56,20 @@
 
     <Service/>
 
+    <Services/>
+
   </div>
 </template>
 
 <script>
 import Service from "@/components/service.vue";
+import Services from "@/components/services.vue";
 
 export default{
   components:{
-    Service
-  },
+    Service,
+    Services
+},
 }
 </script>
 
