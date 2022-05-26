@@ -58,17 +58,20 @@
 
     <Services/>
 
+    <MyWork/>
   </div>
 </template>
 
 <script>
 import Service from "@/components/service.vue";
 import Services from "@/components/services.vue";
+import MyWork from "@/components/myWork.vue";
 
 export default{
   components:{
     Service,
-    Services
+    Services,
+    MyWork
 },
 }
 </script>
