@@ -98,8 +98,8 @@
         <div class="column is-4 card">
             <div class="awesomeCard">
               <div class="title">
-                <h2>Service</h2>
-                <h2>Service</h2>
+                <h2>My awesome</h2>
+                <h2>Services</h2>
               </div>
               <div class="cardContent">
                 
@@ -108,7 +108,7 @@
 
               </div>
               <div class="cardFooter">
-                <div class="button">
+                <div class="buttons">
                   <button>Download CV</button>
                 </div>
               </div>
@@ -128,7 +128,6 @@ export default {
 <style scoped>
 /* fullcard  */
 .cards .card{
-  border: 1px solid black;
   height: 18em;
   width: 100%;
   display: flex;
@@ -221,7 +220,6 @@ background: linear-gradient(180deg, rgba(251, 199, 91, 0.5) 0%, rgba(250, 150, 7
   /* value in the circular bar  */
    .value-container {
     position: relative;
-    /* font-family: "Poppins", sans-serif; */
     font-weight: 900;
     color: #231c3d;
   }
@@ -306,5 +304,9 @@ background: linear-gradient(180deg, rgba(251, 199, 91, 0.5) 0%, rgba(250, 150, 7
    }
    .awesomeCard .title h2:last-child{
      color: #faaa53;
+   }
+
+   .awesomeCard .cardContent{
+     width: 100%;
    }
 </style>
