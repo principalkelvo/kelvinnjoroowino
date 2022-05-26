@@ -33,8 +33,17 @@
                                 <div class="techUsed">
                                     <img src="@/assets/socialIcons/HTML.svg" alt="html">
                                 </div>
+                                <div class="techUsed">
+                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                </div>
                             </div>
                             <div class="circle">
+                                 <div class="techUsed">
+                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                </div>
+                                 <div class="techUsed">
+                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                </div>
                                  <div class="techUsed">
                                     <img src="@/assets/socialIcons/HTML.svg" alt="html">
                                 </div>
@@ -112,6 +121,7 @@
 /* first circle with icons */
 .column .mainCircle .socialCircle .circle{
     position: absolute;
+    
     width: 19.5em;
     height: 19.5em;
     border-radius: 50%;
@@ -137,12 +147,14 @@ box-shadow: 0px 4px 24px 6px #D0D0D040;
 /* first out circle with clipped icons  */
 .column .mainCircle .socialCircle .circle:first-child .techUsed{
     position: absolute;
-    top: -5%;
-    left: 50%;
+    top: -2%;
+    left: 60%;
+    background: #fff;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 4px 24px 6px #D0D0D040;
+box-shadow: 0px 0px 16px 8px #A6A6A640;
+
 
     display: flex;
     justify-content: center;
@@ -151,12 +163,30 @@ box-shadow: 0px 4px 24px 6px #D0D0D040;
 /* second icon on the first circle */
 .column .mainCircle .socialCircle .circle:first-child .techUsed:nth-child(2){
     position: absolute;
-    top: 50%;
-    left: -8%;
+    background: #fff;
+    top: 10%;
+    left: 4%;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 4px 24px 6px #D0D0D040;
+box-shadow: 0px 0px 16px 8px #A6A6A640;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* third icon on the first circle */
+.column .mainCircle .socialCircle .circle:first-child .techUsed:nth-child(3){
+    background: #fff;
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+box-shadow: 0px 0px 16px 8px #A6A6A640;
+
 
     display: flex;
     justify-content: center;
@@ -164,13 +194,15 @@ box-shadow: 0px 4px 24px 6px #D0D0D040;
 }
 /* last icon on the first circle */
 .column .mainCircle .socialCircle .circle:first-child .techUsed:last-child{
+    background: #fff;
     position: absolute;
-    top: 90%;
-    left: 50%;
+    top: 50%;
+    left: 90%;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 4px 24px 6px #D0D0D040;
+box-shadow: 0px 0px 16px 8px #A6A6A640;
+
 
     display: flex;
     justify-content: center;
@@ -180,12 +212,47 @@ box-shadow: 0px 4px 24px 6px #D0D0D040;
 /* first icon in second circle */
 .column .mainCircle .socialCircle .circle:nth-child(2) .techUsed{
     position: absolute;
-    top: 50%;
+    top: 20%;
+    background: #fff;
     right: -10%;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 4px 24px 6px #D0D0D040;
+box-shadow: 0px 0px 16px 8px #A6A6A640;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* second icon on the second circle */
+.column .mainCircle .socialCircle .circle:nth-child(2)  .techUsed:nth-child(2){
+    position: absolute;
+    background: #fff;
+    top: 50%;
+    left: -8%;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+box-shadow: 0px 0px 16px 8px #A6A6A640;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* last icon on the second circle */
+.column .mainCircle .socialCircle .circle:nth-child(2)  .techUsed:last-child{
+    position: absolute;
+    top: 80%;
+    background: #fff;
+    left: 60%;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+box-shadow: 0px 0px 16px 8px #A6A6A640;
+
 
     display: flex;
     justify-content: center;
@@ -195,13 +262,15 @@ box-shadow: 0px 4px 24px 6px #D0D0D040;
 /* the only icon in the last small circle */
 .column .mainCircle .socialCircle .circle:last-child .techUsed{
     position: absolute;
+    background: #fff;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 4px 24px 6px #D0D0D040;
+box-shadow: 0px 0px 16px 8px #A6A6A640;
+
 
     display: flex;
     justify-content: center;
