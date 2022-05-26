@@ -19,7 +19,7 @@
                 <li><a href="#stories">Projects</a></li>
                 <!-- navbar items button -->
                 <li><a class="buttons is-large">
-                        <button class="no-fill">Contact</button>
+                        <button>Contact</button>
                     </a></li>
             </ul>
         </div>
