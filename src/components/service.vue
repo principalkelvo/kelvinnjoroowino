@@ -63,7 +63,7 @@
                 </div>
                 <div class="jobs">
                   <div class="jobTitle">
-                    <p>Graphic designer</p>
+                    <p>UI/UX designer</p>
 
                   </div>
                   <div class="lifeEmoji">
@@ -76,7 +76,7 @@
                 </div>
                 <div class="jobs">
                   <div class="jobTitle">
-                    <p>Graphic designer</p>
+                    <p>Full-Stack Developer</p>
 
                   </div>
                   <div class="lifeEmoji">
@@ -255,15 +255,15 @@ background: linear-gradient(180deg, rgba(251, 199, 91, 0.5) 0%, rgba(250, 150, 7
   .serviceCard .cardContent{    
     display: flex;
     width: 90%;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     font-size: .6em;
   }
   .serviceCard .jobs{
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    align-items: left;
+    justify-content: space-between;
 
   }
   .jobs p{
