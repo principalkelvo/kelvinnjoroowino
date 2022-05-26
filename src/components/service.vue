@@ -22,13 +22,13 @@
 
             </div>
             <div class="success">
-            <div class="firstRectangle">
+            <div class="firstRectangle yellowed">
               <div class="secondRectangle">
-                <p>projects done successfull</p>
+                <p>Jobs completed</p>
 
             </div>
             <div class="circle">
-              <div class="circular-progress">
+              <div class="circular-progress yellowed">
                     <div class="value-container">12</div>
                 </div>
 
@@ -41,10 +41,78 @@
             </div>
         </div>
         <div class="column is-4 card">
-            service
+            <div class="serviceCard">
+              <div class="title">
+                <img src="../assets/modeSVG/emoji.svg" alt="">
+                <h2>Service</h2>
+
+              </div>
+              <div class="cardContent">
+                <div class="jobs">
+                  <div class="jobTitle">
+                    <p>Graphic designer</p>
+
+                  </div>
+                  <div class="lifeEmoji">
+                    <img src="@/assets/socialIcons/life.png" alt="life">
+                  </div>
+                  <div class="jobPercentage">
+                    <p>100%</p>
+
+                  </div>
+                </div>
+                <div class="jobs">
+                  <div class="jobTitle">
+                    <p>Graphic designer</p>
+
+                  </div>
+                  <div class="lifeEmoji">
+                    <img src="@/assets/socialIcons/life.png" alt="life">
+                  </div>
+                  <div class="jobPercentage">
+                    <p>100%</p>
+
+                  </div>
+                </div>
+                <div class="jobs">
+                  <div class="jobTitle">
+                    <p>Graphic designer</p>
+
+                  </div>
+                  <div class="lifeEmoji">
+                    <img src="@/assets/socialIcons/life.png" alt="life">
+                  </div>
+                  <div class="jobPercentage">
+                    <p>100%</p>
+
+                  </div>
+                </div>
+                
+
+              </div>
+              <div class="cardFooter">
+                <p>Experience working</p>
+              </div>
+            </div>
         </div>
         <div class="column is-4 card">
-            service
+            <div class="awesomeCard">
+              <div class="title">
+                <h2>Service</h2>
+                <h2>Service</h2>
+              </div>
+              <div class="cardContent">
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, doloribus.</p>
+                
+
+              </div>
+              <div class="cardFooter">
+                <div class="button">
+                  <button>Download CV</button>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -58,6 +126,7 @@ export default {
 </script>
 
 <style scoped>
+/* fullcard  */
 .cards .card{
   border: 1px solid black;
   height: 18em;
@@ -66,6 +135,7 @@ export default {
   align-items: center;
   justify-content: center;
 }
+/* firstcard projects and jobs percentage  */
 .projects{
   width: 100%;
   height: 100%;
@@ -73,6 +143,7 @@ export default {
   flex-direction: column;
 
 }
+/* each project */
 .projects .success{
   width: 100%;
   padding: 3em 0;
@@ -97,7 +168,7 @@ export default {
   transform: translate(-50%, 0);
   top: -20%;
 }
-.projects:last-child .success .firstRectangle{
+.projects .success .firstRectangle.yellowed{
   background: linear-gradient(180deg, rgba(251, 199, 91, 0.5) 0%, rgba(250, 150, 77, 0.5) 100%);
 }
 
@@ -125,6 +196,7 @@ export default {
 
 }
 
+/* circular progress bar  */
 .circular-progress {
     position: relative;
   background: linear-gradient(205.37deg, rgba(236, 150, 171, 0.56) -2.42%, rgba(169, 137, 229, 0.8) 103.97%);
@@ -134,6 +206,10 @@ export default {
     display: grid;
     place-items: center;
   }
+  .circular-progress.yellowed{
+background: linear-gradient(180deg, rgba(251, 199, 91, 0.5) 0%, rgba(250, 150, 77, 0.5) 100%);
+
+}
   .circular-progress:before {
     content: "";
     position: absolute;
@@ -142,6 +218,7 @@ export default {
     background-color: #ffffff;
     border-radius: 50%;
   }
+  /* value in the circular bar  */
    .value-container {
     position: relative;
     /* font-family: "Poppins", sans-serif; */
@@ -158,4 +235,76 @@ export default {
     color: #231c3d;
   }
 
+/* center card  */
+  .serviceCard{
+    background: linear-gradient(205.37deg, #A989E5 -2.42%, rgba(236, 150, 171, 0.7) 103.97%);
+    width: 100%;
+    height: 120%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .serviceCard .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 10em;
+    color: #fff;
+  }
+  .serviceCard .cardContent{    
+    display: flex;
+    width: 90%;
+    align-items: center;
+    flex-direction: column;
+    font-size: .6em;
+  }
+  .serviceCard .jobs{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+  .jobs p{
+    margin: 0;
+  }
+    .serviceCard .jobs .jobTitle{
+      color: #fff;
+    }
+    .serviceCard .jobs .lifeEmoji{
+      padding: 0 1em ;
+    }
+    .serviceCard .cardFooter{
+  
+      color: #fff;
+    }
+
+/* last service div  */
+ .awesomeCard{
+   background: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+   .awesomeCard .title{
+     color: #000;
+     width: 100%;
+     display: flex;
+     align-items: left;
+     justify-content: center;
+     flex-direction: column;
+  }
+   .awesomeCard .title h2{
+      margin: 0;
+      font-size: 2em;
+   }
+   .awesomeCard .title h2:last-child{
+     color: #faaa53;
+   }
 </style>
