@@ -1,7 +1,9 @@
 <template>
   <div class="services">
     <div class="section">
+        <!-- full columns content -->
         <div class="columns">
+            <!-- main title  -->
             <div class="column is-6">
                 <div class="title">
                     <h1>My awesome</h1>
@@ -11,7 +13,8 @@
                     <button>Download CV</button>
                 </div>
             </div>
-            <div class="column is-6">
+            <!-- card  -->
+            <div class="column is-6 pb-0">
                 <div class="card">
                     <div class="cardTitle">
                         <img src="../assets/emoji/love.png" alt="">
@@ -26,8 +29,43 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+
+        </div>
+        <div class="columns">
+            <div class="column is-4 pt-0 ">
+            <div class="card">
+                    <div class="cardTitle">
+                        <img src="../assets/emoji/celebrate.png" alt="">
+                        <h2>Developer</h2>
+                    </div>
+                    <div class="cardContent">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, atque?</p>
+                    </div>
+                    <div class="cardFooter">
+                        <div class="buttons">
+                            <button class="no-fill">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            <div class="column ">
+            <div class="card">
+                    <div class="cardTitle">
+                        <img src="../assets/emoji/ok.png" alt="">
+                        <h2>Ui/Ux</h2>
+                    </div>
+                    <div class="cardContent">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, atque?</p>
+                    </div>
+                    <div class="cardFooter">
+                        <div class="buttons">
+                            <button class="no-fill">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
         </div>
     </div>
   </div>
@@ -88,8 +126,6 @@
     text-transform: uppercase;
     font-weight: 400;
     font-size: .8em;
-    /* box-shadow: 2px 4px 73px 91px #A989E540; */
-
 }
 
 
