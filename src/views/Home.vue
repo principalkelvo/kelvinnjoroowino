@@ -59,6 +59,8 @@
     <Services/>
 
     <MyWork/>
+
+    <Skills/>
   </div>
 </template>
 
@@ -66,12 +68,14 @@
 import Service from "@/components/service.vue";
 import Services from "@/components/services.vue";
 import MyWork from "@/components/myWork.vue";
+import Skills from "@/components/skills.vue";
 
 export default{
   components:{
     Service,
     Services,
-    MyWork
+    MyWork,
+    Skills
 },
 }
 </script>
