@@ -21,7 +21,7 @@
                         <h2>Design</h2>
                     </div>
                     <div class="cardContent">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, atque?</p>
+                        <p>Misleadingly thought of as the superficial to create, execute, or construct of a product appearance, design actually encompasses a lot more. It is a cross functional that includes market research,design of a concept and technical research</p>
                     </div>
                     <div class="cardFooter">
                         <div class="buttons">
@@ -40,7 +40,7 @@
                         <h2>Developer</h2>
                     </div>
                     <div class="cardContent">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, atque?</p>
+                        <p>Responsible for creating and improving softwares and apps. This includes researching, designing and developing of softwares. Working coherently with analysts and computer engineers to bring out the proposed quality of software application</p>
                     </div>
                     <div class="cardFooter">
                         <div class="buttons">
@@ -56,7 +56,7 @@
                         <h2>Ui/Ux</h2>
                     </div>
                     <div class="cardContent">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, atque?</p>
+                        <p>Improve users' satisfaction by improving the interface usability. Work on language and visual input to translate the brand into a sophisticated and smooth webpage, to quickly communicate information for the user.</p>
                     </div>
                     <div class="cardFooter">
                         <div class="buttons">
@@ -114,11 +114,13 @@
 }
 
 .cardContent{
-    padding: 1rem;
+    padding: 0 1rem;
 }
 
 .cardContent p{
     text-align: center;
+    font-size: .8em;
+    line-height: 1em;
 
 }
 
