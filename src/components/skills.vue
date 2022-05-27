@@ -25,33 +25,50 @@
                         <div class="socialCircle">
                             <div class="circle">
                                 <div class="techUsed">
-                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                    <div class="image">
+                                    <img src="@/assets/socialIcons/django.svg" alt="html">
+                                </div>
                                 </div>
                                 <div class="techUsed">
-                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                    <div class="image">
+                                    <img src="@/assets/socialIcons/photoShop.svg" alt="html">
+                                </div>
                                 </div>
                                 <div class="techUsed">
-                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                    <div class="image">
+                                    <img src="@/assets/socialIcons/lightRoom.svg" alt="html">
+                                </div>
                                 </div>
                                 <div class="techUsed">
-                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                    <div class="image">
+                                    <img src="@/assets/socialIcons/figma.svg" alt="html">
+                                </div>
                                 </div>
                             </div>
                             <div class="circle">
                                  <div class="techUsed">
-                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                     <div class="image">
+                                    <img src="@/assets/socialIcons/css.svg" alt="html">
+                                </div>
                                 </div>
                                  <div class="techUsed">
-                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                     <div class="image">
+                                    <img src="@/assets/socialIcons/javaScript.svg" alt="html">
+                                </div>
                                 </div>
                                  <div class="techUsed">
-                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                     
+                                     <div class="image">
+                                    <img src="@/assets/socialIcons/vue.svg" alt="html">
+                                </div>
                                 </div>
                             </div>
                             
                             <div class="circle">
                                  <div class="techUsed">
+                                     <div class="image">
                                     <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -143,6 +160,8 @@ box-shadow: 0px 4px 24px 6px #D0D0D040;
     border-radius: 50%;
 box-shadow: 0px 4px 24px 6px #D0D0D040;
 }
+
+
 
 /* first out circle with clipped icons  */
 .column .mainCircle .socialCircle .circle:first-child .techUsed{
@@ -275,6 +294,26 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* images  */
+.column .mainCircle .socialCircle .circle .techUsed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column .mainCircle .socialCircle .circle .techUsed .image{
+    width:2em;
+    height:2em;
+    position: relative;
+}
+.column .mainCircle .socialCircle .circle .techUsed .image img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
 }
 
 </style>
