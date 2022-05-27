@@ -28,7 +28,7 @@
                     </div>
 
                 </div>
-                <div class="column is-4">
+                <div class="column is-6">
                     <div class="profile">
                         <div class="image is-large ">
                             <img src="@/assets/profilePic/dp.png" class="profileImg" alt="home">
@@ -42,16 +42,16 @@
                         </div>
                         <div class="smallCircle">
                             <div class="linkedin">
-                            <a href="https://www.linkedin.com/in/kelvin-njoro-8abab4210/" class="socialLink">
-                                <img src="@/assets/socialIcons/linkedin.png" alt="linkedin">
-                            </a>
-                        </div>
+                                <a href="https://www.linkedin.com/in/kelvin-njoro-8abab4210/" class="socialLink">
+                                    <img src="@/assets/socialIcons/linkedin.png" alt="linkedin">
+                                </a>
+                            </div>
                             <div class="twitter">
                                 <a href="https://twitter.com/KelvinPrincipal" class="socialLink">
                                     <img src="@/assets/socialIcons/twitter.png" alt="twitter">
                                 </a>
                             </div>
-                        
+
                         </div>
                     </div>
 
@@ -197,6 +197,7 @@ export default {
     width: 20em;
     height: 20em;
     overflow: visible;
+    /* display: none; */
 }
 
 .image.is-large .profileImg {
@@ -254,7 +255,7 @@ export default {
     left: -9%;
 }
 
-.profile .smallCircle .linkedin img  {
+.profile .smallCircle .linkedin img {
     width: 2.5em;
     height: 2.5em;
     border: 1px solid #f5f5f5;
@@ -268,7 +269,7 @@ export default {
     align-items: center;
     justify-content: center;
     z-index: 1;
-    
+
 }
 
 /* hero payments */

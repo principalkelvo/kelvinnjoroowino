@@ -10,66 +10,70 @@
                     </div>
                     <!-- content  -->
                     <div class="content">
-                        <p>Understand the client's subject matter completely and build on the knowledge related to it, becoming intimately familiar with the subject matter. Determine methods to address the specific customer's needs and requirements</p>
-                        <p>Findings from research are utilized for the production of specific products including materials, systems and methods. Engineer utilizing the research to produce commercial products for the customer.</p>
+                        <p>Understand the client's subject matter completely and build on the knowledge related to it,
+                            becoming intimately familiar with the subject matter. Determine methods to address the
+                            specific customer's needs and requirements</p>
+                        <p>Findings from research are utilized for the production of specific products including
+                            materials, systems and methods. Engineer utilizing the research to produce commercial
+                            products for the customer.</p>
                     </div>
                     <!-- hire button  -->
                     <div class="buttons">
                         <button>Hire Me</button>
                     </div>
-                    
+
                 </div>
                 <div class="column is-6">
                     <div class="mainCircle">
 
-                    <!-- used technologies -->
+                        <!-- used technologies -->
                         <div class="socialCircle">
                             <div class="circle">
                                 <div class="techUsed">
                                     <div class="image">
-                                    <img src="@/assets/socialIcons/django.svg" alt="html">
-                                </div>
-                                </div>
-                                <div class="techUsed">
-                                    <div class="image">
-                                    <img src="@/assets/socialIcons/photoShop.svg" alt="html">
-                                </div>
+                                        <img src="@/assets/socialIcons/django.svg" alt="html">
+                                    </div>
                                 </div>
                                 <div class="techUsed">
                                     <div class="image">
-                                    <img src="@/assets/socialIcons/lightRoom.svg" alt="html">
-                                </div>
+                                        <img src="@/assets/socialIcons/photoShop.svg" alt="html">
+                                    </div>
                                 </div>
                                 <div class="techUsed">
                                     <div class="image">
-                                    <img src="@/assets/socialIcons/figma.svg" alt="html">
+                                        <img src="@/assets/socialIcons/lightRoom.svg" alt="html">
+                                    </div>
                                 </div>
+                                <div class="techUsed">
+                                    <div class="image">
+                                        <img src="@/assets/socialIcons/figma.svg" alt="html">
+                                    </div>
                                 </div>
                             </div>
                             <div class="circle">
-                                 <div class="techUsed">
-                                     <div class="image">
-                                    <img src="@/assets/socialIcons/css.svg" alt="html">
+                                <div class="techUsed">
+                                    <div class="image">
+                                        <img src="@/assets/socialIcons/css.svg" alt="html">
+                                    </div>
                                 </div>
+                                <div class="techUsed">
+                                    <div class="image">
+                                        <img src="@/assets/socialIcons/javaScript.svg" alt="html">
+                                    </div>
                                 </div>
-                                 <div class="techUsed">
-                                     <div class="image">
-                                    <img src="@/assets/socialIcons/javaScript.svg" alt="html">
-                                </div>
-                                </div>
-                                 <div class="techUsed">
-                                     
-                                     <div class="image">
-                                    <img src="@/assets/socialIcons/vue.svg" alt="html">
-                                </div>
+                                <div class="techUsed">
+
+                                    <div class="image">
+                                        <img src="@/assets/socialIcons/vue.svg" alt="html">
+                                    </div>
                                 </div>
                             </div>
-                            
+
                             <div class="circle">
-                                 <div class="techUsed">
-                                     <div class="image">
-                                    <img src="@/assets/socialIcons/HTML.svg" alt="html">
-                                </div>
+                                <div class="techUsed">
+                                    <div class="image">
+                                        <img src="@/assets/socialIcons/HTML.svg" alt="html">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +89,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </template>
 <script>
@@ -95,11 +99,13 @@
 .columns .column .title {
     margin-bottom: 2em;
 }
-.columns .column .title h1{
+
+.columns .column .title h1 {
     width: 100%;
     margin: 0;
 }
-.columns .column .title h1:nth-child(2){
+
+.columns .column .title h1:nth-child(2) {
     color: #faaa53;
 }
 
@@ -112,7 +118,7 @@
 
 /* technology used */
 /* main div  */
-.column .mainCircle{
+.column .mainCircle {
     width: 28em;
     height: 28em;
     position: relative;
@@ -120,10 +126,10 @@
     justify-content: center;
     align-items: center;
     /* border: 1px solid black; */
-    
 
 
 }
+
 /* purple circle */
 .mainCircle .purpleCircle {
     width: 18em;
@@ -131,7 +137,7 @@
     background: #a989e5;
     border-radius: 50%;
     position: absolute;
-    top:-2em;
+    top: -2em;
     right: 0em;
     overflow: visible;
 }
@@ -150,50 +156,53 @@
 }
 
 /* main circle  */
-.column .mainCircle .socialCircle{
+.column .mainCircle .socialCircle {
     width: 26em;
     height: 26em;
     background-color: #fff;
     position: relative;
     border-radius: 50%;
     box-shadow: 27px -8px 41px 5px #71717140,
-                -27px 8px 39px 22px #B9B9B940;
+        -27px 8px 39px 22px #B9B9B940;
 
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
 }
+
 /* first circle with icons */
-.column .mainCircle .socialCircle .circle{
+.column .mainCircle .socialCircle .circle {
     position: absolute;
-    
+
     width: 19.5em;
     height: 19.5em;
     border-radius: 50%;
     box-shadow: 0px 4px 24px 6px #D0D0D040;
 }
+
 /* second circle with icon */
 .column .mainCircle .socialCircle .circle:nth-child(2) {
     /* position: absolute; */
     width: 13em;
     height: 13em;
     border-radius: 50%;
-box-shadow: 0px 4px 24px 6px #D0D0D040;
+    box-shadow: 0px 4px 24px 6px #D0D0D040;
 }
- /* last small circle with icon at the center  */
+
+/* last small circle with icon at the center  */
 .column .mainCircle .socialCircle .circle:last-child {
     position: relative;
     width: 6.5em;
     height: 6.5em;
     border-radius: 50%;
-box-shadow: 0px 4px 24px 6px #D0D0D040;
+    box-shadow: 0px 4px 24px 6px #D0D0D040;
 }
 
 
 
 /* first out circle with clipped icons  */
-.column .mainCircle .socialCircle .circle:first-child .techUsed{
+.column .mainCircle .socialCircle .circle:first-child .techUsed {
     position: absolute;
     top: -2%;
     left: 60%;
@@ -201,15 +210,16 @@ box-shadow: 0px 4px 24px 6px #D0D0D040;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 0px 16px 8px #A6A6A640;
+    box-shadow: 0px 0px 16px 8px #A6A6A640;
 
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /* second icon on the first circle */
-.column .mainCircle .socialCircle .circle:first-child .techUsed:nth-child(2){
+.column .mainCircle .socialCircle .circle:first-child .techUsed:nth-child(2) {
     position: absolute;
     background: #fff;
     top: 10%;
@@ -217,15 +227,16 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 0px 16px 8px #A6A6A640;
+    box-shadow: 0px 0px 16px 8px #A6A6A640;
 
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /* third icon on the first circle */
-.column .mainCircle .socialCircle .circle:first-child .techUsed:nth-child(3){
+.column .mainCircle .socialCircle .circle:first-child .techUsed:nth-child(3) {
     background: #fff;
     position: absolute;
     top: 80%;
@@ -233,15 +244,16 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 0px 16px 8px #A6A6A640;
+    box-shadow: 0px 0px 16px 8px #A6A6A640;
 
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /* last icon on the first circle */
-.column .mainCircle .socialCircle .circle:first-child .techUsed:last-child{
+.column .mainCircle .socialCircle .circle:first-child .techUsed:last-child {
     background: #fff;
     position: absolute;
     top: 50%;
@@ -249,7 +261,7 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 0px 16px 8px #A6A6A640;
+    box-shadow: 0px 0px 16px 8px #A6A6A640;
 
 
     display: flex;
@@ -258,7 +270,7 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
 }
 
 /* first icon in second circle */
-.column .mainCircle .socialCircle .circle:nth-child(2) .techUsed{
+.column .mainCircle .socialCircle .circle:nth-child(2) .techUsed {
     position: absolute;
     top: 20%;
     background: #fff;
@@ -266,7 +278,7 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 0px 16px 8px #A6A6A640;
+    box-shadow: 0px 0px 16px 8px #A6A6A640;
 
 
     display: flex;
@@ -275,7 +287,7 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
 }
 
 /* second icon on the second circle */
-.column .mainCircle .socialCircle .circle:nth-child(2)  .techUsed:nth-child(2){
+.column .mainCircle .socialCircle .circle:nth-child(2) .techUsed:nth-child(2) {
     position: absolute;
     background: #fff;
     top: 50%;
@@ -283,15 +295,16 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 0px 16px 8px #A6A6A640;
+    box-shadow: 0px 0px 16px 8px #A6A6A640;
 
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /* last icon on the second circle */
-.column .mainCircle .socialCircle .circle:nth-child(2)  .techUsed:last-child{
+.column .mainCircle .socialCircle .circle:nth-child(2) .techUsed:last-child {
     position: absolute;
     top: 80%;
     background: #fff;
@@ -299,7 +312,7 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 0px 16px 8px #A6A6A640;
+    box-shadow: 0px 0px 16px 8px #A6A6A640;
 
 
     display: flex;
@@ -308,7 +321,7 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
 }
 
 /* the only icon in the last small circle */
-.column .mainCircle .socialCircle .circle:last-child .techUsed{
+.column .mainCircle .socialCircle .circle:last-child .techUsed {
     position: absolute;
     background: #fff;
     top: 50%;
@@ -317,7 +330,7 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
     width: 3.5em;
     height: 3.5em;
     border-radius: 50%;
-box-shadow: 0px 0px 16px 8px #A6A6A640;
+    box-shadow: 0px 0px 16px 8px #A6A6A640;
 
 
     display: flex;
@@ -327,22 +340,22 @@ box-shadow: 0px 0px 16px 8px #A6A6A640;
 
 
 /* images  */
-.column .mainCircle .socialCircle .circle .techUsed{
+.column .mainCircle .socialCircle .circle .techUsed {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.column .mainCircle .socialCircle .circle .techUsed .image{
-    width:2em;
-    height:2em;
+.column .mainCircle .socialCircle .circle .techUsed .image {
+    width: 2em;
+    height: 2em;
     position: relative;
 }
+
 .column .mainCircle .socialCircle .circle .techUsed .image img {
     width: 100%;
     height: 100%;
     position: absolute;
     object-fit: cover;
 }
-
 </style>

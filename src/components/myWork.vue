@@ -3,40 +3,40 @@
         <div class="section">
             <div class="columns">
                 <div class="title">
-                    <h1 >Clients get <span>always exceptional</span></h1>
+                    <h1>Clients get <span>always exceptional</span></h1>
                     <h1>works from me....</h1>
                 </div>
-                
+
             </div>
             <div class="columns">
-                    <div class="cards">
-                        <div class="buttons">
-                            <div class="prevBtn">
-                                <img src="../assets/emoji/prev.svg" alt="">
-
-                            </div>
-                            <div class="nextBtn">
-                                <img src="../assets/emoji/next.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="allCards">
-                        <div class="card">
+                <div class="cards">
+                    <div class="buttons">
+                        <div class="prevBtn">
+                            <img src="../assets/emoji/prev.svg" alt="">
 
                         </div>
-                        <div class="card">
-                            
+                        <div class="nextBtn">
+                            <img src="../assets/emoji/next.svg" alt="">
                         </div>
-                        <div class="card">
-                            
-                        </div>
-                        
-                        <div class="card">
-                            
-                        </div>
-                        </div>
-                        
                     </div>
+                    <div class="allCards">
+                        <div class="card">
+
+                        </div>
+                        <div class="card">
+
+                        </div>
+                        <div class="card">
+
+                        </div>
+
+                        <div class="card">
+
+                        </div>
+                    </div>
+
                 </div>
+            </div>
         </div>
     </div>
 </template>
@@ -45,18 +45,18 @@ export default {
     name: 'myWork',
     data() {
         return {
-            
+
         }
     },
     methods: {
-        
+
     }
 }
 </script>
 
 <style scoped>
 /* title  */
-.columns .title{
+.columns .title {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -64,13 +64,16 @@ export default {
     justify-content: left;
     padding: 3rem;
 }
-.columns .title h1 span{
+
+.columns .title h1 span {
     color: #faaa53;
 }
+
 .columns .title h1 {
     margin: 0;
 }
-.columns .cards{
+
+.columns .cards {
     width: 100%;
     display: flex;
     align-items: center;
@@ -78,7 +81,7 @@ export default {
     margin: 3rem;
 }
 
-.columns .cards .buttons{
+.columns .cards .buttons {
     width: 10em;
     height: 16em;
     display: flex;
@@ -87,11 +90,11 @@ export default {
     align-items: center;
     margin: 1rem;
 
-    
+
 }
 
 .columns .cards .buttons .prevBtn,
-.columns .cards .buttons .nextBtn{
+.columns .cards .buttons .nextBtn {
     min-width: 8em;
     height: 6em;
     display: flex;
@@ -101,17 +104,17 @@ export default {
 /* .columns .cards .buttons .prevBtn,
 .columns .cards .buttons .nextBtn */
 
-.columns .cards .allCards{
+.columns .cards .allCards {
     display: flex;
     align-items: center;
     justify-content: space-between;
     overflow-x: scroll;
 }
 
-.columns .cards .card{
+.columns .cards .card {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     margin: 1rem;
     display: flex;
