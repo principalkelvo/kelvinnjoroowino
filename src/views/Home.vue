@@ -224,7 +224,7 @@ export default {
     border-radius: 50%;
     width: 10em;
     height: 10em;
-    background: #eb95aa;
+    background: #faaa53;
     position: absolute;
     bottom: 3em;
     right: 0;
