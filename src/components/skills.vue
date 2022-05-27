@@ -119,14 +119,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    
 
 
 }
+/* purple circle */
+.mainCircle .purpleCircle {
+    width: 18em;
+    height: 18em;
+    background: #a989e5;
+    border-radius: 50%;
+    position: absolute;
+    top:-2em;
+    right: 0em;
+    overflow: visible;
+}
+
+/* pink Circle */
+.mainCircle .orangeCircle {
+    border-radius: 50%;
+    width: 14em;
+    height: 14em;
+    background: #faaa53;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: visible;
+
+}
+
 /* main circle  */
 .column .mainCircle .socialCircle{
     width: 26em;
     height: 26em;
+    background-color: #fff;
     position: relative;
     border-radius: 50%;
     box-shadow: 27px -8px 41px 5px #71717140,
@@ -135,6 +162,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 /* first circle with icons */
 .column .mainCircle .socialCircle .circle{
