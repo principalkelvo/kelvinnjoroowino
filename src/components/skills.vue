@@ -1,5 +1,5 @@
 <template>
-    <div class="skills">
+    <div class="skills" id="skills">
         <div class="section">
             <div class="columns">
                 <div class="column is-6">
