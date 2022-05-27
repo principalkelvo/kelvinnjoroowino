@@ -42,12 +42,12 @@
                         </div>
                         <div class="smallCircle">
                             <div class="linkedin">
-                            <a href="https://github.com/principalkelvo" class="socialLink">
+                            <a href="https://www.linkedin.com/in/kelvin-njoro-8abab4210/" class="socialLink">
                                 <img src="@/assets/socialIcons/linkedin.png" alt="linkedin">
                             </a>
                         </div>
                             <div class="twitter">
-                                <a href="https://github.com/principalkelvo" class="socialLink">
+                                <a href="https://twitter.com/KelvinPrincipal" class="socialLink">
                                     <img src="@/assets/socialIcons/twitter.png" alt="twitter">
                                 </a>
                             </div>
