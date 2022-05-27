@@ -1,31 +1,33 @@
 <template>
     <div>
         <!-- navbar  -->
-    <div class="navbar">
-        <!-- navbar logo  -->
-        <div class="navbar-logo">
-            <p>Personal</p>
-        </div>
-        <div class="mode">
-            <div class="image mode">
-                <img src="#" alt="darkmode">
+        <div class="navbar">
+            <!-- navbar logo  -->
+            <div class="navbar-logo">
+                <p>Portfolio</p>
+                <div class="mode">
+                    <div class="image mode">
+                        <img src="@/assets/modeSVG/Switch - Orange.svg" alt="darkmode">
+                    </div>
+                </div>
             </div>
-        </div>
-        <!-- navbar items  -->
-        <div class="navbar-items">
-            <ul>
-                <li><a href="" class="active">Home</a></li>
-                <li><a href="#projects">About</a></li>
-                <li><a href="#stories">Projects</a></li>
-                <!-- navbar items button -->
-                <li><a class="buttons is-large">
-                        <button>Contact</button>
-                    </a></li>
-            </ul>
+
+            <!-- navbar items  -->
+            <div class="navbar-items">
+                <ul>
+                    <li><a href="" class="active">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#myWork">Projects</a></li>
+                    <!-- navbar items button -->
+                    <li><a class="buttons is-large">
+                            <button>Contact</button>
+                        </a></li>
+                </ul>
+            </div>
+
         </div>
 
-    </div>
-        
     </div>
 </template>
 
@@ -37,20 +39,38 @@
 /* navbar styles  */
 .navbar {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    margin: 1rem 1rem;
     min-height: 3.25rem;
 }
 
-/* moringa logo  */
+/* logo  */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    margin: 0 2em;
+
+}
+
 .navbar-logo p {
     letter-spacing: 2px;
     color: #000;
     font-weight: 700;
+    margin: 2em;
 }
 
+.navbar .navbar-logo .mode {
+    cursor: pointer;
+}
+
+
 /* navbar items */
+.navbar-items {
+    margin: 2em;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -80,13 +100,13 @@ li a {
 li a:hover {
     color: #FAAA53;
 }
-li a.active{
+
+li a.active {
     color: #FAAA53;
 }
+
 /* no border on button */
 li:last-child a:hover {
     border: none;
 }
-
-
 </style>
