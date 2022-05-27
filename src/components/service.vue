@@ -103,7 +103,7 @@
               </div>
               <div class="cardContent">
                 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, doloribus.</p>
+                <p>We provide clients with a fully intergrated digital and web design services that combines strategy, branding and messaging. Our methods are flexible to much the diverse B2B business needs and demands</p>
                 
 
               </div>
