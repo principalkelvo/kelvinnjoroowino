@@ -6,11 +6,12 @@
                     <!-- title  -->
                     <div class="title">
                         <h1>Skills Used For All This</h1>
-                        <h1>Brand & Client</h1>
+                        <h1>Design & Development</h1>
                     </div>
                     <!-- content  -->
                     <div class="content">
-                        <p>Sit amet consectetur, adipisicing elit. Sit inventore magnam explicabo pariatur! Ipsa, soluta possimus. Saepe eum voluptatem deserunt neque nam nesciunt quasi, dolore dolorem quidem. Molestias veniam facere incidunt illum animi dolorum deserunt provident assumenda quidem?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, reprehenderit.</p>
+                        <p>Understand the client's subject matter completely and build on the knowledge related to it, becoming intimately familiar with the subject matter. Determine methods to address the specific customer's needs and requirements</p>
+                        <p>Findings from research are utilized for the production of specific products including materials, systems and methods. Engineer utilizing the research to produce commercial products for the customer.</p>
                     </div>
                     <!-- hire button  -->
                     <div class="buttons">
