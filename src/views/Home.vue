@@ -1,67 +1,72 @@
 <template>
-  <div class="home">
+    <div class="home">
 
-    <div class="section">
-        <div class="columns">
-            <div class="column is-6 pr-0">
-                <p class="title is-large pd-0">Hy! I Am</p>
-                <p class="title is-large">Kelvin Njoro</p>
-                <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque id omnis voluptas,
-                    fuga culpa itaque natus dolor doloremque, dolore eligendi, vero corporis ex. Pariatur fugiat minima
-                    nisi ea nobis dolorem!</p>
-                <div class="paybtn">
-                    <div class="buttons small">
-                        <button>Hire me</button>
+        <div class="section">
+            <div class="columns">
+                <div class="column is-6 pr-">
+                    <p class="title is-large pb-0 dark">Hy! I Am</p>
+                    <p class="title is-large pb-0">Kelvin Njoro</p>
+                    <p class="content">I design and develop beautifully simple things, and I love what I do.</p>
+                    <div class="paybtn">
+                        <div class="buttons small">
+                            <button>Hire me</button>
+                        </div>
+                        <ul class="payments">
+                            <li class="paypal">
+                                <img src="@/assets/payment/Paypal.jpg" alt="">
+                            </li>
+                            <li class="mastCard">
+                                <img src="@/assets/payment/MasterCard.jpg" alt="">
+                            </li>
+                            <li class="skrill">
+                                <img src="@/assets/payment/Skrill.png" alt="">
+                            </li>
+                            <li class="visa">
+                                <img src="@/assets/payment/Visa.jpg" alt="">
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="payments">
-                        <li class="paypal">
-                            <img src="@/assets/payment/Paypal.jpg" alt="">
-                        </li>
-                        <li class="mastCard">
-                            <img src="@/assets/payment/MasterCard.jpg" alt="">
-                        </li>
-                        <li class="skrill">
-                            <img src="@/assets/payment/Skrill.png" alt="">
-                        </li>
-                        <li class="visa">
-                            <img src="@/assets/payment/Visa.jpg" alt="">
-                        </li>
-                    </ul>
+
                 </div>
-
-            </div>
-            <div class="column is-4">
-                <div class="profile">
-                    <div class="image is-large ">
-                        <img src="@/assets/profilePic/dp.png" class="profileImg" alt="home">
-                    </div>
-                    <div class="bigCircle">
-                        <div class="google">
-                            <img src="@/assets/socialIcons/github.png" alt="google">
+                <div class="column is-4">
+                    <div class="profile">
+                        <div class="image is-large ">
+                            <img src="@/assets/profilePic/dp.png" class="profileImg" alt="home">
+                        </div>
+                        <div class="bigCircle">
+                            <div class="github">
+                                <a href="https://github.com/principalkelvo" class="socialLink">
+                                    <img src="@/assets/socialIcons/github.png" alt="github">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="smallCircle">
+                            <div class="linkedin">
+                            <a href="https://github.com/principalkelvo" class="socialLink">
+                                <img src="@/assets/socialIcons/linkedin.png" alt="linkedin">
+                            </a>
+                        </div>
+                            <div class="twitter">
+                                <a href="https://github.com/principalkelvo" class="socialLink">
+                                    <img src="@/assets/socialIcons/twitter.png" alt="twitter">
+                                </a>
+                            </div>
+                        
                         </div>
                     </div>
-                    <div class="smallCircle">
-                        <div class="twitter">
-                            <img src="@/assets/socialIcons/linkedin.png" alt="linkendin">
-                        </div>
-                    </div>
-                    <div class="facebook">
-                        <img src="@/assets/socialIcons/twitter.png" alt="twitter">
-                    </div>
-                </div>
 
+                </div>
             </div>
         </div>
+
+        <Service />
+
+        <Services />
+
+        <MyWork />
+
+        <Skills />
     </div>
-
-    <Service/>
-
-    <Services/>
-
-    <MyWork/>
-
-    <Skills/>
-  </div>
 </template>
 
 <script>
@@ -70,13 +75,13 @@ import Services from "@/components/services.vue";
 import MyWork from "@/components/myWork.vue";
 import Skills from "@/components/skills.vue";
 
-export default{
-  components:{
-    Service,
-    Services,
-    MyWork,
-    Skills
-},
+export default {
+    components: {
+        Service,
+        Services,
+        MyWork,
+        Skills
+    },
 }
 </script>
 
@@ -95,12 +100,14 @@ export default{
     justify-content: center;
     width: 100%;
 }
+
 .columns.cards {
     overflow: hidden;
     justify-content: space-around;
 
 
 }
+
 .column.is-3 {
     width: 25%;
     padding: 2em;
@@ -126,36 +133,47 @@ export default{
     padding: 0.2em 0 1em;
     color: #FA964D;
     font-size: 1.9em;
-    font-weight: 700;
+    font-weight: 900;
     width: 100%;
     letter-spacing: 2px;
+}
+
+.title.is-large.dark {
+    color: #000;
+
 }
 
 /* padding  */
 .pt-0 {
     padding-top: 0 !important;
 }
-.pb-0{
+
+.pb-0 {
     padding-bottom: 0 !important;
 }
-.pr-0{
+
+.pr-0 {
     padding-right: 0 !important
 }
-.pl-0{
+
+.pl-0 {
     padding-left: 0 !important
 }
 
 /* margins  */
-.mt-0{
+.mt-0 {
     margin-top: 0 !important
 }
-.mb-0{
+
+.mb-0 {
     margin-bottom: 0 !important
 }
-.mr-0{
+
+.mr-0 {
     margin-right: 0 !important
 }
-.ml-0{
+
+.ml-0 {
     margin-left: 0 !important
 }
 
@@ -165,25 +183,23 @@ export default{
     width: 20em;
 }
 
-.image.is-large img{
+.image.is-large img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 </style>
 
 <style scoped>
-
 /* working  */
-.profile{
+.profile {
     position: relative;
     width: 20em;
     height: 20em;
     overflow: visible;
 }
 
-.image.is-large .profileImg{
+.image.is-large .profileImg {
     height: 17.5em;
     width: 15.5em;
     position: relative;
@@ -192,9 +208,9 @@ export default{
     z-index: 1;
 }
 
-.profile .bigCircle{
-    width: 15em; 
-    height: 15em;   
+.profile .bigCircle {
+    width: 15em;
+    height: 15em;
     background: #a989e5;
     border-radius: 50%;
     position: absolute;
@@ -204,7 +220,7 @@ export default{
 }
 
 
-.profile .smallCircle{
+.profile .smallCircle {
     border-radius: 50%;
     width: 10em;
     height: 10em;
@@ -215,7 +231,7 @@ export default{
     overflow: visible;
 }
 
-.profile .smallCircle .twitter img{    
+.profile .smallCircle .twitter img {
     width: 2.5em;
     height: 2.5em;
     background: #fff;
@@ -226,7 +242,8 @@ export default{
     top: 1em;
 
 }
-.profile .bigCircle .google img{
+
+.profile .bigCircle .github img {
     width: 2.5em;
     height: 2.5em;
     background: #fff;
@@ -236,7 +253,8 @@ export default{
     top: 4em;
     left: -9%;
 }
-.profile .facebook img{    
+
+.profile .smallCircle .linkedin img  {
     width: 2.5em;
     height: 2.5em;
     border: 1px solid #f5f5f5;
@@ -244,35 +262,44 @@ export default{
     padding: .5em;
     border-radius: 50%;
     position: absolute;
-    top: 1.3em;
-    right: 15%;
+    top: -7em;
+    right: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    
 }
 
 /* hero payments */
-.paybtn{
+.paybtn {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 2em;
 }
-.paybtn .payments{
+
+.paybtn .payments {
     display: -webkit-inline-box;
 }
-.paybtn .payments li{
+
+.paybtn .payments li {
     padding: 5px;
     width: 4em;
     height: 2em;
     position: relative;
     overflow: hidden;
 }
-.paybtn .payments li img{
+
+.paybtn .payments li img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: contain;
     border: none;
 }
-.paybtn .buttons button{
+
+.paybtn .buttons button {
     height: 100%;
     width: 100%;
     white-space: nowrap;
