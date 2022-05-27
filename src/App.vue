@@ -24,6 +24,11 @@ export default{
   font-family: 'Istok Web', sans-serif;
   font-size: 24px;
 }
+.container{
+  margin: 1em;
+  padding: 1em;
+  width: 100vw;
+}
 
 
 /*all buttons */
