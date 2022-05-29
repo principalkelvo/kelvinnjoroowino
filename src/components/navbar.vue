@@ -7,7 +7,8 @@
                 <p>Portfolio</p>
                 <div class="mode">
                     <div class="image mode">
-                        <img src="@/assets/modeSVG/Switch - Orange.svg" alt="darkmode">
+                        <img v-bind:src="imgUrl" id="dark" alt="darkmode" @click="darkmode">
+
                     </div>
                 </div>
             </div>
@@ -32,6 +33,47 @@
 </template>
 
 <script>
+// const imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url)
+
+// const imageUrl = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href
+//             console.log(imgUrl)
+// document.getElementById('dark').src = imgUrl.href
+//             console.log(imageUrl)
+// import imgUrl from '../assets/modeSVG/Switch - Orange.svg'
+
+
+export default {
+    name: 'navbar',
+    data() {
+
+        return {
+            imgUrl : new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href,
+            isDarkModeActive : true,
+        }
+    }, computed:{
+    darkModeToggleIcon () {
+      this.isDarkModeActive ? 'this.imgUrl' : this.imgUrl
+      console.log(this.imgUrl)
+    },
+  },
+    methods: {
+        darkmode() {
+      console.log("dark");
+      if (this.imgUrl === new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href) {
+        this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href
+      } else {
+        this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href
+      }
+      var slider = document.getElementById("slideout");
+      slider.className += " slideout";
+      setTimeout(function () {
+        slider.classList.remove("slideout");
+      }, 100);
+      this.$store.commit('darkModeToggle')
+    },
+
+    }
+}
 
 </script>
 
