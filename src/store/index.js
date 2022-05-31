@@ -4,7 +4,7 @@ import {
 export default createStore({
     state: {
         // Dark Mode
-        isDarkModeActive: true
+        isDarkModeActive: false
     },
     mutations: {
         // Dark Mode toggle
