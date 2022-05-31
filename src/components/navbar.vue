@@ -6,8 +6,8 @@
             <div class="navbar-logo">
                 <p>Portfolio</p>
                 <div class="mode">
-                    <div class="image mode">
-                        <img v-bind:src="imgUrl" id="dark" alt="darkmode" @click="darkmode">
+                    <div class="image mode" @click="darkModeToggle">
+                        <img v-bind:src="darkModeToggleIcon" id="dark" alt="darkmode">
 
                     </div>
                 </div>
@@ -47,30 +47,39 @@ export default {
     data() {
 
         return {
-            imgUrl : new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href,
-            isDarkModeActive : true,
+            // imgUrl : new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href,
+            // isDarkModeActive : false,
+
         }
-    }, computed:{
-    darkModeToggleIcon () {
-      this.isDarkModeActive ? 'this.imgUrl' : this.imgUrl
-      console.log(this.imgUrl)
     },
-  },
+    computed: {
+
+        darkModeToggleIcon() {
+
+            return this.$store.state.isDarkModeActive ? this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href : this.imgUrl = new URL('../assets/modeSVG/Land Switch - Dark.svg', import.meta.url).href
+            //   console.log(this.imgUrl)
+        },
+    },
     methods: {
-        darkmode() {
-      console.log("dark");
-      if (this.imgUrl === new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href) {
-        this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href
-      } else {
-        this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href
-      }
-      var slider = document.getElementById("slideout");
-      slider.className += " slideout";
-      setTimeout(function () {
-        slider.classList.remove("slideout");
-      }, 100);
-      this.$store.commit('darkModeToggle')
-    },
+        //     darkmode() {
+        //   console.log("dark");
+        //   if (this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href) {
+
+
+        // this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href
+        //   } else {
+        // this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href
+        //   }
+        //   var slider = document.getElementById("dark");
+        //   slider.className += " slideout";
+        //   setTimeout(function () {
+        //     slider.classList.remove("slideout");
+        //   }, 100);
+        //   this.$store.commit('darkModeToggle')
+        // },
+        darkModeToggle() {
+            this.$store.commit('darkModeToggle');
+        },
 
     }
 }
@@ -150,5 +159,21 @@ li a.active {
 /* no border on button */
 li:last-child a:hover {
     border: none;
+}
+
+/* slide fade out */
+.slideout {
+    /* animation: 1s ease-in 0s 1 slideInFromLeft; */
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 </style>
