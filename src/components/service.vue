@@ -153,10 +153,22 @@ export default {
   top: -20%;
 }
 
+.is-dark-mode-active .projects .success .firstRectangle .secondRectangle {
+  background-color: #464646;
+  border: 1px solid #ffffff32;
+
+}
+
 .projects .success .firstRectangle.yellowed {
   background: linear-gradient(180deg,
-      rgba(251, 199, 91, 0.5) 0%,
-      rgba(250, 150, 77, 0.5) 100%);
+      #fbc75b80 0%,
+      #fa964d80 100%);
+}
+
+.is-dark-mode-active .projects .success .firstRectangle.yellowed {
+  background: linear-gradient(180deg,
+      #5a6dfa80 0%,
+      #10209680 100%);
 }
 
 .projects .success .firstRectangle .secondRectangle p {
@@ -166,8 +178,12 @@ export default {
   left: 50%;
   white-space: nowrap;
   transform: translate(-50%, 0);
-  color: rgba(0, 0, 0, 0.5);
+  color: #00000080;
   text-align: center;
+}
+
+.is-dark-mode-active .projects .success .firstRectangle .secondRectangle p {
+  color: #f4f4f4;
 }
 
 .projects .success .firstRectangle .circle {
@@ -187,8 +203,8 @@ export default {
 .circular-progress {
   position: relative;
   background: linear-gradient(205.37deg,
-      rgba(236, 150, 171, 0.56) -2.42%,
-      rgba(169, 137, 229, 0.8) 103.97%);
+      #ec96ab8f -2.42%,
+      #a989e5cc 103.97%);
   height: 5em;
   width: 5em;
   border-radius: 50%;
@@ -198,8 +214,14 @@ export default {
 
 .circular-progress.yellowed {
   background: linear-gradient(180deg,
-      rgba(251, 199, 91, 0.5) 0%,
-      rgba(250, 150, 77, 0.5) 100%);
+      #fbc75b80 0%,
+      #fa964d80 100%);
+}
+
+.is-dark-mode-active .circular-progress.yellowed {
+  background: linear-gradient(180deg,
+      #5a6dfa80 0%,
+      #10209680 100%);
 }
 
 .circular-progress:before {
@@ -207,8 +229,13 @@ export default {
   position: absolute;
   height: 84%;
   width: 84%;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 50%;
+}
+
+.is-dark-mode-active .circular-progress:before {
+  background-color: #464646;
+  border: 1px solid #ffffff32;
 }
 
 /* value in the circular bar  */
@@ -218,24 +245,34 @@ export default {
   color: #231c3d;
 }
 
-.value-container {
+.is-dark-mode-active .value-container {
+  color: #f4f4f4;
+}
+
+/* .value-container {
   position: relative;
-  /* font-family: "Poppins", sans-serif; */
   font-weight: 900;
   color: #231c3d;
-}
+} */
 
 /* center card  */
 .serviceCard {
   background: linear-gradient(205.37deg,
       #a989e5 -2.42%,
-      rgba(236, 150, 171, 0.7) 103.97%);
+      #ec96abb3 103.97%);
   width: 100%;
   height: 120%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  border-radius: 0.6em;
+}
+
+.is-dark-mode-active .serviceCard {
+  background: linear-gradient(205.37deg,
+      #ec96ab59 -2.42%,
+      #a989e580 103.97%);
 }
 
 .serviceCard .title {
@@ -246,6 +283,10 @@ export default {
   width: 100%;
   height: 10em;
   color: #fff;
+}
+
+.is-dark-mode-active .serviceCard .title {
+  color: #f4f4f4;
 }
 
 .serviceCard .cardContent {
@@ -271,12 +312,20 @@ export default {
   color: #fff;
 }
 
+.is-dark-mode-active .serviceCard .jobs .jobTitle {
+  color: #d4d4d4;
+}
+
 .serviceCard .jobs .lifeEmoji {
   padding: 0 1em;
 }
 
 .serviceCard .cardFooter {
   color: #fff;
+}
+
+.is-dark-mode-active .serviceCard .cardFooter {
+  color: #f4f4f4;
 }
 
 /* last service div  */
@@ -290,6 +339,10 @@ export default {
   justify-content: space-around;
 }
 
+.is-dark-mode-active .awesomeCard {
+  background: #464646;
+}
+
 .awesomeCard .title {
   color: #000;
   width: 100%;
@@ -299,6 +352,10 @@ export default {
   flex-direction: column;
 }
 
+.is-dark-mode-active .awesomeCard .title {
+  color: #f4f4f4;
+}
+
 .awesomeCard .title h2 {
   margin: 0;
   font-size: 2em;
@@ -306,6 +363,10 @@ export default {
 
 .awesomeCard .title h2:last-child {
   color: #faaa53;
+}
+
+.is-dark-mode-active .awesomeCard .title h2:last-child {
+  color: #364cf3;
 }
 
 .awesomeCard .cardContent {
