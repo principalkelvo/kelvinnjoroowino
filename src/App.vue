@@ -32,8 +32,8 @@ export default {
 }
 
 .container {
-  margin: 1em;
-  padding: 1em;
+  /* margin: 1em;
+  padding: 1em; */
   width: 100vw;
 }
 
