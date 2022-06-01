@@ -137,10 +137,16 @@ export default {
     width: 100%;
     letter-spacing: 2px;
 }
+.is-dark-mode-active .title.is-large{
+        color: #364cf3;
 
+}
 .title.is-large.dark {
     color: #000;
 
+}
+.is-dark-mode-active .title.is-large.dark {
+    color: #c4c4c4;
 }
 
 /* padding  */
@@ -220,6 +226,9 @@ export default {
     overflow: visible;
 }
 
+.is-dark-mode-active .profile .bigCircle {
+    background: #866bb8e0;
+}
 
 .profile .smallCircle {
     border-radius: 50%;
@@ -231,6 +240,9 @@ export default {
     right: 0;
     overflow: visible;
 }
+.is-dark-mode-active .profile .smallCircle {
+    background: #364cf3;
+}
 
 .profile .smallCircle .twitter img {
     width: 2.5em;
@@ -241,9 +253,17 @@ export default {
     position: absolute;
     right: -1.5em;
     top: 1em;
+    box-shadow: 0 0 10px 0 #a989e512,
+    -0 -0 10px 0 #a989e512,
+    -0 0 10px 0 #a989e512,
+    0 -0 10px 0 #a989e512;
 
 }
-
+.is-dark-mode-active .profile .smallCircle .twitter img {
+        background: transparent;
+    border: 2px solid #fff;
+    filter: sepia(100%) hue-rotate(220deg) brightness(59%) saturate(500%);
+}
 .profile .bigCircle .github img {
     width: 2.5em;
     height: 2.5em;
@@ -253,12 +273,22 @@ export default {
     position: absolute;
     top: 4em;
     left: -9%;
+    box-shadow: 0 0 10px 0 #faaa5310,
+    -0 -0 10px 0 #faaa5310,
+    -0 0 10px 0 #faaa5310,
+    0 -0 10px 0 #faaa5310;
+}
+
+.is-dark-mode-active .profile .bigCircle .github img {
+    background: #686868;
+    /* border: 2px solid #fff; */
+    filter: sepia(10%) hue-rotate(190deg) brightness(60%) saturate(400%);
 }
 
 .profile .smallCircle .linkedin img {
     width: 2.5em;
     height: 2.5em;
-    border: 1px solid #f5f5f5;
+    /* border: 1px solid #141414; */
     background: #fff;
     padding: .5em;
     border-radius: 50%;
@@ -269,7 +299,16 @@ export default {
     align-items: center;
     justify-content: center;
     z-index: 1;
+    box-shadow: 0 0 10px 0 #00000010,
+    -0 -0 10px 0 #00000010,
+    -0 0 10px 0 #00000010,
+    0 -0 10px 0 #00000010;
 
+}
+.is-dark-mode-active .profile .smallCircle .linkedin img {
+    background: #686868;
+    border: none;
+    filter: sepia(10%) hue-rotate(190deg) brightness(60%) saturate(400%);
 }
 
 /* hero payments */
