@@ -93,6 +93,9 @@
     margin-top: 0;
     color: #faaa53;
 }
+.is-dark-mode-active .column .title h2{
+    color: #364cf3;
+}
 
 .card {
     background-color: #fff;
@@ -106,6 +109,9 @@
     width: 15em;
     height: 16em;
 }
+.is-dark-mode-active .card{
+    background-color: #cacaca;
+}
 
 .cardTitle {
 
@@ -118,6 +124,9 @@
     font-size: 1.5em;
     margin: 0;
 }
+.is-dark-mode-active .card .cardTitle h2{
+    color: #000;
+}
 
 .cardContent {
     padding: 0 1rem;
@@ -128,6 +137,9 @@
     font-size: .8em;
     line-height: 1em;
 
+}
+.is-dark-mode-active .cardContent p{
+    color: #364cf3;
 }
 
 .buttons button.no-fill {
