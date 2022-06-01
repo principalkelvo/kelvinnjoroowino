@@ -95,6 +95,13 @@ export default {
   border: 1px solid #000;
   color: #000 !important;
 }
+.is-dark-mode-active .buttons.small button:hover,
+.is-dark-mode-active .buttons.small button:focus,
+.is-dark-mode-active .buttons.small button:active {
+  box-shadow: inset 6.1em 0px 0 0 #c4c4c4;
+  border: 1px solid #333e94;
+  color: #000000 !important;
+}
 
 /* button no-fill */
 .buttons button.no-fill {
