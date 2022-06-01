@@ -122,8 +122,8 @@ export default {
 }
 
 .navbar .navbar-logo .mode {
-    height: 30px;
-    width: 65px;
+    /* height: 1.6em; */
+    width: 3em;
     cursor: pointer;
 }
 
@@ -156,7 +156,7 @@ li a {
     color: #000;
     text-align: center;
     margin: 0 0.1em;
-    padding: 5px 16px;
+    padding: 0.21em 0.8em;
     text-decoration: none;
     font-weight: 700;
 

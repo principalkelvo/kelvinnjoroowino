@@ -3,7 +3,7 @@
 
         <div class="section">
             <div class="columns">
-                <div class="column is-6 pr-">
+                <div class="column is-6">
                     <p class="title is-large pb-0 dark">Hy! I Am</p>
                     <p class="title is-large pb-0">Kelvin Njoro</p>
                     <p class="content">I design and develop beautifully simple things, and I love what I do.</p>
@@ -31,7 +31,9 @@
                 <div class="column is-6">
                     <div class="profile">
                         <div class="image is-large ">
-                            <img src="@/assets/profilePic/dp.png" class="profileImg" alt="home">
+                            <div class="profileImg" >
+                            <img src="@/assets/profilePic/dp.png" alt="home">
+                            </div>
                         </div>
                         <div class="bigCircle">
                             <div class="github">
@@ -88,9 +90,9 @@ export default {
 <style>
 /* section  */
 .section {
-    padding: 1em 1em;
+    padding: 1em;
     min-height: calc(100vh - 3.25rem);
-    width: 95%;
+    width: 90%;
 }
 
 /* columns  */
@@ -120,7 +122,9 @@ export default {
 
 .column.is-6 {
     width: 50%;
-    padding: 3em;
+    padding: 2em;
+
+
 }
 
 .column.is-8 {
@@ -200,19 +204,24 @@ export default {
 /* working  */
 .profile {
     position: relative;
-    width: 20em;
-    height: 20em;
+    width: 100%;
     overflow: visible;
     /* display: none; */
 }
 
 .image.is-large .profileImg {
-    height: 17.5em;
+    height: 17.2em;
     width: 15.5em;
     position: relative;
     top: 0;
     background: none;
     z-index: 1;
+}
+
+.image.is-large .profileImg img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .profile .bigCircle {
