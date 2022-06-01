@@ -108,7 +108,9 @@
 .columns .column .title h1:nth-child(2) {
     color: #faaa53;
 }
-
+.is-dark-mode-active .columns .column .title h1:nth-child(2){
+    color: #364cf3;
+}
 .columns .column .content {
     width: 100%;
     margin-bottom: 2em;
@@ -154,6 +156,9 @@
     overflow: visible;
 
 }
+.is-dark-mode-active .mainCircle .orangeCircle{
+    background: #364cf3;
+}
 
 /* main circle  */
 .column .mainCircle .socialCircle {
@@ -169,6 +174,10 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
+}
+
+.is-dark-mode-active .column .mainCircle .socialCircle{
+    background-color: #f4f4f4;
 }
 
 /* first circle with icons */
