@@ -56,7 +56,7 @@ export default {
 
         darkModeToggleIcon() {
 
-            return this.$store.state.isDarkModeActive ? this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href : this.imgUrl = new URL('../assets/modeSVG/Land Switch - Dark.svg', import.meta.url).href
+            return !this.$store.state.isDarkModeActive ? this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href : this.imgUrl = new URL('../assets/modeSVG/Land Switch - Dark.svg', import.meta.url).href
             //   console.log(this.imgUrl)
         },
     },
@@ -78,6 +78,11 @@ export default {
         //   this.$store.commit('darkModeToggle')
         // },
         darkModeToggle() {
+            var slider = document.getElementById("dark");
+            slider.className += " slideout";
+            setTimeout(function () {
+                slider.classList.remove("slideout");
+            }, 100);
             this.$store.commit('darkModeToggle');
         },
 
@@ -111,11 +116,22 @@ export default {
     font-weight: 700;
     margin: 2em;
 }
+.is-dark-mode-active .navbar-logo p{
+        color: #c4c4c4;
+
+}
 
 .navbar .navbar-logo .mode {
+    height: 30px;
+    width: 65px;
     cursor: pointer;
 }
 
+.navbar .navbar-logo .mode img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 /* navbar items */
 .navbar-items {
@@ -147,12 +163,20 @@ li a {
     transition: all 0.3s ease;
 }
 
+.is-dark-mode-active li a{
+    color: #c4c4c4;
+}
+
 /* Change the link color to pink on hover */
-li a:hover {
+li a:hover,
+li a:active,
+li a:focus {
     color: #FAAA53;
 }
 
-li a.active {
+.is-dark-mode-active li a:hover,
+.is-dark-mode-active li a:active,
+.is-dark-mode-active li a:focus {
     color: #FAAA53;
 }
 
