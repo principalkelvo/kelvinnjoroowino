@@ -26,6 +26,11 @@ export default {
   font-size: 24px;
 }
 
+.is-dark-mode-active {
+  background-color: #464646;
+  color: #c4c4c4;
+}
+
 .container {
   margin: 1em;
   padding: 1em;
@@ -59,12 +64,28 @@ export default {
 
 }
 
+.is-dark-mode-active .buttons button {
+  background: linear-gradient(180deg, #394aca 0%, #1429c9e1 100%);
+  box-shadow: 0px 0px 0px 0px inset #333e94,
+    0px 19px 28px -11px #00000040;
+  color: #c4c4c4;
+  
+}
+
 .buttons button:hover,
 .buttons button:focus,
 .buttons button:active {
   box-shadow: inset 9em 0px 0 0 #fff;
   border: 1px solid #000;
   color: #000 !important;
+}
+
+.is-dark-mode-active .buttons button:hover,
+.is-dark-mode-active .buttons button:focus,
+.is-dark-mode-active .buttons button:active {
+  box-shadow: inset 9em 0px 0 0 #c4c4c4;
+  border: 1px solid #333e94;
+  color: #000000 !important;
 }
 
 .buttons.small button:hover,
@@ -86,6 +107,13 @@ export default {
   transition: ease-out 0.3s;
 }
 
+.is-dark-mode-active .buttons button.no-fill {
+  color: #000;
+  background: transparent;
+  border: .5px solid #00000012;
+  box-shadow: 0px 0px 0px 0px inset #333e94,
+    2px 4px 6.041em 2em #160d2540;
+}
 .buttons button.no-fill:hover,
 .buttons button.no-fill:focus,
 .buttons button.no-fill:active {
@@ -94,5 +122,14 @@ export default {
     2px 4px 73px 91px #FAAA5340;
   color: #fff !important;
   border: 1.45px solid #FAAA53;
+}
+.is-dark-mode-active .buttons button.no-fill:hover,
+.is-dark-mode-active .buttons button.no-fill:focus,
+.is-dark-mode-active .buttons button.no-fill:active {
+  box-shadow: inset 10em 0 0 0 #333e94,
+    0px 19px 28px -11px #00000040,
+    2px 4px 73px 91px #333e9440;
+  color: #c4c4c4 !important;
+  border: 1.45px solid #333e94;
 }
 </style>
