@@ -69,6 +69,10 @@ export default {
     color: #faaa53;
 }
 
+.is-dark-mode-active .columns .title h1 span{
+    color: #364cf3;
+}
+
 .columns .title h1 {
     margin: 0;
 }
@@ -124,5 +128,8 @@ export default {
     width: 15em;
     height: 16em;
     min-height: 13em;
+}
+.is-dark-mode-active .columns .cards .card{
+    background-color: #f4f4f4;
 }
 </style>
