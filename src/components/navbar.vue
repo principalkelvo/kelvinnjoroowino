@@ -200,4 +200,11 @@ li:last-child a:hover {
         opacity: 1;
     }
 }
+
+/* tablet */
+@media only screen and (max-width: 769px) {
+    .navbar-items {
+    display: none;
+}
+}
 </style>

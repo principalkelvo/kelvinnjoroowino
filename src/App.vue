@@ -21,9 +21,11 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
 
-#app {
+* {
   font-family: 'Istok Web', sans-serif;
   font-size: 24px;
+  padding: 0;
+  margin: 0;
 }
 
 .is-dark-mode-active {
@@ -138,5 +140,55 @@ export default {
     2px 4px 73px 91px #333e9440;
   color: #c4c4c4 !important;
   border: 1.45px solid #333e94;
+}
+
+/* Responsiveness */
+
+/* tablet */
+@media only screen and (max-width: 769px) {
+    *{
+        font-size: 16px;
+    }
+
+}
+
+/* 4k */
+@media only screen and (min-width: 1450px) {
+    *{
+        font-size: 40px;
+    }
+
+}
+
+/* mobile  */
+@media only screen and (max-width: 425px) {
+    * {
+        font-size: 13px;
+    }
+
+}
+
+/* phone  */
+@media only screen and (max-width: 500px) {
+    * {
+        font-size: 13px;
+    }
+
+}
+
+/* mobile */
+@media only screen and (max-width: 320px) {
+    * {
+        font-size: 7px;
+    }
+
+}
+
+/* mobile */
+@media only screen and (max-width: 250px) {
+    * {
+        font-size: 4px;
+    }
+
 }
 </style>
