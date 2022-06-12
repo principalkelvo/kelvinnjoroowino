@@ -9,12 +9,14 @@ export default {
 </script>
 
 <template>
+  <div id="app">
 
-  <Navbar />
-  <!-- <router-link to="/">Home</router-link> -->
+    <Navbar />
+    <!-- <router-link to="/">Home</router-link> -->
 
-  <div class="container">
-    <router-view></router-view>
+    <div class="container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -26,6 +28,10 @@ export default {
   font-size: 24px;
   padding: 0;
   margin: 0;
+}
+
+#app{
+  overflow-x: hidden;
 }
 
 .is-dark-mode-active {
@@ -71,7 +77,7 @@ export default {
   box-shadow: 0px 0px 0px 0px inset #333e94,
     0px 19px 28px -11px #00000040;
   color: #c4c4c4;
-  
+
 }
 
 .buttons button:hover,
@@ -97,6 +103,7 @@ export default {
   border: 1px solid #000;
   color: #000 !important;
 }
+
 .is-dark-mode-active .buttons.small button:hover,
 .is-dark-mode-active .buttons.small button:focus,
 .is-dark-mode-active .buttons.small button:active {
@@ -123,6 +130,7 @@ export default {
   box-shadow: 0px 0px 0px 0px inset #333e94,
     2px 4px 6.041em 2em #160d2540;
 }
+
 .buttons button.no-fill:hover,
 .buttons button.no-fill:focus,
 .buttons button.no-fill:active {
@@ -132,6 +140,7 @@ export default {
   color: #fff !important;
   border: 1.45px solid #FAAA53;
 }
+
 .is-dark-mode-active .buttons button.no-fill:hover,
 .is-dark-mode-active .buttons button.no-fill:focus,
 .is-dark-mode-active .buttons button.no-fill:active {
@@ -146,49 +155,53 @@ export default {
 
 /* tablet */
 @media only screen and (max-width: 769px) {
-    *{
-        font-size: 16px;
-    }
+  * {
+    font-size: 16px;
+  }
+  .columns {
+    display: flex;
+    flex-direction: column;
+}
 
 }
 
 /* 4k */
-@media only screen and (min-width: 1450px) {
-    *{
-        font-size: 40px;
-    }
+@media only screen and (min-width: 1470px) {
+  * {
+    font-size: 24px;
+  }
 
 }
 
 /* mobile  */
 @media only screen and (max-width: 425px) {
-    * {
-        font-size: 13px;
-    }
+  * {
+    font-size: 13px;
+  }
 
 }
 
 /* phone  */
 @media only screen and (max-width: 500px) {
-    * {
-        font-size: 13px;
-    }
+  * {
+    font-size: 13px;
+  }
 
 }
 
 /* mobile */
 @media only screen and (max-width: 320px) {
-    * {
-        font-size: 7px;
-    }
+  * {
+    font-size: 7px;
+  }
 
 }
 
 /* mobile */
 @media only screen and (max-width: 250px) {
-    * {
-        font-size: 4px;
-    }
+  * {
+    font-size: 4px;
+  }
 
 }
 </style>
