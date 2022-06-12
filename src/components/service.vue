@@ -132,8 +132,7 @@ export default {
 }
 
 .projects .success .firstRectangle {
-  height: 5em;
-  width: 18em;
+  height: 4em;
   background: linear-gradient(205.37deg,
       rgba(236, 150, 171, 0.35) -2.42%,
       rgba(169, 137, 229, 0.5) 103.97%);
@@ -172,7 +171,7 @@ export default {
 }
 
 .projects .success .firstRectangle .secondRectangle p {
-  /* font-size: 1.2em; */
+  font-size: 83%;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -267,6 +266,10 @@ export default {
   align-items: center;
   justify-content: space-around;
   border-radius: 0.6em;
+}
+
+.serviceCard p{
+  font-size: 80%;
 }
 
 .is-dark-mode-active .serviceCard {
@@ -371,5 +374,13 @@ export default {
 
 .awesomeCard .cardContent {
   width: 100%;
+}
+
+@media only screen and (max-width: 769px) {  
+.cards .card {
+  height: 18em;
+  width: 20em;
+}
+
 }
 </style>
