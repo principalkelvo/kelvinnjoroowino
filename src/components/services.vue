@@ -4,7 +4,7 @@
             <!-- full columns content -->
             <div class="columns">
                 <!-- main title  -->
-                <div class="column is-6">
+                <div class="column is-6 awesome">
                     <div class="title">
                         <h1>My awesome</h1>
                         <h2>Services</h2>
@@ -146,5 +146,11 @@
     text-transform: uppercase;
     font-weight: 400;
     font-size: .8em;
+}
+@media only screen and (max-width: 769px) {
+  .column.awesome {
+    display: none;
+}
+
 }
 </style>
