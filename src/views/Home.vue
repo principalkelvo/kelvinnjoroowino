@@ -3,7 +3,7 @@
 
         <div class="section">
             <div class="columns">
-                <div class="column is-6">
+                <div class="column is-6 content">
                     <p class="title is-large pb-0 dark">Hy! I Am</p>
                     <p class="title is-large pb-0">Kelvin Njoro</p>
                     <p class="content">I design and develop beautifully simple things, and I love what I do.</p>
@@ -28,7 +28,7 @@
                     </div>
 
                 </div>
-                <div class="column is-6">
+                <div class="column is-6 myProfile">
                     <div class="profile">
                         <div class="image is-large ">
                             <div class="profileImg" >
@@ -103,33 +103,26 @@ export default {
     width: 100%;
 }
 
-.columns.cards {
-    overflow: hidden;
-    justify-content: space-around;
-
-
-}
-
 .column.is-3 {
     width: 25%;
-    padding: 2em;
+    padding: 1.5em;
 }
 
 .column.is-4 {
     width: 44.4%;
-    padding: 3em;
+    padding: 1.5em;
 }
 
 .column.is-6 {
     width: 50%;
-    padding: 2em;
+    padding: 1.5em;
 
 
 }
 
 .column.is-8 {
     width: 66.6%;
-    padding: 3em;
+    padding: 1.5em;
 }
 
 /* title  */
@@ -353,5 +346,20 @@ export default {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
+}
+@media only screen and (max-width: 769px) { 
+    .section {
+    min-height: calc(100vh - 5.25rem);
+} 
+  .columns {
+    display: flex;
+    flex-direction: column-reverse;
+}
+    .column.is-6{
+        width: 100%;
+    }
+    .column.is-6.myProfile{
+        width: 50%;
+    }
 }
 </style>
