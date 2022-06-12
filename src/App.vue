@@ -30,7 +30,7 @@ export default {
   margin: 0;
 }
 
-#app{
+#app {
   overflow-x: hidden;
 }
 
@@ -61,8 +61,8 @@ export default {
   box-shadow: 0px 0px 0px 0px inset #FAAA53,
     0px 19px 28px -11px #00000040;
 
-  padding: 10px 30px;
-  border-radius: 5px;
+  padding: .5rem 1rem;
+  border-radius: .212rem;
   font-size: 1em;
   font-weight: 700;
   color: #fff;
@@ -99,7 +99,7 @@ export default {
 .buttons.small button:hover,
 .buttons.small button:focus,
 .buttons.small button:active {
-  box-shadow: inset 6.1em 0px 0 0 #fff;
+  box-shadow: inset 6.1rem 0px 0 0 #fff;
   border: 1px solid #000;
   color: #000 !important;
 }
@@ -107,7 +107,7 @@ export default {
 .is-dark-mode-active .buttons.small button:hover,
 .is-dark-mode-active .buttons.small button:focus,
 .is-dark-mode-active .buttons.small button:active {
-  box-shadow: inset 6.1em 0px 0 0 #c4c4c4;
+  box-shadow: inset 6.1rem 0px 0 0 #c4c4c4;
   border: 1px solid #333e94;
   color: #000000 !important;
 }
@@ -119,6 +119,8 @@ export default {
   border: .5px solid #00000012;
   box-shadow: 0px 0px 0px 0px inset #FAAA53,
     2px 4px 3.041em 4em #A989E540;
+  
+  margin: 1rem;
 
   transition: ease-out 0.3s;
 }
@@ -152,19 +154,6 @@ export default {
 }
 
 /* Responsiveness */
-
-/* tablet */
-@media only screen and (max-width: 769px) {
-  * {
-    font-size: 16px;
-  }
-  .columns {
-    display: flex;
-    flex-direction: column;
-}
-
-}
-
 /* 4k */
 @media only screen and (min-width: 1470px) {
   * {
@@ -173,26 +162,46 @@ export default {
 
 }
 
-/* mobile  */
-@media only screen and (max-width: 425px) {
+
+/* tablet */
+@media only screen and (max-width: 1128px) and (min-width: 769px){
+  *{
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 769px){
+  .columns {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 769px) and (min-width: 500px) {
+  * {
+    font-size: 16px;
+  }
+}
+
+/* phone  */
+@media only screen and (max-width: 500px) and (min-width: 405px) {
   * {
     font-size: 13px;
   }
 
 }
 
-/* phone  */
-@media only screen and (max-width: 500px) {
+/* mobile  */
+@media only screen and (max-width: 405px) and (min-width: 320px) {
   * {
-    font-size: 13px;
+    font-size: 12px;
   }
 
 }
 
 /* mobile */
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 320px) and (min-width: 250px) {
   * {
-    font-size: 7px;
+    font-size: 9px;
   }
 
 }
@@ -200,8 +209,10 @@ export default {
 /* mobile */
 @media only screen and (max-width: 250px) {
   * {
-    font-size: 4px;
+    font-size: 8px;
   }
 
 }
+
+
 </style>
