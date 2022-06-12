@@ -97,7 +97,7 @@
 </script>
 <style scoped>
 .columns .column .title {
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
 .columns .column .title h1 {
@@ -113,16 +113,16 @@
 }
 .columns .column .content {
     width: 100%;
-    margin-bottom: 2em;
-    font-size: .9em;
-    line-height: 1.4em;
+    margin-bottom: 2rem;
+    font-size: .9rem;
+    line-height: 1.4rem;
 }
 
 /* technology used */
 /* main div  */
 .column .mainCircle {
-    width: 28em;
-    height: 28em;
+    width: 28rem;
+    height: 28rem;
     position: relative;
     display: flex;
     justify-content: center;
@@ -134,21 +134,21 @@
 
 /* purple circle */
 .mainCircle .purpleCircle {
-    width: 18em;
-    height: 18em;
+    width: 18rem;
+    height: 18rem;
     background: #a989e5;
     border-radius: 50%;
     position: absolute;
-    top: -2em;
-    right: 0em;
+    top: -2rem;
+    right: 0rem;
     overflow: visible;
 }
 
 /* pink Circle */
 .mainCircle .orangeCircle {
     border-radius: 50%;
-    width: 14em;
-    height: 14em;
+    width: 14rem;
+    height: 14rem;
     background: #faaa53;
     position: absolute;
     bottom: 0;
@@ -162,8 +162,8 @@
 
 /* main circle  */
 .column .mainCircle .socialCircle {
-    width: 26em;
-    height: 26em;
+    width: 26rem;
+    height: 26rem;
     background-color: #fff;
     position: relative;
     border-radius: 50%;
@@ -184,8 +184,8 @@
 .column .mainCircle .socialCircle .circle {
     position: absolute;
 
-    width: 19.5em;
-    height: 19.5em;
+    width: 19.5rem;
+    height: 19.5rem;
     border-radius: 50%;
     box-shadow: 0px 4px 24px 6px #D0D0D040;
 }
@@ -193,8 +193,8 @@
 /* second circle with icon */
 .column .mainCircle .socialCircle .circle:nth-child(2) {
     /* position: absolute; */
-    width: 13em;
-    height: 13em;
+    width: 13rem;
+    height: 13rem;
     border-radius: 50%;
     box-shadow: 0px 4px 24px 6px #D0D0D040;
 }
@@ -202,8 +202,8 @@
 /* last small circle with icon at the center  */
 .column .mainCircle .socialCircle .circle:last-child {
     position: relative;
-    width: 6.5em;
-    height: 6.5em;
+    width: 6.5rem;
+    height: 6.5rem;
     border-radius: 50%;
     box-shadow: 0px 4px 24px 6px #D0D0D040;
 }
@@ -216,8 +216,8 @@
     top: -2%;
     left: 60%;
     background: #fff;
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     box-shadow: 0px 0px 16px 8px #A6A6A640;
 
@@ -233,8 +233,8 @@
     background: #fff;
     top: 10%;
     left: 4%;
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     box-shadow: 0px 0px 16px 8px #A6A6A640;
 
@@ -250,8 +250,8 @@
     position: absolute;
     top: 80%;
     left: 10%;
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     box-shadow: 0px 0px 16px 8px #A6A6A640;
 
@@ -267,8 +267,8 @@
     position: absolute;
     top: 50%;
     left: 90%;
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     box-shadow: 0px 0px 16px 8px #A6A6A640;
 
@@ -284,8 +284,8 @@
     top: 20%;
     background: #fff;
     right: -10%;
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     box-shadow: 0px 0px 16px 8px #A6A6A640;
 
@@ -301,8 +301,8 @@
     background: #fff;
     top: 50%;
     left: -8%;
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     box-shadow: 0px 0px 16px 8px #A6A6A640;
 
@@ -318,8 +318,8 @@
     top: 80%;
     background: #fff;
     left: 60%;
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     box-shadow: 0px 0px 16px 8px #A6A6A640;
 
@@ -336,8 +336,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 3.5em;
-    height: 3.5em;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     box-shadow: 0px 0px 16px 8px #A6A6A640;
 
@@ -356,8 +356,8 @@
 }
 
 .column .mainCircle .socialCircle .circle .techUsed .image {
-    width: 2em;
-    height: 2em;
+    width: 2rem;
+    height: 2rem;
     position: relative;
 }
 
@@ -369,9 +369,6 @@
 }
 
 @media only screen and (max-width: 769px) {
-  * {
-    font-size: 16px;
-  }
   .columns {
     display: flex;
     flex-direction: column;

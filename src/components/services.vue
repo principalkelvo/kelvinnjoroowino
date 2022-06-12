@@ -101,13 +101,13 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 2.5rem 1rem;
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 15em;
-    height: 16em;
+    /* height: 16em; */
 }
 .is-dark-mode-active .card{
     background-color: #cacaca;
