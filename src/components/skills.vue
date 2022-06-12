@@ -367,4 +367,16 @@
     position: absolute;
     object-fit: cover;
 }
+
+@media only screen and (max-width: 769px) {
+  * {
+    font-size: 16px;
+  }
+  .columns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+}
 </style>
