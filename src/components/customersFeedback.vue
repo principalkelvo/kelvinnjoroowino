@@ -6,7 +6,7 @@
                     <div class="card">
                         <div class="cardHeader">
                             <div class="profileImg">
-                                <img src="#" alt="">
+                                <img src="../assets/profilePic/dp.png" alt="">
                             </div>
                         </div>
                         <div class="cardBody">
@@ -29,7 +29,15 @@ export default {
 </script>
 
 <style scoped>
+.section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .column.is-12{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 .card{
@@ -39,28 +47,29 @@ export default {
     padding: 1em;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 .card .cardHeader{
-    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .card .cardHeader .profileImg{
     width: 5em;
     height: 5em;
-    border-radius: 50%;
 }
 .card .cardHeader .profileImg img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    border-radius: 50%;
+    object-fit: contain;
 }
 .card .cardBody{
     width:90%;
 }
 .card .cardBody .feedback{
     width: 100%;
-    margin: .3em;
+    margin: 1em 0;
     border: 2px solid red;
 }
 </style>
