@@ -70,6 +70,8 @@
         <Skills />
 
         <CustomersFeedback/>
+
+        <Contact/>
     </div>
 </template>
 
@@ -79,16 +81,17 @@ import Services from "@/components/services.vue";
 import MyWork from "@/components/myWork.vue";
 import Skills from "@/components/skills.vue";
 import CustomersFeedback from "@/components/customersFeedback.vue";
+import Contact from "@/components/contact.vue";
 
 export default {
     components: {
-        Service,
-        Services,
-        MyWork,
-        Skills,
-        CustomersFeedback,
-
-    },
+    Service,
+    Services,
+    MyWork,
+    Skills,
+    CustomersFeedback,
+    Contact
+},
 }
 </script>
 
