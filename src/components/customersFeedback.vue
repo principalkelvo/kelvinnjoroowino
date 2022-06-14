@@ -33,6 +33,31 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.section::before{
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(#a989e5,#B8A0EA);
+    box-shadow: 0em 0em 8em 6em rgb(169, 138, 229);
+    border-radius: 50%;
+    border: 1px solid #a989e5;
+    border-radius: 50%;
+    transform: translate(-11rem, -2rem);
+}
+.section::after{
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(#faa953,#FBBB75);
+    box-shadow: 0em 0em 9em 6em #faaa53;
+    border-radius: 50%;
+    border: 1px solid #faa953;
+    transform: translate(15rem, 5rem);
 }
 .column.is-12{
     display: flex;
@@ -42,12 +67,27 @@ export default {
 }
 .card{
     width: 70%;
+    min-height: 350px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.412em;
     margin: 2rem;
-    border: 2px solid black;
     padding: 1em;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+    z-index: 40;
+}
+.is-dark-mode-active .card{
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .card .cardHeader{
     display: flex;
@@ -70,6 +110,6 @@ export default {
 .card .cardBody .feedback{
     width: 100%;
     margin: 1em 0;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 </style>
