@@ -369,6 +369,9 @@
 }
 
 @media only screen and (max-width: 769px) {
+.column.is-6 {
+    width: auto;
+}
   .columns {
     display: flex;
     flex-direction: column;
