@@ -199,6 +199,12 @@ export default {
     height: 100%;
     object-fit: cover;
 }
+@media only screen and (max-width: 769px) { 
+    .section {
+    /* min-height: calc(100vh - 5.25rem); */
+    min-height: 100% !important;
+} 
+}
 </style>
 
 <style scoped>
@@ -357,7 +363,8 @@ export default {
 }
 @media only screen and (max-width: 769px) { 
     .section {
-    min-height: calc(100vh - 5.25rem);
+    /* min-height: calc(100vh - 5.25rem); */
+    min-height: 100% !important;
 } 
   .columns {
     display: flex;
