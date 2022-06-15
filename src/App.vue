@@ -187,6 +187,9 @@ export default {
   * {
     font-size: 13px;
   }
+  .column.is-6 {
+    width: auto !important;
+}
 
 }
 
@@ -195,6 +198,9 @@ export default {
   * {
     font-size: 12px;
   }
+   .column.is-6 {
+    width: auto !important;
+}
 
 }
 
@@ -203,11 +209,14 @@ export default {
   * {
     font-size: 9px;
   }
+   .column.is-6 {
+    width: auto !important;
+}
 
 }
 
 /* mobile */
-@media only screen and (max-width: 250px) {
+@media only screen and (max-width: 250px) and (min-width: 200px) {
   * {
     font-size: 8px;
   }
