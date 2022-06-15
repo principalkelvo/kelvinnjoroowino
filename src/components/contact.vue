@@ -31,10 +31,10 @@ export default{
 
 </script>
 
-<style>
-.section .columns{
+<style scoped>
+/* .section .columns{
     align-items: flex-start;
-}
+} */
 
 .column .title h1 {
     font-size: 3em;
@@ -77,5 +77,6 @@ form{
     form{
     width: 100%;
 }
+
 }
 </style>
