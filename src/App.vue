@@ -50,6 +50,7 @@ export default {
 .buttons {
   display: flex;
   justify-content: space-between;
+  margin: 1rem 0;
 }
 
 .buttons button {

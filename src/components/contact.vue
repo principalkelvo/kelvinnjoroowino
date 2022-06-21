@@ -71,7 +71,9 @@ form{
     display: flex;
     flex-direction: column;
     width: 80%;
+    /* margin: 0 auto; */
 }
+
 
 @media only screen and (max-width: 769px) { 
     form{

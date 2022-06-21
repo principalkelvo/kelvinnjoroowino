@@ -31,8 +31,8 @@
                 <div class="column is-6 myProfile">
                     <div class="profile">
                         <div class="image is-large ">
-                            <div class="profileImg" >
-                            <img src="@/assets/profilePic/dp.png" alt="home">
+                            <div class="profileImg">
+                                <img src="@/assets/profilePic/dp.png" alt="home">
                             </div>
                         </div>
                         <div class="bigCircle">
@@ -69,9 +69,9 @@
 
         <Skills />
 
-        <CustomersFeedback/>
+        <CustomersFeedback />
 
-        <Contact/>
+        <Contact />
     </div>
 </template>
 
@@ -85,13 +85,13 @@ import Contact from "@/components/contact.vue";
 
 export default {
     components: {
-    Service,
-    Services,
-    MyWork,
-    Skills,
-    CustomersFeedback,
-    Contact
-},
+        Service,
+        Services,
+        MyWork,
+        Skills,
+        CustomersFeedback,
+        Contact,
+    },
 }
 </script>
 
@@ -142,14 +142,17 @@ export default {
     width: 100%;
     letter-spacing: 2px;
 }
-.is-dark-mode-active .title.is-large{
-        color: #364cf3;
+
+.is-dark-mode-active .title.is-large {
+    color: #364cf3;
 
 }
+
 .title.is-large.dark {
     color: #000;
 
 }
+
 .is-dark-mode-active .title.is-large.dark {
     color: #c4c4c4;
 }
@@ -199,11 +202,12 @@ export default {
     height: 100%;
     object-fit: cover;
 }
-@media only screen and (max-width: 769px) { 
+
+@media only screen and (max-width: 769px) {
     .section {
-    /* min-height: calc(100vh - 5.25rem); */
-    min-height: 100% !important;
-} 
+        /* min-height: calc(100vh - 5.25rem); */
+        min-height: 100% !important;
+    }
 }
 </style>
 
@@ -225,7 +229,7 @@ export default {
     z-index: 1;
 }
 
-.image.is-large .profileImg img{
+.image.is-large .profileImg img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -256,6 +260,7 @@ export default {
     right: 0;
     overflow: visible;
 }
+
 .is-dark-mode-active .profile .smallCircle {
     background: #364cf3;
 }
@@ -270,16 +275,18 @@ export default {
     right: -1.5em;
     top: 1em;
     box-shadow: 0 0 10px 0 #a989e512,
-    -0 -0 10px 0 #a989e512,
-    -0 0 10px 0 #a989e512,
-    0 -0 10px 0 #a989e512;
+        -0 -0 10px 0 #a989e512,
+        -0 0 10px 0 #a989e512,
+        0 -0 10px 0 #a989e512;
 
 }
+
 .is-dark-mode-active .profile .smallCircle .twitter img {
-        background: transparent;
+    background: transparent;
     border: 2px solid #fff;
     filter: sepia(100%) hue-rotate(220deg) brightness(59%) saturate(500%);
 }
+
 .profile .bigCircle .github img {
     width: 2.5em;
     height: 2.5em;
@@ -290,9 +297,9 @@ export default {
     top: 4em;
     left: -9%;
     box-shadow: 0 0 10px 0 #faaa5310,
-    -0 -0 10px 0 #faaa5310,
-    -0 0 10px 0 #faaa5310,
-    0 -0 10px 0 #faaa5310;
+        -0 -0 10px 0 #faaa5310,
+        -0 0 10px 0 #faaa5310,
+        0 -0 10px 0 #faaa5310;
 }
 
 .is-dark-mode-active .profile .bigCircle .github img {
@@ -316,11 +323,12 @@ export default {
     justify-content: center;
     z-index: 1;
     box-shadow: 0 0 10px 0 #00000010,
-    -0 -0 10px 0 #00000010,
-    -0 0 10px 0 #00000010,
-    0 -0 10px 0 #00000010;
+        -0 -0 10px 0 #00000010,
+        -0 0 10px 0 #00000010,
+        0 -0 10px 0 #00000010;
 
 }
+
 .is-dark-mode-active .profile .smallCircle .linkedin img {
     background: #686868;
     border: none;
@@ -361,19 +369,30 @@ export default {
     white-space: nowrap;
     overflow: hidden;
 }
-@media only screen and (max-width: 769px) { 
-    .section {
-    /* min-height: calc(100vh - 5.25rem); */
-    min-height: 100% !important;
-} 
-  .columns {
-    display: flex;
-    flex-direction: column-reverse;
+
+@media only screen and (min-width: 1470px) {
+    .profile .smallCircle {
+        right: 35%;
+    }
+
 }
-    .column.is-6{
+
+@media only screen and (max-width: 769px) {
+    .section {
+        /* min-height: calc(100vh - 5.25rem); */
+        min-height: 100% !important;
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .column.is-6 {
         width: 100%;
     }
-    .column.is-6.myProfile{
+
+    .column.is-6.myProfile {
         width: 50%;
     }
 }

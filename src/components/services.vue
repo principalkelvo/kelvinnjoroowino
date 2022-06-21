@@ -21,13 +21,11 @@
                             <h2>Design</h2>
                         </div>
                         <div class="cardContent">
-                            <p>Misleadingly thought of as the superficial to create, execute, or construct of a product
-                                appearance, design actually encompasses a lot more. It is a cross functional that
-                                includes market research,design of a concept and technical research</p>
+                            <p>Design, which is sometimes misunderstood as the superficial process of creating, executing, or constructing a product's appearance, actually involves a lot more. It is a cross-functional task that entails market research, concept design, and technological research.</p>
                         </div>
                         <div class="cardFooter">
                             <div class="buttons">
-                                <button class="no-fill">Learn More</button>
+                                <button class="no-fill">My Designs</button>
                             </div>
                         </div>
                     </div>
@@ -42,9 +40,7 @@
                             <h2>Developer</h2>
                         </div>
                         <div class="cardContent">
-                            <p>Responsible for creating and improving softwares and apps. This includes researching,
-                                designing and developing of softwares. Working coherently with analysts and computer
-                                engineers to bring out the proposed quality of software application</p>
+                            <p>In charge of developing and improving software and apps. This comprises software research, design, and development. Collaboration between analysts and computer engineers to achieve the proposed software application performance</p>
                         </div>
                         <div class="cardFooter">
                             <div class="buttons">
@@ -60,9 +56,7 @@
                             <h2>Ui/Ux</h2>
                         </div>
                         <div class="cardContent">
-                            <p>Improve users' satisfaction by improving the interface usability. Work on language and
-                                visual input to translate the brand into a sophisticated and smooth webpage, to quickly
-                                communicate information for the user.</p>
+                            <p>Enhance the usability of the user interface to increase user satisfaction. Work on linguistic and visual input to translate the brand into a sophisticated and user-friendly website that communicates information fast.</p>
                         </div>
                         <div class="cardFooter">
                             <div class="buttons">

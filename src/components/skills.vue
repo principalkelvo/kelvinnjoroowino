@@ -10,12 +10,14 @@
                     </div>
                     <!-- content  -->
                     <div class="content">
-                        <p>Understand the client's subject matter completely and build on the knowledge related to it,
-                            becoming intimately familiar with the subject matter. Determine methods to address the
-                            specific customer's needs and requirements</p>
-                        <p>Findings from research are utilized for the production of specific products including
-                            materials, systems and methods. Engineer utilizing the research to produce commercial
-                            products for the customer.</p>
+                        <p>Understand the topic matter of the customer completely and build on previous expertise,
+                            becoming intimately familiar with the subject area. Determine how to respond to the demands
+                            and requirements of a certain consumer.
+
+                        </p>
+                        <p>The results of research are being used to technological solutions product, such as materials,
+                            systems, and procedures. Engineer who uses research to create commercial items for a client.
+                        </p>
                     </div>
                     <!-- hire button  -->
                     <div class="buttons">
@@ -108,9 +110,11 @@
 .columns .column .title h1:nth-child(2) {
     color: #faaa53;
 }
-.is-dark-mode-active .columns .column .title h1:nth-child(2){
+
+.is-dark-mode-active .columns .column .title h1:nth-child(2) {
     color: #364cf3;
 }
+
 .columns .column .content {
     width: 100%;
     margin-bottom: 2rem;
@@ -156,7 +160,8 @@
     overflow: visible;
 
 }
-.is-dark-mode-active .mainCircle .orangeCircle{
+
+.is-dark-mode-active .mainCircle .orangeCircle {
     background: #364cf3;
 }
 
@@ -176,7 +181,7 @@
     z-index: 1;
 }
 
-.is-dark-mode-active .column .mainCircle .socialCircle{
+.is-dark-mode-active .column .mainCircle .socialCircle {
     background-color: #f4f4f4;
 }
 
@@ -369,14 +374,15 @@
 }
 
 @media only screen and (max-width: 769px) {
-.column.is-6 {
-    width: auto;
-}
-  .columns {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+    .column.is-6 {
+        width: auto;
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
 }
 </style>

@@ -84,10 +84,7 @@
             </div>
             <div class="cardContent">
               <p>
-                We provide clients with a fully intergrated digital and web
-                design services that combines strategy, branding and messaging.
-                Our methods are flexible to much the diverse B2B business needs
-                and demands
+                Offering fully integrated digital and online design services that incorporate strategy, branding, and messaging for our clients. This methods are adaptable to a wide range of B2B business requirements.
               </p>
             </div>
             <div class="cardFooter">
