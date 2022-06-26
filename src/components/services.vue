@@ -10,7 +10,10 @@
                         <h2>Services</h2>
                     </div>
                     <div class="buttons">
-                        <button>Download CV</button>
+                        <a href="https://docs.google.com/document/d/1DOBR7xySqjyxnxLoGrpbzWymuraH6ezP/edit?usp=sharing&ouid=103616862020210601390&rtpof=true&sd=true"
+                            target="_blank">
+                            <button>Download CV</button>
+                        </a>
                     </div>
                 </div>
                 <!-- card  -->
@@ -21,7 +24,10 @@
                             <h2>Design</h2>
                         </div>
                         <div class="cardContent">
-                            <p>Design, which is sometimes misunderstood as the superficial process of creating, executing, or constructing a product's appearance, actually involves a lot more. It is a cross-functional task that entails market research, concept design, and technological research.</p>
+                            <p>Design, which is sometimes misunderstood as the superficial process of creating,
+                                executing, or constructing a product's appearance, actually involves a lot more. It is a
+                                cross-functional task that entails market research, concept design, and technological
+                                research.</p>
                         </div>
                         <div class="cardFooter">
                             <div class="buttons">
@@ -40,11 +46,13 @@
                             <h2>Developer</h2>
                         </div>
                         <div class="cardContent">
-                            <p>In charge of developing and improving software and apps. This comprises software research, design, and development. Collaboration between analysts and computer engineers to achieve the proposed software application performance</p>
+                            <p>In charge of developing and improving software and apps. This comprises software
+                                research, design, and development. Collaboration between analysts and computer engineers
+                                to achieve the proposed software application performance</p>
                         </div>
                         <div class="cardFooter">
                             <div class="buttons">
-                                <button class="no-fill">Learn More</button>
+                                <button class="no-fill">View Projects</button>
                             </div>
                         </div>
                     </div>
@@ -56,11 +64,13 @@
                             <h2>Ui/Ux</h2>
                         </div>
                         <div class="cardContent">
-                            <p>Enhance the usability of the user interface to increase user satisfaction. Work on linguistic and visual input to translate the brand into a sophisticated and user-friendly website that communicates information fast.</p>
+                            <p>Enhance the usability of the user interface to increase user satisfaction. Work on
+                                linguistic and visual input to translate the brand into a sophisticated and
+                                user-friendly website that communicates information fast.</p>
                         </div>
                         <div class="cardFooter">
                             <div class="buttons">
-                                <button class="no-fill">Learn More</button>
+                                <button class="no-fill">Web Designs</button>
                             </div>
                         </div>
                     </div>
@@ -87,7 +97,8 @@
     margin-top: 0;
     color: #faaa53;
 }
-.is-dark-mode-active .column .title h2{
+
+.is-dark-mode-active .column .title h2 {
     color: #364cf3;
 }
 
@@ -103,7 +114,8 @@
     width: 15em;
     /* height: 16em; */
 }
-.is-dark-mode-active .card{
+
+.is-dark-mode-active .card {
     background-color: #cacaca;
 }
 
@@ -118,7 +130,8 @@
     font-size: 1.5em;
     margin: 0;
 }
-.is-dark-mode-active .card .cardTitle h2{
+
+.is-dark-mode-active .card .cardTitle h2 {
     color: #000;
 }
 
@@ -132,7 +145,8 @@
     line-height: 1em;
 
 }
-.is-dark-mode-active .cardContent p{
+
+.is-dark-mode-active .cardContent p {
     color: #364cf3;
 }
 
@@ -141,10 +155,11 @@
     font-weight: 400;
     font-size: .8em;
 }
+
 @media only screen and (max-width: 769px) {
-  .column.awesome {
-    display: none;
-}
+    .column.awesome {
+        display: none;
+    }
 
 }
 </style>

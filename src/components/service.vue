@@ -84,12 +84,16 @@
             </div>
             <div class="cardContent">
               <p>
-                Offering fully integrated digital and online design services that incorporate strategy, branding, and messaging for our clients. This methods are adaptable to a wide range of B2B business requirements.
+                Offering fully integrated digital and online design services that incorporate strategy, branding, and
+                messaging for our clients. This methods are adaptable to a wide range of B2B business requirements.
               </p>
             </div>
             <div class="cardFooter">
               <div class="buttons">
-                <button>Download CV</button>
+                <a href="https://docs.google.com/document/d/1DOBR7xySqjyxnxLoGrpbzWymuraH6ezP/edit?usp=sharing&ouid=103616862020210601390&rtpof=true&sd=true"
+                  target="_blank">
+                  <button>Download CV</button>
+                </a>
               </div>
             </div>
           </div>
@@ -265,7 +269,7 @@ export default {
   border-radius: 0.6em;
 }
 
-.serviceCard p{
+.serviceCard p {
   font-size: 80%;
 }
 
@@ -373,11 +377,11 @@ export default {
   width: 100%;
 }
 
-@media only screen and (max-width: 769px) {  
-.cards .card {
-  height: 18em;
-  width: 20em;
-}
+@media only screen and (max-width: 769px) {
+  .cards .card {
+    height: 18em;
+    width: 20em;
+  }
 
 }
 </style>

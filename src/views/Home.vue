@@ -9,7 +9,9 @@
                     <p class="content">I design and develop beautifully simple things, and I love what I do.</p>
                     <div class="paybtn">
                         <div class="buttons small">
-                            <button>Hire me</button>
+                            <a href="#contact">
+                                <button>Hire me</button>
+                            </a>
                         </div>
                         <ul class="payments">
                             <li class="paypal">

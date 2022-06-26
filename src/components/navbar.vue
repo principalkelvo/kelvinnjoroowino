@@ -21,7 +21,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#myWork">Projects</a></li>
                     <!-- navbar items button -->
-                    <li><a class="buttons is-large">
+                    <li><a href="#contact" class="buttons is-large">
                             <button>Contact</button>
                         </a></li>
                 </ul>
@@ -116,8 +116,9 @@ export default {
     font-weight: 700;
     margin: 2em;
 }
-.is-dark-mode-active .navbar-logo p{
-        color: #c4c4c4;
+
+.is-dark-mode-active .navbar-logo p {
+    color: #c4c4c4;
 
 }
 
@@ -163,7 +164,7 @@ li a {
     transition: all 0.3s ease;
 }
 
-.is-dark-mode-active li a{
+.is-dark-mode-active li a {
     color: #c4c4c4;
 }
 
@@ -204,7 +205,7 @@ li:last-child a:hover {
 /* tablet */
 @media only screen and (max-width: 769px) {
     .navbar-items {
-    display: none;
-}
+        display: none;
+    }
 }
 </style>
