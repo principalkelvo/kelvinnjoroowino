@@ -11,11 +11,11 @@
             <div class="columns">
                 <div class="cards">
                     <div class="buttons">
-                        <div class="prevBtn">
+                        <div class="prevBtn" @click="scrollHorizantlly(1)">
                             <img src="../assets/emoji/prev.svg" alt="">
 
                         </div>
-                        <div class="nextBtn">
+                        <div class="nextBtn" @click="scrollHorizantlly(-1)">
                             <img src="../assets/emoji/next.svg" alt="">
                         </div>
                     </div>
@@ -45,11 +45,53 @@ export default {
     name: 'myWork',
     data() {
         return {
+            currentScrollPosition: 0,
+            scrollAmount: 320,
 
         }
     },
     methods: {
+        // const hScroll = document.querySelector('.horizontal-scroll')
+        
+        scrollHorizantlly(val) {
+            // const buttonLeft = document.querySelector('#btn-scroll-left');
+            // const buttonRight = document.querySelector('#btn-scroll-right');
+            // const hScroll = document.querySelector('.horizontal-scroll')
+            const sScroll = document.querySelector('.allCards')
+            if(val<0){
+                sScroll.scrollBy(350, 0)
+            }
+            else{
+                sScroll.scrollBy(-350, 0)
+            }
+            
+            // let maxScroll = parseInt(-sScroll.offsetWidth,10) + parseInt(hScroll.offsetHeight,10)
 
+            // this.currentScrollPosition += (val*this.scrollAmount)
+            // console.log(this.currentScrollPosition)
+            // console.log(hScroll.offsetWidth)
+            // console.log(sScroll.offsetWidth)
+            // console.log(maxScroll +"max")
+            // if(this.currentScrollPosition > 0){
+            //     this.currentScrollPosition = 0
+            //     buttonLeft.style.opacity = "0"
+            // }
+            // else{
+            //     buttonLeft.style.opacity = "1"
+            // }
+            // if(this.currentScrollPosition < maxScroll) {
+            //     this.currentScrollPosition = maxScroll;
+            //     buttonRight.style.opacity = "0"
+            // }
+            // else{
+            //     buttonRight.style.opacity = "1"
+            // }
+            // scroll.style.left = this.currentScrollPosition + "px"
+            // scroll.classList.add("scroll")
+            // console.log(this.currentScrollPosition + " left")
+
+
+        }
     }
 }
 </script>
