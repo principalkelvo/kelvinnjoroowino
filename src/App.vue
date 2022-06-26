@@ -28,6 +28,7 @@ export default {
   font-size: 24px;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 #app {
