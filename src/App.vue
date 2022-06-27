@@ -192,6 +192,12 @@ export default {
   .column.is-6 {
     width: auto !important;
 }
+.relative{
+  position: static !important;
+}
+.vue-testimonials .item {
+    min-height: 100px !important;
+}
 
 }
 
@@ -202,6 +208,12 @@ export default {
   }
    .column.is-6 {
     width: auto !important;
+}
+.relative{
+  position: static !important;
+}
+.vue-testimonials .item {
+    min-height: 100px !important;
 }
 
 }
@@ -214,6 +226,12 @@ export default {
    .column.is-6 {
     width: auto !important;
 }
+.relative{
+  position: static !important;
+}
+.vue-testimonials .item {
+    min-height: 100px !important;
+}
 
 }
 
@@ -222,7 +240,12 @@ export default {
   * {
     font-size: 8px;
   }
-
+.relative{
+  position: static !important;
+}
+.vue-testimonials .item {
+    min-height: 100px;
+}
 }
 
 

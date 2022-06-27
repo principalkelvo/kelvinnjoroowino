@@ -1,63 +1,53 @@
-<!-- <template>
+<template>
     <div class="customer" id="customer">
         <div class="section">
             <div class="columns">
                 <div class="column is-12">
                     <div class="card sliderWrapper">
-                        <div class="slide">
-                            <div class="cardHeader">
-                                <div class="profileImg">
-                                    <img src="../assets/profilePic/dp.png" alt="">
-                                </div>
-                            </div>
-                            <div class="cardBody">
-                                <div class="feedback ">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti accusamus cum
-                                        non fugiat quod iure minima distinctio molestiae, voluptas assumenda.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <vue-testimonials :items="items" arrow-color="#000000" ball-active-color-class="text-red-500"
+                            ball-inactive-color-class="text-red-500" title-classes="text-red-500 text-2xl"
+                            content-classes="text-red-500 text-8xl" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</template> -->
-<template>
+</template>
+<!-- <template>
 <vue-testimonials :items="items" 
 arrow-color="#000000" 
 ball-active-color-class="text-red-500" 
 ball-inactive-color-class="text-red-500" 
 title-classes="text-red-500 text-2xl" 
 content-classes="text-red-500 text-8xl"/>
-</template>
+</template> -->
 
 <script >
 import { defineComponent, ref } from "vue"
 
 
-export default defineComponent ({
+export default defineComponent({
     name: "CustomersFeedback",
     components: {
     },
-    setup(){
+    setup() {
         const items = ref([
-             {
-                    title: 'Excelent',
-                    content: 'good morning',
-                  image: '../src/assets/profilePic/dp.png',
-                    author:'John Smith',
+            {
+                title: 'Excelent',
+                content: 'good morning',
+                image: '../src/assets/profilePic/dp.png',
+                author: 'John Smith',
 
-                },
-                {
-                    title: 'true',
-                    content: 'good evening',
-                     image: '../src/assets/profilePic/dp.png',
-                    author:'John Smith',
+            },
+            {
+                title: 'true',
+                content: 'good evening',
+                image: '../src/assets/profilePic/dp.png',
+                author: 'John Smith',
 
-                }
+            }
         ])
-        return{items}
+        return { items }
     },
     // data() {
     //     return {
@@ -127,7 +117,8 @@ export default defineComponent ({
 
 .card {
     width: 90%;
-    min-height: 15em;
+    min-height: 30em;
+    max-height: 31em;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -139,7 +130,7 @@ export default defineComponent ({
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    flex-direction: column;
+    /* flex-direction: column; */
     z-index: 40;
 }
 
@@ -181,7 +172,18 @@ export default defineComponent ({
 </style>
 
 <style>
-.text-red-500{
+.text-red-500 {
     color: #faa953 !important;
+}
+.mb-40{
+    margin-bottom: 0 !important;
+}
+.mt-6 {
+    margin-top: 0 !important;
+}
+@media (min-width: 1024px){
+.lg\:pb-20 {
+    padding-bottom: 0 !important;
+}
 }
 </style>
