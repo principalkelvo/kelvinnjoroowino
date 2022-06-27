@@ -5,6 +5,9 @@ const path=require('path')
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define:{
+    global:{}
+  },
   resolve: {
   alias: {
     '@': path.resolve(__dirname, 'src'),
