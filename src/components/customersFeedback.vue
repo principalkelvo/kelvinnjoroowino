@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="customer" id="customer">
         <div class="section">
             <div class="columns">
@@ -22,14 +22,64 @@
             </div>
         </div>
     </div>
+</template> -->
+<template>
+<vue-testimonials :items="items" 
+arrow-color="#000000" 
+ball-active-color-class="text-red-500" 
+ball-inactive-color-class="text-red-500" 
+title-classes="text-red-500 text-2xl" 
+content-classes="text-red-500 text-8xl"/>
 </template>
 
-<script>
+<script >
+import { defineComponent, ref } from "vue"
 
-export default {
+
+export default defineComponent ({
     name: "CustomersFeedback",
-    components: {}
-}
+    components: {
+    },
+    setup(){
+        const items = ref([
+             {
+                    title: 'Excelent',
+                    content: 'good morning',
+                  image: '../src/assets/profilePic/dp.png',
+                    author:'John Smith',
+
+                },
+                {
+                    title: 'true',
+                    content: 'good evening',
+                     image: '../src/assets/profilePic/dp.png',
+                    author:'John Smith',
+
+                }
+        ])
+        return{items}
+    },
+    // data() {
+    //     return {
+    //         items:[
+    //            {
+    //                 title: 'Excelent',
+    //                 content: 'good morning',
+    //                 // image: '../src/assets/profilePic/dp.png',
+    //                 author:'John Smith',
+
+    //             },
+    //             {
+    //                 title: 'Excelent',
+    //                 content: 'good morning',
+    //                 // image: '../src/assets/profilePic/dp.png',
+    //                 author:'John Smith',
+
+    //             }
+    //         ]
+    //     }
+    // },
+})
 
 </script>
 
@@ -40,6 +90,8 @@ export default {
     justify-content: center;
     position: relative;
 }
+
+
 
 .section::before {
     content: '';
@@ -125,5 +177,11 @@ export default {
     width: 100%;
     margin: 1em 0;
     /* border: 2px solid red; */
+}
+</style>
+
+<style>
+.text-red-500{
+    color: #faa953 !important;
 }
 </style>
