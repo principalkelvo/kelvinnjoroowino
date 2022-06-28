@@ -1,9 +1,11 @@
 <script>
 import Navbar from "@/components/navbar.vue";
+import NavbarMobile from "@/components/navbar-mobile.vue";
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    NavbarMobile,
   },
 }
 </script>
@@ -16,6 +18,7 @@ export default {
 
     <div class="container">
       <router-view></router-view>
+      <NavbarMobile/>
     </div>
   </div>
 </template>
