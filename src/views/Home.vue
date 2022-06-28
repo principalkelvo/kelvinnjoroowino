@@ -34,7 +34,7 @@
                     <div class="profile">
                         <div class="image is-large ">
                             <div class="profileImg">
-                                <img src="@/assets/profilePic/dp.png" alt="home">
+                                <img v-bind:src="darkModeToggleImage" alt="home">
                             </div>
                         </div>
                         <div class="bigCircle">
@@ -86,6 +86,7 @@ import CustomersFeedback from "@/components/customersFeedback.vue";
 import Contact from "@/components/contact.vue";
 
 export default {
+    name:'Home',
     components: {
         Service,
         Services,
@@ -94,6 +95,17 @@ export default {
         CustomersFeedback,
         Contact,
     },
+    computed: {
+
+        darkModeToggleImage() {
+
+            return !this.$store.state.isDarkModeActive ? this.imgUrl = new URL('../assets/profilePic/Portfolio-Kelvin-Njoro-Owino-orange-hood.png', import.meta.url).href : this.imgUrl = new URL('../assets/profilePic/Portfolio-Kelvin-Njoro-Owino-darkmode.png', import.meta.url).href
+            //   console.log(this.imgUrl)
+        },
+    },
+    methods:{
+
+    }
 }
 </script>
 
@@ -223,8 +235,8 @@ export default {
 }
 
 .image.is-large .profileImg {
-    height: 17.2em;
-    width: 15.5em;
+    height: 22.2em;
+    width: 19.5em;
     position: relative;
     top: 0;
     background: none;
@@ -336,6 +348,17 @@ export default {
     border: none;
     filter: sepia(10%) hue-rotate(190deg) brightness(60%) saturate(400%);
 }
+
+
+.profile .smallCircle .twitter:hover img,
+.profile .bigCircle .github:hover img,
+.profile .smallCircle .linkedin:hover img,
+.profile .smallCircle .twitter:active img,
+.profile .bigCircle .github:active img,
+.profile .smallCircle .linkedin:active img{
+ box-shadow: 0em 0em 1rem .2rem #faaa53;
+}
+
 
 /* hero payments */
 .paybtn {
