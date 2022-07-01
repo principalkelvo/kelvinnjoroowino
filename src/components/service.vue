@@ -1,6 +1,6 @@
 <template>
   <div class="service">
-    <div class="section">
+    <section class="section" id="service">
       <div class="columns cards">
         <div class="column is-4 card">
           <div class="projects">
@@ -99,7 +99,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 <script>
