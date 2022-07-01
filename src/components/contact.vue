@@ -80,7 +80,7 @@ form{
     width: 100%;
 }
 .section {
-        min-height: calc(100vh - 5.25rem);
+        min-height: calc(100vh - 2.75rem) !important;
     }
 }
 </style>
