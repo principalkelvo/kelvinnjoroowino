@@ -79,6 +79,8 @@ form{
     form{
     width: 100%;
 }
-
+.section {
+        min-height: calc(100vh - 5.25rem);
+    }
 }
 </style>
