@@ -35,15 +35,15 @@ export default defineComponent({
             {
                 title: 'Excelent',
                 content: 'good morning',
-                image: '../src/assets/profilePic/dp.png',
+                image: '../assets/profilePic/dp.png',
                 author: 'John Smith',
 
             },
             {
                 title: 'true',
                 content: 'good evening',
-                image: '../src/assets/profilePic/dp.png',
-                author: 'John Smith',
+                image: '../assets/profilePic/dp.png',
+                author: 'Kelvin Smiti',
 
             }
         ])

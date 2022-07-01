@@ -75,8 +75,8 @@ export default {
 
     <div class="container">
       <router-view></router-view>
-      <NavbarMobile />
     </div>
+    <NavbarMobile />
   </div>
 </template>
 
