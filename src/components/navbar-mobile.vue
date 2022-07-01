@@ -2,7 +2,9 @@
     <div class="navigation">
         <ul>
             <!-- list rendering -->
-            <li v-for="item in items" @click="toggleList(item)" :class="{ active: item.active }">
+            <li v-for="item in items" 
+            @click="toggleList(item)" 
+            :class="[{ active: item.active},item.activeClass]">
                 <a :href="`${item.routed}`">
                     <span class="icon">
                         <i :class="[faClass(item.icon)]" 
@@ -30,6 +32,7 @@
 //     item.addEventListener('click', activeLink)
 // )
 
+
 export default {
     name: "navbarMobile",
     data() {
@@ -40,37 +43,45 @@ export default {
                     text: 'Home',
                     icon: 'home',
                     active: false,
-                    routed: "#"
+                    routed: "#",
+                    activeClass: 'home'
                 },
-                {
-                    text: 'Skills',
-                    icon: 'home',
-                    active: false,
-                    routed: "#skills"
-
-
-                },
+               
                 {
                     text: 'Services',
-                    icon: 'home',
+                    icon: 'wrench',
                     active: false,
-                    routed: "#services"
+                    routed: "#services",
+                    activeClass: 'services'
                 },
+               
                 {
                     text: 'Projects',
-                    icon: 'home',
+                    icon: 'project-diagram',
                     active: false,
-                    routed: "#myWork"
+                    routed: "#myWork",
+                    activeClass: 'myWork'
+                },
+                  {
+                    text: 'Skills',
+                    icon: 'cogs',
+                    active: false,
+                    routed: "#skills",
+                    activeClass: 'skills'
+
+
                 },
                 {
                     text: 'Contact',
-                    icon: 'home',
+                    icon: 'phone',
                     active: false,
-                    routed: "#contact"
+                    routed: "#contact",
+                    activeClass: 'contact',
                 }
             ]
         }
     },
+   
     methods: {
         toggleList(item) {
             //remove active class to any active items
