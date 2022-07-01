@@ -68,7 +68,6 @@ export default {
 
 
 <template>
-  <div id="app">
 
     <Navbar />
     <!-- <router-link to="/">Home</router-link> -->
@@ -77,7 +76,6 @@ export default {
       <router-view></router-view>
     </div>
     <NavbarMobile />
-  </div>
 </template>
 
 <style>
