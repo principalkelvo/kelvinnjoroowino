@@ -246,4 +246,10 @@ body{
 .navigation ul li:nth-child(5).active~.indicator {
     transform: translateX(calc(4.375rem * 4));
 }
+/* tablet */
+@media only screen and (min-width: 769px) {
+    .navigation {
+        display: none;
+    }
+}
 </style>
