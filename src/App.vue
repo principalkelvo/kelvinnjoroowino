@@ -1,4 +1,27 @@
 <script>
+
+// window.onscroll = () => {
+//   let current = "";
+
+//   sections.forEach((section) => {
+//     const sectionTop = section.offsetTop;
+//     console.log(sectionTop);
+//     if (scrollY >= sectionTop - 60) {
+//       current = section.getAttribute("id");
+//       console.log(current);
+//     }
+//   });
+//   navLi.forEach((li) => {
+//     li.classList.remove("active");
+//     console.log(li);
+
+//     if (li.classList.contains(current)) {
+//       li.classList.add("active");
+//       console.log('active')
+//     }
+//   });
+// };
+
 import Navbar from "@/components/navbar.vue";
 import NavbarMobile from "@/components/navbar-mobile.vue";
 
@@ -7,8 +30,42 @@ export default {
     Navbar,
     NavbarMobile,
   },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll(event) {
+      const sections = document.querySelectorAll("section[id]");
+      const navLi = document.querySelectorAll(".navigation ul li");
+      let scrollY = window.pageYOffset
+      // Any code to be executed when the window is scrolled
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        console.log(sectionTop);
+        if (scrollY >= sectionTop - 60) {
+          current = section.getAttribute("id");
+          console.log(current);
+        }
+      });
+      navLi.forEach((li) => {
+        li.classList.remove("active");
+        console.log(li);
+
+        if (li.classList.contains(current)) {
+          li.classList.add("active");
+          console.log('active')
+        }
+      });
+    }
+  }
 }
 </script>
+
 
 <template>
   <div id="app">
@@ -18,7 +75,7 @@ export default {
 
     <div class="container">
       <router-view></router-view>
-      <NavbarMobile/>
+      <NavbarMobile />
     </div>
   </div>
 </template>
@@ -124,7 +181,7 @@ export default {
   border: .5px solid #00000012;
   box-shadow: 0px 0px 0px 0px inset #FAAA53,
     2px 4px 3.041em 4em #A989E540;
-  
+
   margin: 1rem;
 
   transition: ease-out 0.3s;
@@ -169,18 +226,19 @@ export default {
 
 
 /* tablet */
-@media only screen and (max-width: 1128px) and (min-width: 769px){
-  *{
+@media only screen and (max-width: 1128px) and (min-width: 769px) {
+  * {
     font-size: 18px;
   }
 }
 
-@media only screen and (max-width: 769px){
+@media only screen and (max-width: 769px) {
   .columns {
     display: flex;
     flex-direction: column;
   }
 }
+
 @media only screen and (max-width: 769px) and (min-width: 500px) {
   * {
     font-size: 16px;
@@ -192,15 +250,18 @@ export default {
   * {
     font-size: 13px;
   }
+
   .column.is-6 {
     width: auto !important;
-}
-.relative{
-  position: static !important;
-}
-.vue-testimonials .item {
+  }
+
+  .relative {
+    position: static !important;
+  }
+
+  .vue-testimonials .item {
     min-height: 100px !important;
-}
+  }
 
 }
 
@@ -209,15 +270,18 @@ export default {
   * {
     font-size: 12px;
   }
-   .column.is-6 {
+
+  .column.is-6 {
     width: auto !important;
-}
-.relative{
-  position: static !important;
-}
-.vue-testimonials .item {
+  }
+
+  .relative {
+    position: static !important;
+  }
+
+  .vue-testimonials .item {
     min-height: 100px !important;
-}
+  }
 
 }
 
@@ -226,15 +290,18 @@ export default {
   * {
     font-size: 9px;
   }
-   .column.is-6 {
+
+  .column.is-6 {
     width: auto !important;
-}
-.relative{
-  position: static !important;
-}
-.vue-testimonials .item {
+  }
+
+  .relative {
+    position: static !important;
+  }
+
+  .vue-testimonials .item {
     min-height: 100px !important;
-}
+  }
 
 }
 
@@ -243,13 +310,13 @@ export default {
   * {
     font-size: 8px;
   }
-.relative{
-  position: static !important;
-}
-.vue-testimonials .item {
+
+  .relative {
+    position: static !important;
+  }
+
+  .vue-testimonials .item {
     min-height: 100px;
+  }
 }
-}
-
-
 </style>
