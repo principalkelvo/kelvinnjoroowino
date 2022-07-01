@@ -1,6 +1,6 @@
 <template>
-    <div class="customer" id="customer">
-        <div class="section">
+    <div class="customer" >
+        <section class="section" id="customer">
             <div class="columns">
                 <div class="column is-12">
                     <div class="card sliderWrapper">
@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </template>
 <!-- <template>

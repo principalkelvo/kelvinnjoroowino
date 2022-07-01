@@ -1,7 +1,7 @@
 <template>
     <div class="home">
 
-        <div class="section">
+        <section class="section" id="home">
             <div class="columns">
                 <div class="column is-6 content">
                     <p class="title is-large pb-0 dark">Hy! I Am</p>
@@ -61,7 +61,7 @@
 
                 </div>
             </div>
-        </div>
+        </section>
 
         <Service />
 

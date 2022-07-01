@@ -1,6 +1,6 @@
 <template>
- <div class="contact" id="contact">
-        <div class="section">
+ <div class="contact">
+        <section class="section" id="contact">
             <div class="columns">
                 <div class="column is-6">
                     <div class="title">
@@ -20,7 +20,7 @@
 
                 </div>
             </div>
-        </div>
+        </section>
  </div>
 </template>
 

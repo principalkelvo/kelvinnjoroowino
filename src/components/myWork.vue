@@ -1,6 +1,6 @@
 <template>
-    <div class="myWork" id="myWork">
-        <div class="section">
+    <div class="myWork" >
+        <section class="section" id="myWork">
             <div class="columns">
                 <div class="title">
                     <h1>Clients get <span>always exceptional</span></h1>
@@ -37,7 +37,7 @@
 
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </template>
 <script>

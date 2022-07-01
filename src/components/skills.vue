@@ -1,6 +1,6 @@
 <template>
-    <div class="skills" id="skills">
-        <div class="section">
+    <div class="skills" >
+        <section class="section" id="skills">
             <div class="columns">
                 <div class="column is-6">
                     <!-- title  -->
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
     </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
-    <div class="services" id="services">
-        <div class="section">
+    <div class="services" >
+        <section class="section" id="services">
             <!-- full columns content -->
             <div class="columns">
                 <!-- main title  -->
@@ -77,7 +77,7 @@
                 </div>
 
             </div>
-        </div>
+        </section>
     </div>
 </template>
 
