@@ -69,13 +69,9 @@ export default {
 
 <template>
 
-    <Navbar />
-    <!-- <router-link to="/">Home</router-link> -->
-
-    <div class="container">
-      <router-view></router-view>
-    </div>
-    <NavbarMobile />
+  <Navbar />
+  <router-view></router-view>
+  <NavbarMobile />
 </template>
 
 <style>
