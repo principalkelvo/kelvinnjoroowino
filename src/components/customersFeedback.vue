@@ -43,7 +43,7 @@ export default defineComponent({
                 title: 'true',
                 content: 'good evening',
                 // image: this.imgUrl = new URL('../assets/profilePic/dp.png', import.meta.url).href,
-                author: 'Kelvin Smiti',
+                author: 'Kelvin Simiti',
 
             }
         ])
