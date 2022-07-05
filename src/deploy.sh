@@ -22,5 +22,5 @@ git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
  git push -f git@github.com:principalkelvo/kelvinnjoroowino.git main:gh-pages
-#https://principalkelvo.github.io/kelvinnjoroowino/
+# https://principalkelvo.github.io/kelvinnjoroowino/
 cd -
