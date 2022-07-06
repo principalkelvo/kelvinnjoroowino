@@ -30,6 +30,11 @@ export default defineComponent({
     name: "CustomersFeedback",
     components: {
     },
+    data(){
+        return {
+            image: imgUrl(),
+        }
+    },
     setup() {
         const items = ref([
             {
@@ -42,7 +47,7 @@ export default defineComponent({
             {
                 title: 'true',
                 content: 'good evening',
-                // image: imgUrl(),
+                image: this.image,
                 author: 'Kelvin Simiti',
 
             }
