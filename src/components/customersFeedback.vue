@@ -42,7 +42,7 @@ export default defineComponent({
             {
                 title: 'true',
                 content: 'good evening',
-                image: imgUrl(),
+                // image: imgUrl(),
                 author: 'Kelvin Simiti',
 
             }
