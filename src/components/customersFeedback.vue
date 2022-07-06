@@ -30,11 +30,6 @@ export default defineComponent({
     name: "CustomersFeedback",
     components: {
     },
-    data(){
-        return {
-            image: imgUrl(),
-        }
-    },
     setup() {
         const items = ref([
             {
@@ -55,9 +50,6 @@ export default defineComponent({
         return { items }
     },
     methods: {
-        imgUrl() {
-            return new URL('../assets/profilePic/dp.png', import.meta.url).href
-        }
     },
     // data() {
     //     return {
