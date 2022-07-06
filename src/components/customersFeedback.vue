@@ -42,12 +42,17 @@ export default defineComponent({
             {
                 title: 'true',
                 content: 'good evening',
-                // image: this.imgUrl = new URL('../assets/profilePic/dp.png', import.meta.url).href,
+                image: this.imgUrl(),
                 author: 'Kelvin Simiti',
 
             }
         ])
         return { items }
+    },
+    methods: {
+        imgUrl() {
+            return new URL('../assets/profilePic/dp.png', import.meta.url).href
+        }
     },
     // data() {
     //     return {
