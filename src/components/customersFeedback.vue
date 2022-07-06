@@ -47,7 +47,7 @@ export default defineComponent({
             {
                 title: 'true',
                 content: 'good evening',
-                image: this.image,
+                image: '../assets/profilePic/dp.png',
                 author: 'Kelvin Simiti',
 
             }
