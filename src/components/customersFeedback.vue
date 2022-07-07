@@ -25,7 +25,7 @@ content-classes="text-red-500 text-8xl"/>
 <script >
 import { defineComponent, ref } from "vue"
 // import image in vite
-import imageUrl from '../assets/profilePic/dp.png'
+import imageUrl from '@/assets/profilePic/dp.png'
 
 export default defineComponent({
     name: "CustomersFeedback",
