@@ -1,5 +1,5 @@
 <template>
-    <div class="myWork" >
+    <div class="myWork">
         <section class="section" id="myWork">
             <div class="columns">
                 <div class="title">
@@ -20,19 +20,26 @@
                         </div>
                     </div>
                     <div class="allCards">
-                        <div class="card">
+
+                        <div v-for="project in projects">
+                            <div class="card">
+                                <img :src="getImgUrl(project.image)" v-bind:alt="project.name">
+                                 <div class="buttons">
+                    <button>Follow</button>
+                    <button>Message</button>
+                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="card">
 
                         </div>
                         <div class="card">
 
                         </div>
-                        <div class="card">
-
-                        </div>
 
                         <div class="card">
 
-                        </div>
+                        </div> -->
                     </div>
 
                 </div>
@@ -47,51 +54,38 @@ export default {
         return {
             currentScrollPosition: 0,
             scrollAmount: 320,
+            projects: [
+                {
+                    name:"project",
+                    image: 'dp',
+                },
+                {
+                    name:"project1",
+                    image: 'dp',
+                },
+                {
+                    name:"project2",
+                    image: 'dp',
 
+                }
+            ]
         }
     },
     methods: {
-        // const hScroll = document.querySelector('.horizontal-scroll')
-        
+
         scrollHorizantlly(val) {
-            // const buttonLeft = document.querySelector('#btn-scroll-left');
-            // const buttonRight = document.querySelector('#btn-scroll-right');
-            // const hScroll = document.querySelector('.horizontal-scroll')
             const sScroll = document.querySelector('.allCards')
-            if(val<0){
+            if (val < 0) {
                 sScroll.scrollBy(350, 0)
             }
-            else{
+            else {
                 sScroll.scrollBy(-350, 0)
             }
-            
-            // let maxScroll = parseInt(-sScroll.offsetWidth,10) + parseInt(hScroll.offsetHeight,10)
 
-            // this.currentScrollPosition += (val*this.scrollAmount)
-            // console.log(this.currentScrollPosition)
-            // console.log(hScroll.offsetWidth)
-            // console.log(sScroll.offsetWidth)
-            // console.log(maxScroll +"max")
-            // if(this.currentScrollPosition > 0){
-            //     this.currentScrollPosition = 0
-            //     buttonLeft.style.opacity = "0"
-            // }
-            // else{
-            //     buttonLeft.style.opacity = "1"
-            // }
-            // if(this.currentScrollPosition < maxScroll) {
-            //     this.currentScrollPosition = maxScroll;
-            //     buttonRight.style.opacity = "0"
-            // }
-            // else{
-            //     buttonRight.style.opacity = "1"
-            // }
-            // scroll.style.left = this.currentScrollPosition + "px"
-            // scroll.classList.add("scroll")
-            // console.log(this.currentScrollPosition + " left")
-
-
-        }
+        },
+        getImgUrl(project) {
+            return new URL(`../assets/profilePic/${project}.png`, import.meta.url).href
+            }
     }
 }
 </script>
@@ -111,7 +105,7 @@ export default {
     color: #faaa53;
 }
 
-.is-dark-mode-active .columns .title h1 span{
+.is-dark-mode-active .columns .title h1 span {
     color: #364cf3;
 }
 
@@ -147,8 +141,10 @@ export default {
     justify-content: center;
 }
 
-/* .columns .cards .buttons .prevBtn,
-.columns .cards .buttons .nextBtn */
+.columns .cards .buttons .prevBtn:hover,
+.columns .cards .buttons .nextBtn:hover{
+cursor: pointer;
+}
 
 .columns .cards .allCards {
     display: flex;
@@ -170,8 +166,26 @@ export default {
     width: 15em;
     height: 16em;
     min-height: 13em;
+    position: relative;
 }
-.is-dark-mode-active .columns .cards .card{
+
+.is-dark-mode-active .columns .cards .card {
     background-color: #f4f4f4;
+}
+
+.columns .cards .card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.columns .cards .card .buttons{
+    position: absolute;
+    background:#faa953ab;
+    width: 100%;
+    height: 100%;
+    top: 0;    
+}
+.columns .cards .card .buttons button{
+    margin: 1em;
 }
 </style>
