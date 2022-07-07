@@ -1,5 +1,5 @@
 <template>
-    <div class="customer" >
+    <div class="customer">
         <section class="section" id="customer">
             <div class="columns">
                 <div class="column is-12">
@@ -24,7 +24,8 @@ content-classes="text-red-500 text-8xl"/>
 
 <script >
 import { defineComponent, ref } from "vue"
-
+// import image in vite
+import imageUrl from '../assets/profilePic/dp.png'
 
 export default defineComponent({
     name: "CustomersFeedback",
@@ -35,14 +36,14 @@ export default defineComponent({
             {
                 title: 'Excelent',
                 content: 'good morning',
-                image: '../assets/profilePic/dp.png',
+                image: imageUrl,
                 author: 'John Smith',
 
             },
             {
                 title: 'true',
                 content: 'good evening',
-                image: '../assets/profilePic/dp.png',
+                image: 'https://unsplash.com/photos/rlwE8f8anOc',
                 author: 'Kelvin Simiti',
 
             }
@@ -50,6 +51,9 @@ export default defineComponent({
         return { items }
     },
     methods: {
+        getImageUrl(name) {
+            return new URL(`./dir/${name}.png`, import.meta.url).href
+        }
     },
     // data() {
     //     return {
@@ -177,15 +181,18 @@ export default defineComponent({
 .text-red-500 {
     color: #faa953 !important;
 }
-.mb-40{
+
+.mb-40 {
     margin-bottom: 0 !important;
 }
+
 .mt-6 {
     margin-top: 0 !important;
 }
-@media (min-width: 1024px){
-.lg\:pb-20 {
-    padding-bottom: 0 !important;
-}
+
+@media (min-width: 1024px) {
+    .lg\:pb-20 {
+        padding-bottom: 0 !important;
+    }
 }
 </style>
