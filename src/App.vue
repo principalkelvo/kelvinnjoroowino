@@ -194,7 +194,7 @@ export default {
 .buttons button.no-fill:hover,
 .buttons button.no-fill:focus,
 .buttons button.no-fill:active {
-  box-shadow: inset 10em 0 0 0 #FAAA53,
+  box-shadow: inset 10.5em 0 0 0 #FAAA53,
     0px 19px 28px -11px #00000040,
     2px 4px 73px 91px #FAAA5340;
   color: #fff !important;
