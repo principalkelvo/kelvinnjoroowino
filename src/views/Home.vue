@@ -292,6 +292,7 @@ export default {
         -0 -0 10px 0 #a989e512,
         -0 0 10px 0 #a989e512,
         0 -0 10px 0 #a989e512;
+    z-index: 2;
 
 }
 
