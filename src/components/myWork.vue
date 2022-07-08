@@ -24,10 +24,10 @@
                         <div v-for="project in projects">
                             <div class="card">
                                 <img :src="getImgUrl(project.image)" v-bind:alt="project.name">
-                                 <div class="buttons">
-                    <button>Follow</button>
-                    <button>Message</button>
-                </div>
+                                <div class="buttons">
+                                    <button>View Design</button>
+                                    <button class="no-fill">View Demo</button>
+                                </div>
                             </div>
                         </div>
                         <!-- <div class="card">
@@ -56,15 +56,15 @@ export default {
             scrollAmount: 320,
             projects: [
                 {
-                    name:"project",
+                    name: "project",
                     image: 'dp',
                 },
                 {
-                    name:"project1",
+                    name: "project1",
                     image: 'dp',
                 },
                 {
-                    name:"project2",
+                    name: "project2",
                     image: 'dp',
 
                 }
@@ -85,7 +85,7 @@ export default {
         },
         getImgUrl(project) {
             return new URL(`../assets/profilePic/${project}.png`, import.meta.url).href
-            }
+        }
     }
 }
 </script>
@@ -142,8 +142,8 @@ export default {
 }
 
 .columns .cards .buttons .prevBtn:hover,
-.columns .cards .buttons .nextBtn:hover{
-cursor: pointer;
+.columns .cards .buttons .nextBtn:hover {
+    cursor: pointer;
 }
 
 .columns .cards .allCards {
@@ -151,14 +151,21 @@ cursor: pointer;
     align-items: center;
     justify-content: space-between;
     overflow-x: scroll;
+    overflow-y: hidden;
+    margin: 0 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+.columns .cards .allCards::-webkit-scrollbar {
+    display: none;
 }
 
 .columns .cards .card {
-    background-color: #fff;
+    /* background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
     padding: 1rem;
-    margin: 1rem;
+    margin: 2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,25 +174,54 @@ cursor: pointer;
     height: 16em;
     min-height: 13em;
     position: relative;
+    transition: all 0.5s ease-in-out 0s;
+    scroll-snap-align: start;
+}
+
+.columns .cards .card:hover {
+    transform: scale(1.1);
 }
 
 .is-dark-mode-active .columns .cards .card {
     background-color: #f4f4f4;
 }
 
-.columns .cards .card img{
+.columns .cards .card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-.columns .cards .card .buttons{
     position: absolute;
-    background:#faa953ab;
+    transform: rotateY(0);
+    transition: all 0.5s ease-in-out 0s;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* padding: 1rem; */
+}
+
+.columns .cards .card:hover img {
+    transform: rotateY(-90deg);
+
+}
+
+.columns .cards .card .buttons {
+    position: absolute;
+    background: rgba(219, 219, 219, 0.8);
     width: 100%;
     height: 100%;
-    top: 0;    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    top: 0;
+    border-radius: 10px;
+    transform: rotateY(90deg);
+    transition: all 0.5s ease-in-out 0s;
+
 }
-.columns .cards .card .buttons button{
+
+.columns .cards .card:hover .buttons {
+    transform: rotateY(0);
+}
+
+.columns .cards .card .buttons button {
     margin: 1em;
 }
 </style>
