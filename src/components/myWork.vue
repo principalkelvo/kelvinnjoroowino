@@ -218,8 +218,9 @@ export default {
 }
 
 .columns .cards .card .images {
-
-    /* position: absolute; */
+     width: 100%;
+    height: 100%;
+    position: absolute;
     transform: rotateY(0);
     transition: all 0.5s ease-in-out 0s;
     background-color: #fff;
