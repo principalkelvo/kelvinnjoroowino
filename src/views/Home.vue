@@ -99,7 +99,7 @@ export default {
 
         darkModeToggleImage() {
 
-            return !this.$store.state.isDarkModeActive ? this.imgUrl = new URL('../assets/profilePic/Portfolio-Kelvin-Njoro-Owino-orange-hood.png', import.meta.url).href : this.imgUrl = new URL('../assets/profilePic/Portfolio-Kelvin-Njoro-Owino-darkmode.png', import.meta.url).href
+            return !this.$store.state.isDarkModeActive ? this.imgUrl = new URL('../assets/profilePic/Portfolio-Kelvin-Njoro-Owino-orange-hood-resized.png', import.meta.url).href : this.imgUrl = new URL('../assets/profilePic/Portfolio-Kelvin-Njoro-Owino-darkmode-resized.png', import.meta.url).href
             //   console.log(this.imgUrl)
         },
     },
@@ -235,7 +235,7 @@ export default {
 }
 
 .image.is-large .profileImg {
-    height: 22.2em;
+    height: 24.2em;
     width: 19.5em;
     position: relative;
     top: 0;
@@ -246,7 +246,7 @@ export default {
 .image.is-large .profileImg img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .profile .bigCircle {
@@ -331,7 +331,7 @@ export default {
     border-radius: 50%;
     position: absolute;
     top: -7em;
-    right: 3em;
+    right: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
