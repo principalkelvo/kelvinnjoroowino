@@ -23,7 +23,14 @@
 
                         <div v-for="project in projects">
                             <div class="card">
-                                <img :src="getImgUrl(project.image)" v-bind:alt="project.name">
+                                <div class="images">
+                                    <div class="imageHero">
+                                        <img :src="getImgUrl(project.image)" v-bind:alt="project.name">
+                                    </div>
+                                    <div class="imageFull">
+                                        <img :src="getImgUrl(project.image1)" v-bind:alt="project.name">
+                                    </div>
+                                </div>
                                 <div class="buttons">
                                     <button>View Design</button>
                                     <button class="no-fill">View Demo</button>
@@ -57,15 +64,18 @@ export default {
             projects: [
                 {
                     name: "project",
-                    image: 'dp',
+                    image: 'Anonymously_send_images_and_files_upload_download_big_files',
+                    image1: 'full-minimalist-Portfolio-project-design-source-code-free',
                 },
                 {
                     name: "project1",
-                    image: 'dp',
+                    image: 'full-minimalist-Portfolio-project-design-source-code-free',
+                    image1: 'full-minimalist-Portfolio-project-design-source-code-free',
                 },
                 {
                     name: "project2",
-                    image: 'dp',
+                    image: 'Hack_interview_simple_design_navbar_hero_landing_page',
+                    image1: 'full-minimalist-Portfolio-project-design-source-code-free',
 
                 }
             ]
@@ -84,7 +94,7 @@ export default {
 
         },
         getImgUrl(project) {
-            return new URL(`../assets/profilePic/${project}.png`, import.meta.url).href
+            return new URL(`../assets/myDesigns/${project}.png`, import.meta.url).href
         }
     }
 }
@@ -186,11 +196,30 @@ export default {
     background-color: #f4f4f4;
 }
 
-.columns .cards .card img {
-    width: 100%;
+.columns .cards .card .images {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.columns .cards .card .images .imageHero {
+    width: 65%;
     height: 100%;
-    object-fit: cover;
-    position: absolute;
+    /* position: absolute; */
+
+}
+
+.columns .cards .card .images .imageFull {
+    width: 25%;
+    height: 100%;
+    padding: .5rem 0;
+    /* position: absolute; */
+
+}
+
+.columns .cards .card .images {
+
+    /* position: absolute; */
     transform: rotateY(0);
     transition: all 0.5s ease-in-out 0s;
     background-color: #fff;
@@ -199,7 +228,13 @@ export default {
     /* padding: 1rem; */
 }
 
-.columns .cards .card:hover img {
+.columns .cards .card .images img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.columns .cards .card:hover .images {
     transform: rotateY(-90deg);
 
 }
