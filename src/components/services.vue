@@ -112,9 +112,15 @@
     flex-direction: column;
     align-items: center;
     width: 15em;
+    transition: all .5s ease-in-out 0s;
     /* height: 16em; */
 }
 
+.card:hover{
+    box-shadow: 0px 0px 10px #faaa53a1;
+    transform: scale(1.1);
+
+}
 .is-dark-mode-active .card {
     background-color: #cacaca;
 }
