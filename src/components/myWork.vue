@@ -142,7 +142,7 @@ export default {
                     name: "Minimal Portfolio Project and Design",
                     image: 'minimalist-Portfolio-project-design-source-code-free',
                     image1: 'full-minimalist-Portfolio-project-design-source-code-free',
-                    description: 'The main purpose of this repository is to give the user a better Ui and UX experience while viewing my portfolio. This project is done by using HTML, CSS and JS only to create a cool minimalist Portfolio page. It is a fully developed light mode for all gadgets',
+                    description: 'This project is done by using HTML, CSS and JS only, to create a cool minimalist Portfolio page. It is a fully developed light mode for all gadgets',
                 },
 
                 {
@@ -155,7 +155,7 @@ export default {
                     name: "Interview Hack Project and Design",
                     image: 'Hack_interview_simple_design_navbar_hero_landing_page',
                     image1: 'register_login_signup_forgot_password_design_source_code_motivation',
-                    description: 'The main purpose of this repository is to give a user interview preparation techniques',
+                    description: 'Crack Interviews with this website content, get interview preparation techniques',
 
                 },
                 {
