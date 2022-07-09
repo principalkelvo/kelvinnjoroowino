@@ -32,9 +32,11 @@ export default {
   },
   created() {
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.checkAnimation);
   },
   destroyed() {
     window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.checkAnimation);
   },
   methods: {
     handleScroll(event) {
@@ -61,7 +63,34 @@ export default {
           console.log('active')
         }
       });
-    }
+    },
+    checkAnimation(){
+    const fadeIn = document.querySelectorAll(".fadeIn")
+    const jumpIn = document.querySelectorAll(".jumpIn")
+    const trigger = window.innerHeight / 5 * 7;
+
+    fadeIn.forEach(fade=>{
+        const top = fade.getBoundingClientRect().top
+
+        if (trigger > top){
+            fade.classList.add('fade-in')
+        }
+        else{
+            fade.classList.remove('fade-in')
+        }
+    })
+    jumpIn.forEach(jump=>{
+        const top = jump.getBoundingClientRect().top
+
+        if (trigger > top){
+            jump.classList.add('fade-in')
+        }
+        else{
+            jump.classList.remove('fade-in')
+
+        }
+    })
+}
   }
 }
 </script>
@@ -315,5 +344,36 @@ export default {
   .vue-testimonials .item {
     min-height: 100px;
   }
+}
+
+/* animation on scroll */
+.fadeIn{
+    opacity: 0;
+    transform: translateX(-20%);
+    overflow: hidden;
+    transition: .5s ease-in-out transform,
+                .5s ease-in-out opacity;
+}
+.fadeIn:nth-of-type(even){
+    transform: translateX(20%);
+    transition: 2s ease-in-out transform,
+                2s ease-in-out opacity;
+}
+
+.jumpIn{
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: .5s ease-in-out transform,
+                .5s ease-in-out opacity;
+}
+
+.fade-in{
+    opacity:1;
+    transform: translateX(0);
+    transform: translateY(0);
+    /* transition: all 3s ease-out; */
+}
+.fade-in:nth-of-type(even){
+    transform: translateX(0)
 }
 </style>
