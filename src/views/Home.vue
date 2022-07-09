@@ -1,12 +1,12 @@
 <template>
     <div class="home">
 
-        <section class="section" id="home">
+        <section class="section " id="home">
             <div class="columns">
-                <div class="column is-6 content">
+                <div class="column is-6 content " >
                     <p class="title is-large pb-0 dark">Hy! I Am</p>
                     <p class="title is-large pb-0">Kelvin Njoro</p>
-                    <p class="content">I design and develop beautifully simple things, and I love what I do.</p>
+                    <p class="content fadeIn">I design and develop beautifully simple things, and I love what I do.</p>
                     <div class="paybtn">
                         <div class="buttons small">
                             <a href="#contact">
