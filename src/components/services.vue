@@ -5,11 +5,11 @@
             <div class="columns">
                 <!-- main title  -->
                 <div class="column is-6 awesome">
-                    <div class="title">
+                    <div class="title jumpIn">
                         <h1>My awesome</h1>
                         <h2>Services</h2>
                     </div>
-                    <div class="buttons">
+                    <div class="buttons jumpIn">
                         <a href="https://docs.google.com/document/d/1DOBR7xySqjyxnxLoGrpbzWymuraH6ezP/edit?usp=sharing&ouid=103616862020210601390&rtpof=true&sd=true"
                             target="_blank">
                             <button>Download CV</button>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <!-- card  -->
-                <div class="column is-6 pb-0">
+                <div class="column is-6 pb-0 fadeIn">
                     <div class="card">
                         <div class="cardTitle">
                             <img src="../assets/emoji/love.png" alt="">
@@ -39,8 +39,8 @@
 
             </div>
             <div class="columns">
-                <div class="column is-4 pt-0 ">
-                    <div class="card">
+                <div class="column is-4 pt-0 fadeIn">
+                    <div class="card jumpIn">
                         <div class="cardTitle">
                             <img src="../assets/emoji/celebrate.png" alt="">
                             <h2>Developer</h2>
@@ -50,15 +50,15 @@
                                 research, design, and development. Collaboration between analysts and computer engineers
                                 to achieve the proposed software application performance</p>
                         </div>
-                        <div class="cardFooter">
+                        <div class="cardFooter ">
                             <div class="buttons">
                                 <button class="no-fill">View Projects</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="column ">
-                    <div class="card">
+                <div class="column fadeIn">
+                    <div class="card ">
                         <div class="cardTitle">
                             <img src="../assets/emoji/ok.png" alt="">
                             <h2>Ui/Ux</h2>
@@ -68,8 +68,8 @@
                                 linguistic and visual input to translate the brand into a sophisticated and
                                 user-friendly website that communicates information fast.</p>
                         </div>
-                        <div class="cardFooter">
-                            <div class="buttons">
+                        <div class="cardFooter ">
+                            <div class="buttons ">
                                 <button class="no-fill">Web Designs</button>
                             </div>
                         </div>

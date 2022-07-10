@@ -1,8 +1,8 @@
 <template>
   <div class="service">
     <section class="section" id="service">
-      <div class="columns cards">
-        <div class="column is-4 card">
+      <div class="columns cards ">
+        <div class="column is-4 card fadeIn">
           <div class="projects">
             <div class="success">
               <div class="firstRectangle">
@@ -30,7 +30,7 @@
             </div>
           </div>
         </div>
-        <div class="column is-4 card">
+        <div class="column is-4 card fadeIn">
           <div class="serviceCard">
             <div class="title">
               <img src="../assets/modeSVG/emoji.svg" alt="" />
@@ -76,7 +76,7 @@
             </div>
           </div>
         </div>
-        <div class="column is-4 card">
+        <div class="column is-4 card fadeIn">
           <div class="awesomeCard">
             <div class="title">
               <h2>My awesome</h2>
