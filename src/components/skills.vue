@@ -4,12 +4,12 @@
             <div class="columns">
                 <div class="column is-6">
                     <!-- title  -->
-                    <div class="title">
+                    <div class="title jumpIn">
                         <h1>Skills Used For All This</h1>
                         <h1>Design & Development</h1>
                     </div>
                     <!-- content  -->
-                    <div class="content">
+                    <div class="content jumpIn">
                         <p>Understand the topic matter of the customer completely and build on previous expertise,
                             becoming intimately familiar with the subject area. Determine how to respond to the demands
                             and requirements of a certain consumer.
@@ -20,7 +20,7 @@
                         </p>
                     </div>
                     <!-- hire button  -->
-                    <div class="buttons">
+                    <div class="buttons fadeIn">
                         <button>Hire Me</button>
                     </div>
 
@@ -30,40 +30,40 @@
 
                         <!-- used technologies -->
                         <div class="socialCircle">
-                            <div class="circle">
-                                <div class="techUsed">
+                            <div class="circle ">
+                                <div class="techUsed fadeIn">
                                     <div class="image">
                                         <img src="@/assets/socialIcons/django.svg" alt="html">
                                     </div>
                                 </div>
-                                <div class="techUsed">
+                                <div class="techUsed fadeIn">
                                     <div class="image">
                                         <img src="@/assets/socialIcons/photoShop.svg" alt="html">
                                     </div>
                                 </div>
-                                <div class="techUsed">
+                                <div class="techUsed fadeIn">
                                     <div class="image">
                                         <img src="@/assets/socialIcons/lightRoom.svg" alt="html">
                                     </div>
                                 </div>
-                                <div class="techUsed">
+                                <div class="techUsed fadeIn">
                                     <div class="image">
                                         <img src="@/assets/socialIcons/figma.svg" alt="html">
                                     </div>
                                 </div>
                             </div>
-                            <div class="circle">
-                                <div class="techUsed">
+                            <div class="circle ">
+                                <div class="techUsed jumpIn">
                                     <div class="image">
                                         <img src="@/assets/socialIcons/css.svg" alt="html">
                                     </div>
                                 </div>
-                                <div class="techUsed">
+                                <div class="techUsed jumpIn">
                                     <div class="image">
                                         <img src="@/assets/socialIcons/javaScript.svg" alt="html">
                                     </div>
                                 </div>
-                                <div class="techUsed">
+                                <div class="techUsed jumpIn">
 
                                     <div class="image">
                                         <img src="@/assets/socialIcons/vue.svg" alt="html">
@@ -71,8 +71,8 @@
                                 </div>
                             </div>
 
-                            <div class="circle">
-                                <div class="techUsed">
+                            <div class="circle ">
+                                <div class="techUsed jumpIn">
                                     <div class="image">
                                         <img src="@/assets/socialIcons/HTML.svg" alt="html">
                                     </div>
@@ -80,11 +80,11 @@
                             </div>
                         </div>
                         <!-- background purple circle -->
-                        <div class="purpleCircle">
+                        <div class="purpleCircle fadeIn">
 
                         </div>
                         <!-- background orange circle -->
-                        <div class="orangeCircle">
+                        <div class="orangeCircle fadeIn">
 
                         </div>
                     </div>
@@ -105,10 +105,13 @@
 .columns .column .title h1 {
     width: 100%;
     margin: 0;
+    font-size: 1.5rem;
 }
 
 .columns .column .title h1:nth-child(2) {
     color: #faaa53;
+    font-size: 1.2rem;
+
 }
 
 .is-dark-mode-active .columns .column .title h1:nth-child(2) {
