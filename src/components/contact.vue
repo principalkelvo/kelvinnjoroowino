@@ -2,18 +2,18 @@
  <div class="contact">
         <section class="section" id="contact">
             <div class="columns">
-                <div class="column is-6">
-                    <div class="title">
+                <div class="column is-6 jumpIn">
+                    <div class="title fadeIn">
                     <h1>Get In Touch</h1>
                     <h2>Contact Me</h2>
                     </div>
                 </div>
                 <div class="column is-6">
                     <form action="" method="post">
-                        <input type="name" placeholder="Name">
-                        <input type="email" placeholder="E-mail">
-                        <textarea name="message" id="message" cols="21" rows="4" placeholder="Message"></textarea>
-                        <div class="buttons">
+                        <input type="name" placeholder="Name" class="fadeIn">
+                        <input type="email" placeholder="E-mail" class="fadeIn">
+                        <textarea name="message" id="message" cols="21" rows="4" placeholder="Message" class="fadeIn"></textarea>
+                        <div class="buttons fadeIn">
                             <button>Send</button>
                         </div>
                     </form>
