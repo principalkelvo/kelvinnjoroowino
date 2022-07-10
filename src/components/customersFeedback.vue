@@ -3,7 +3,7 @@
         <section class="section" id="customer">
             <div class="columns">
                 <div class="column is-12">
-                    <div class="card sliderWrapper">
+                    <div class="card sliderWrapper jumpIn">
                         <vue-testimonials :items="items" arrow-color="#000000" ball-active-color-class="text-red-500"
                             ball-inactive-color-class="text-red-500" title-classes="text-red-500 text-2xl"
                             content-classes="text-red-500 text-8xl" />
