@@ -1,17 +1,17 @@
 <template>
     <div class="myWork">
         <section class="section" id="myWork">
-            <div class="columns">
+            <div class="columns jumpIn">
                 <div class="title">
                     <h1>Clients get <span>always exceptional</span></h1>
-                    <h1>works from me....</h1>
+                    <h2>works from me....</h2>
                 </div>
 
             </div>
-            <div class="columns">
+            <div class="columns jumpIn">
                 <div class="cards">
                     <div class="buttons">
-                        <div class="prevBtn" @click="scrollHorizantlly(1)">
+                        <div class="prevBtn fadeIn" @click="scrollHorizantlly(1)">
                             <!-- <img src="../assets/emoji/prev.svg" alt=""> -->
                             <svg width="257" height="184" viewBox="0 0 257 184" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@
 
 
                         </div>
-                        <div class="nextBtn" @click="scrollHorizantlly(-1)">
+                        <div class="nextBtn fadeIn" @click="scrollHorizantlly(-1)">
                             <!-- <img src="../assets/emoji/next.svg" alt=""> -->
                             <svg width="257" height="184" viewBox="0 0 257 184" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -89,10 +89,10 @@
 
                         </div>
                     </div>
-                    <div class="allCards">
+                    <div class="allCards ">
 
                         <div v-for="project in projects">
-                            <div class="card">
+                            <div class="card ">
                                 <div class="images">
                                     <div class="imageHero">
                                         <img :src="getImgUrl(project.image)" v-bind:alt="project.name">
@@ -211,14 +211,21 @@ export default {
 
 .columns .title h1 span {
     color: #faaa53;
+    font-size: 2rem;
 }
 
 .is-dark-mode-active .columns .title h1 span {
     color: #364cf3;
+
 }
 
 .columns .title h1 {
     margin: 0;
+    font-size: 3rem;
+}
+.columns .title h2 {
+    margin: 0;
+    font-size: 2rem;
 }
 
 .columns .cards {
@@ -277,7 +284,7 @@ export default {
     overflow-x: scroll;
     overflow-y: hidden;
     margin: 0 1rem;
-    scroll-snap-type: x;
+    /* scroll-snap-type: x mandatory; */
 }
 
 .columns .cards .allCards::-webkit-scrollbar {
