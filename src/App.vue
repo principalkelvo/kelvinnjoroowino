@@ -38,6 +38,9 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
     window.removeEventListener('scroll', this.checkAnimation);
   },
+mounted(){
+  this.checkAnimation();
+},
   methods: {
     handleScroll(event) {
       const sections = document.querySelectorAll("section[id]");
@@ -56,18 +59,20 @@ export default {
       });
       navLi.forEach((li) => {
         li.classList.remove("active");
-        console.log(li);
+        // console.log(li);
 
         if (li.classList.contains(current)) {
           li.classList.add("active");
-          console.log('active')
+          // console.log('active')
         }
       });
     },
     checkAnimation(){
+      // console.log('checking animation ')
     const fadeIn = document.querySelectorAll(".fadeIn")
     const jumpIn = document.querySelectorAll(".jumpIn")
-    const trigger = window.innerHeight / 5 * 7;
+    const rotateIn = document.querySelectorAll(".circle")
+    const trigger = window.innerHeight / 5 * 4;
 
     fadeIn.forEach(fade=>{
         const top = fade.getBoundingClientRect().top
@@ -87,6 +92,17 @@ export default {
         }
         else{
             jump.classList.remove('fade-in')
+
+        }
+    })
+    rotateIn.forEach(rotate=>{
+        const top = rotate.getBoundingClientRect().top
+
+        if (trigger > top){
+            rotate.classList.add('rotateIn')
+        }
+        else{
+            rotate.classList.remove('rotateIn')
 
         }
     })
@@ -347,26 +363,55 @@ export default {
 }
 
 /* animation on scroll */
+/* fade in animation for first div */
 .fadeIn{
     opacity: 0;
-    transform: translateX(-20%);
+    transform: translateY(-20%);
     overflow: hidden;
     transition: .5s ease-in-out transform,
                 .5s ease-in-out opacity;
 }
+
+/* fade in animation for scond div */
 .fadeIn:nth-of-type(even){
-    transform: translateX(20%);
-    transition: 2s ease-in-out transform,
-                2s ease-in-out opacity;
+    transform: translateY(20%);
+    transition: .5s ease-in-out transform,
+                .5s ease-in-out opacity;
+}
+.fadeIn:last-child{
+    transform: translateY(20%);
+    transition: .8s ease-in-out transform,
+                .8s ease-in-out opacity;
 }
 
+/* jump in animation for first div */
 .jumpIn{
-    transform: translateY(-100%);
+    transform: translateX(-100%);
     opacity: 0;
     transition: .5s ease-in-out transform,
                 .5s ease-in-out opacity;
 }
 
+/* jump in animation for second div */
+.jumpIn:nth-of-type(even){
+    transform: translateX(100%);
+    transition: .5s ease-in-out transform,
+                .5s ease-in-out opacity;
+}
+
+/* rotate in animation for first div */
+.rotateIn{
+  animation: rotate 3s linear;
+}
+@keyframes rotate{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+/* add all animations */
 .fade-in{
     opacity:1;
     transform: translateX(0);
@@ -374,6 +419,6 @@ export default {
     /* transition: all 3s ease-out; */
 }
 .fade-in:nth-of-type(even){
-    transform: translateX(0)
+    transform: translateY(0)
 }
 </style>
