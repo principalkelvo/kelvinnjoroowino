@@ -1,4 +1,5 @@
 <template>
+    <!-- contact section -->
  <div class="contact">
         <section class="section" id="contact">
             <div class="columns">
