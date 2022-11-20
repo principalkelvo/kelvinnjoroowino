@@ -51,10 +51,10 @@ mounted(){
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        console.log(sectionTop);
+        // console.log(sectionTop);
         if (scrollY >= sectionTop - 60) {
           current = section.getAttribute("id");
-          console.log(current);
+          // console.log(current);
         }
       });
       navLi.forEach((li) => {

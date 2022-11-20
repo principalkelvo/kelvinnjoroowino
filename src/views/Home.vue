@@ -3,7 +3,7 @@
 
         <section class="section " id="home">
             <div class="columns">
-                <div class="column is-6 content " >
+                <div class="column is-6 content ">
                     <p class="title is-large pb-0 dark">Hy! I Am</p>
                     <p class="title is-large pb-0">Kelvin Njoro</p>
                     <p class="content ">I design and develop beautifully simple things, and I love what I do.</p>
@@ -13,7 +13,7 @@
                                 <button>Hire me</button>
                             </a>
                         </div>
-                        <ul class="payments">
+                        <!-- <ul class="payments">
                             <li class="paypal">
                                 <img src="@/assets/payment/Paypal.jpg" alt="">
                             </li>
@@ -26,7 +26,7 @@
                             <li class="visa">
                                 <img src="@/assets/payment/Visa.jpg" alt="">
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
 
                 </div>
@@ -86,7 +86,7 @@ import CustomersFeedback from "@/components/customersFeedback.vue";
 import Contact from "@/components/contact.vue";
 
 export default {
-    name:'Home',
+    name: 'Home',
     components: {
         Service,
         Services,
@@ -103,7 +103,7 @@ export default {
             //   console.log(this.imgUrl)
         },
     },
-    methods:{
+    methods: {
 
     }
 }
@@ -356,8 +356,8 @@ export default {
 .profile .smallCircle .linkedin:hover img,
 .profile .smallCircle .twitter:active img,
 .profile .bigCircle .github:active img,
-.profile .smallCircle .linkedin:active img{
- box-shadow: 0em 0em 1rem .2rem #faaa53;
+.profile .smallCircle .linkedin:active img {
+    box-shadow: 0em 0em 1rem .2rem #faaa53;
 }
 
 

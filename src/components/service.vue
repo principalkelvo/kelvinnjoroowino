@@ -90,8 +90,7 @@
             </div>
             <div class="cardFooter">
               <div class="buttons">
-                <a href="https://docs.google.com/document/d/1DOBR7xySqjyxnxLoGrpbzWymuraH6ezP/edit?usp=sharing&ouid=103616862020210601390&rtpof=true&sd=true"
-                  target="_blank">
+                <a href="../assets/Kelvin_Njoro's_Resume.pdf" download="Kelvin Njoro's Resume.pdf">
                   <button>Download CV</button>
                 </a>
               </div>
@@ -139,6 +138,9 @@ export default {
       rgba(169, 137, 229, 0.5) 103.97%);
   border-radius: 0.6em;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .projects .success .firstRectangle .secondRectangle {
@@ -188,15 +190,17 @@ export default {
 
 .projects .success .firstRectangle .circle {
   position: absolute;
+  top: -90%;
   /* width: 5em;
+  transform: translate(0%, -100%);
   height: 5em; */
-  /* border: 10px solid; */
+  /* border: 10px solid; 
+  transform: translate(-50%, -30%);
   border-radius: 50%;
   left: 50%;
   top: -50%;
-  transform: translate(-50%, -30%);
   display: grid;
-  place-items: center;
+ place-items: center;*/
 }
 
 /* circular progress bar  */
