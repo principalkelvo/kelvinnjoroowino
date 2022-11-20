@@ -33,13 +33,12 @@
 </template>
 
 <script>
-// const imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url)
+const imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href
+const imgUrlDark = new URL('../assets/modeSVG/Land Switch - Dark.svg', import.meta.url).href
+// const imgUrl ="hello"
 
-// const imageUrl = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href
-//             console.log(imgUrl)
-// document.getElementById('dark').src = imgUrl.href
-//             console.log(imageUrl)
-// import imgUrl from '../assets/modeSVG/Switch - Orange.svg'
+// const imageurl = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href
+            console.log(imgUrl)
 
 
 export default {
@@ -49,14 +48,15 @@ export default {
         return {
             // imgUrl : new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href,
             // isDarkModeActive : false,
-
+            // = new URL('../assets/modeSVG/Land Switch - Dark.svg', import.meta.url).href
+            // = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href
         }
     },
     computed: {
 
         darkModeToggleIcon() {
 
-            return !this.$store.state.isDarkModeActive ? this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href : this.imgUrl = new URL('../assets/modeSVG/Land Switch - Dark.svg', import.meta.url).href
+            return !this.$store.state.isDarkModeActive ? imgUrl : imgUrlDark 
             //   console.log(this.imgUrl)
         },
     },
