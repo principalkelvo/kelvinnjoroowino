@@ -139,6 +139,9 @@ export default {
       rgba(169, 137, 229, 0.5) 103.97%);
   border-radius: 0.6em;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .projects .success .firstRectangle .secondRectangle {
@@ -188,15 +191,17 @@ export default {
 
 .projects .success .firstRectangle .circle {
   position: absolute;
+  top: -90%;
   /* width: 5em;
+  transform: translate(0%, -100%);
   height: 5em; */
-  /* border: 10px solid; */
+  /* border: 10px solid; 
+  transform: translate(-50%, -30%);
   border-radius: 50%;
   left: 50%;
   top: -50%;
-  transform: translate(-50%, -30%);
   display: grid;
-  place-items: center;
+ place-items: center;*/
 }
 
 /* circular progress bar  */
