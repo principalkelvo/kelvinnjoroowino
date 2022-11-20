@@ -38,7 +38,7 @@ const imgUrlDark = new URL('../assets/modeSVG/Land Switch - Dark.svg', import.me
 // const imgUrl ="hello"
 
 // const imageurl = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href
-            console.log(imgUrl)
+            // console.log(imgUrl)
 
 
 export default {
