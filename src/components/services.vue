@@ -105,7 +105,6 @@
 .card {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 2.5rem 1rem;
     margin-bottom: 2rem;
     display: flex;
@@ -113,12 +112,14 @@
     align-items: center;
     width: 15em;
     transition: all .5s ease-in-out 0s;
-    /* height: 16em; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* height: 16em; 
+    */
 }
 
 .card:hover{
     box-shadow: 0px 0px 10px #faaa53a1;
-    transform: scale(1.1);
+    transform: scale(1.09);
 
 }
 .is-dark-mode-active .card {
