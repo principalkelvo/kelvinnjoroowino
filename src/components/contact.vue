@@ -17,7 +17,7 @@
                         <label>Email</label>
                         <input type="email" name="user_email" placeholder="E-mail" class="fadeIn"
                             :class="{ 'is-invalid': validEmail }" v-model="form.email" required>
-                        <span :style="{ color: 'red' }" v-if="form.error.length"> {{                                                                 form.error                                                                 }} </span>
+                        <span :style="{ color: 'red' }" v-if="form.error.length"> {{ form.error }} </span>
                         <label>Message</label>
                         <textarea name="message" id="message" cols="21" rows="4" placeholder="Message" class="fadeIn"
                             v-model="form.message" required></textarea>
@@ -62,6 +62,7 @@ export default {
 
             if (isValid) {
                 this.form.error = '';
+                this.validEmail = false
                 console.log("sending email", isValid)
                 emailjs.sendForm('service_mvn3n88', 'template_yttdlvj', this.$refs.form, 'Qj_lR13PPkYyF676p')
                     .then((result) => {
