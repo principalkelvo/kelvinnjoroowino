@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.9.1",
     "vue": "^3.2.45",
     "vue-router": "^4.0.15",
     "vue-testimonials": "^0.2.0",
