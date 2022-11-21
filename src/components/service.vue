@@ -33,7 +33,7 @@
         <div class="column is-4 card fadeIn">
           <div class="serviceCard">
             <div class="title">
-              <img src="../assets/modeSVG/emoji.svg" alt="" />
+              <img src="../assets/modeSVG/emoji.svg" alt="services" />
               <h2>Service</h2>
             </div>
             <div class="cardContent">
@@ -42,7 +42,7 @@
                   <p>Graphic designer</p>
                 </div>
                 <div class="lifeEmoji">
-                  <img src="@/assets/socialIcons/life.png" alt="life" />
+                  <img src="@/assets/socialIcons/life.png" alt="Graphic designer" />
                 </div>
                 <div class="jobPercentage">
                   <p>100%</p>
@@ -53,7 +53,7 @@
                   <p>UI/UX designer</p>
                 </div>
                 <div class="lifeEmoji">
-                  <img src="@/assets/socialIcons/life.png" alt="life" />
+                  <img src="@/assets/socialIcons/life.png" alt="UI/UX designer" />
                 </div>
                 <div class="jobPercentage">
                   <p>100%</p>
@@ -64,7 +64,7 @@
                   <p>Full-Stack Developer</p>
                 </div>
                 <div class="lifeEmoji">
-                  <img src="@/assets/socialIcons/life.png" alt="life" />
+                  <img src="@/assets/socialIcons/life.png" alt="Full-Stack Developer" />
                 </div>
                 <div class="jobPercentage">
                   <p>100%</p>

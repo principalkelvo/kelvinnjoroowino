@@ -33,26 +33,26 @@
                 <div class="column is-6 myProfile">
                     <div class="profile">
                         <div class="image is-large ">
-                            <div class="profileImg">
-                                <img v-bind:src="darkModeToggleImage" alt="home">
+                            <div class="profileImg" title="Kelvin Njoro Owino">
+                                <img v-bind:src="darkModeToggleImage" alt="Kelvin Njoro | Principal Kelvo">
                             </div>
                         </div>
                         <div class="bigCircle">
                             <div class="github">
                                 <a href="https://github.com/principalkelvo" class="socialLink">
-                                    <img src="@/assets/socialIcons/github.png" alt="github">
+                                    <img src="@/assets/socialIcons/github.png" alt="github profile">
                                 </a>
                             </div>
                         </div>
                         <div class="smallCircle">
                             <div class="linkedin">
                                 <a href="https://www.linkedin.com/in/kelvin-njoro-8abab4210/" class="socialLink">
-                                    <img src="@/assets/socialIcons/linkedin.png" alt="linkedin">
+                                    <img src="@/assets/socialIcons/linkedin.png" alt="linkedin profile">
                                 </a>
                             </div>
                             <div class="twitter">
                                 <a href="https://twitter.com/KelvinPrincipal" class="socialLink">
-                                    <img src="@/assets/socialIcons/twitter.png" alt="twitter">
+                                    <img src="@/assets/socialIcons/twitter.png" alt="twitter profile">
                                 </a>
                             </div>
 

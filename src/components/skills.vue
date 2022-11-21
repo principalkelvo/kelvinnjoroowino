@@ -1,5 +1,5 @@
 <template>
-    <div class="skills" >
+    <div class="skills">
         <section class="section" id="skills">
             <div class="columns">
                 <div class="column is-6">
@@ -31,48 +31,49 @@
                         <!-- used technologies -->
                         <div class="socialCircle">
                             <div class="circle ">
-                                <div class="techUsed fadeIn">
+                                <div class="techUsed fadeIn" title="Django">
                                     <div class="image">
-                                        <img src="@/assets/socialIcons/django.svg" alt="html">
+                                        <img src="@/assets/socialIcons/django.svg" alt="Django">
                                     </div>
                                 </div>
-                                <div class="techUsed fadeIn">
+                                <div class="techUsed fadeIn" title="PhotoShop">
                                     <div class="image">
-                                        <img src="@/assets/socialIcons/photoShop.svg" alt="html">
+                                        <img src="@/assets/socialIcons/photoShop.svg" alt="Photo-shop">
                                     </div>
                                 </div>
-                                <div class="techUsed fadeIn">
+                                
+                                <div class="techUsed fadeIn" title="LightRoom">
                                     <div class="image">
-                                        <img src="@/assets/socialIcons/lightRoom.svg" alt="html">
+                                        <img src="@/assets/socialIcons/lightRoom.svg" alt="Light-room">
                                     </div>
                                 </div>
-                                <div class="techUsed fadeIn">
+                                <div class="techUsed fadeIn" title="Figma">
                                     <div class="image">
-                                        <img src="@/assets/socialIcons/figma.svg" alt="html">
+                                        <img src="@/assets/socialIcons/figma.svg" alt="Figma">
                                     </div>
                                 </div>
                             </div>
                             <div class="circle ">
-                                <div class="techUsed jumpIn">
+                                <div class="techUsed jumpIn" title="CSS">
                                     <div class="image">
-                                        <img src="@/assets/socialIcons/css.svg" alt="html">
+                                        <img src="@/assets/socialIcons/css.svg" alt="CSS">
                                     </div>
                                 </div>
-                                <div class="techUsed jumpIn">
+                                <div class="techUsed jumpIn" title="JavaScript">
                                     <div class="image">
-                                        <img src="@/assets/socialIcons/javaScript.svg" alt="html">
+                                        <img src="@/assets/socialIcons/javaScript.svg" alt="Javascript">
                                     </div>
                                 </div>
-                                <div class="techUsed jumpIn">
+                                <div class="techUsed jumpIn" title="Vue js">
 
                                     <div class="image">
-                                        <img src="@/assets/socialIcons/vue.svg" alt="html">
+                                        <img src="@/assets/socialIcons/vue.svg" alt="Vue">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="circle ">
-                                <div class="techUsed jumpIn">
+                                <div class="techUsed jumpIn" title="HTML">
                                     <div class="image">
                                         <img src="@/assets/socialIcons/HTML.svg" alt="html">
                                     </div>
