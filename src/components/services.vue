@@ -20,7 +20,7 @@
                 <div class="column is-6 pb-0 fadeIn">
                     <div class="card">
                         <div class="cardTitle">
-                            <img src="../assets/emoji/love.png" alt="">
+                            <img src="../assets/emoji/love.png" alt="Graphic Design">
                             <h2>Design</h2>
                         </div>
                         <div class="cardContent">
@@ -42,7 +42,7 @@
                 <div class="column is-4 pt-0 fadeIn">
                     <div class="card jumpIn">
                         <div class="cardTitle">
-                            <img src="../assets/emoji/celebrate.png" alt="">
+                            <img src="../assets/emoji/celebrate.png" alt="Software Engineer">
                             <h2>Developer</h2>
                         </div>
                         <div class="cardContent">
@@ -60,7 +60,7 @@
                 <div class="column fadeIn">
                     <div class="card ">
                         <div class="cardTitle">
-                            <img src="../assets/emoji/ok.png" alt="">
+                            <img src="../assets/emoji/ok.png" alt="Ui/Ux">
                             <h2>Ui/Ux</h2>
                         </div>
                         <div class="cardContent">
