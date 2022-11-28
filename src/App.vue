@@ -38,6 +38,9 @@ export default {
     window.removeEventListener('scroll', this.handleScroll);
     window.removeEventListener('scroll', this.checkAnimation);
   },
+  beforeCreate() {
+		this.$store.commit('initialiseStore');
+	},
 mounted(){
   this.checkAnimation();
 },
