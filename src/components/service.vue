@@ -90,7 +90,8 @@
             </div>
             <div class="cardFooter">
               <div class="buttons">
-                <a href="../assets/Kelvin_Njoro's_Resume.pdf" download="Kelvin Njoro's Resume.pdf">
+                <a href="https://1drv.ms/w/s!AsNXwuWoeJ5krGfzo_kZwaNM9HwT?e=MWszhc"
+                  download="Kelvin Njoro's Resume.pdf">
                   <button>Download CV</button>
                 </a>
               </div>

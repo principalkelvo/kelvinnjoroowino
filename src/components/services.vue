@@ -10,7 +10,7 @@
                         <h2>Services</h2>
                     </div>
                     <div class="buttons jumpIn">
-                        <a href="https://docs.google.com/document/d/1DOBR7xySqjyxnxLoGrpbzWymuraH6ezP/edit?usp=sharing&ouid=103616862020210601390&rtpof=true&sd=true"
+                        <a href="https://1drv.ms/w/s!AsNXwuWoeJ5krGfzo_kZwaNM9HwT?e=MWszhc"
                             target="_blank">
                             <button>Download CV</button>
                         </a>
