@@ -25,7 +25,7 @@ content-classes="text-red-500 text-8xl"/>
 <script >
 import { defineComponent, ref } from "vue"
 // import image in vite
-import imageUrl from '@/assets/profilePic/dp.png'
+import imageUrl from '@/assets/profilePic/default.jpg'
 
 export default defineComponent({
     name: "CustomersFeedback",
@@ -34,27 +34,27 @@ export default defineComponent({
     setup() {
         const items = ref([
             {
-                title: 'Excelent',
-                content: 'good morning',
+                title: 'Timely Support',
+                content: 'The support I received was fast and my issue was addressed with a single interaction. Awesome!',
                 image: imageUrl,
                 author: 'John Smith',
 
             },
             {
-                title: 'true',
-                content: 'good evening',
+                title: 'Thank you',
+                content: 'Thank you so much for your good work',
                 image: imageUrl,
-                author: 'Kelvin Simiti',
+                author: 'Pokot Tours',
 
             }
         ])
         return { items }
     },
-    methods: {
-        getImageUrl(name) {
-            return new URL(`./dir/${name}.png`, import.meta.url).href
-        }
-    },
+    // methods: {
+        // getImageUrl(name) {
+            // return new URL(`./dir/${name}.png`, import.meta.url).href
+        // }
+    // },
     // data() {
     //     return {
     //         items:[
@@ -89,7 +89,7 @@ export default defineComponent({
 
 
 
-.section::before {
+/*.section::before {
     content: '';
     position: absolute;
     width: 15em;
@@ -112,7 +112,7 @@ export default defineComponent({
     border-radius: 50%;
     border: 1px solid #faa953;
     transform: translate(15rem, 5rem);
-}
+}*/
 
 .column.is-12 {
     display: flex;
@@ -122,8 +122,8 @@ export default defineComponent({
 }
 
 .card {
-    width: 90%;
-    min-height: 30em;
+    width: 80%;
+    min-height: 20em;
     max-height: 31em;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
@@ -179,7 +179,7 @@ export default defineComponent({
 
 <style>
 .text-red-500 {
-    color: #faa953 !important;
+    color: #a989e5 !important;
 }
 
 .mb-40 {
@@ -190,9 +190,23 @@ export default defineComponent({
     margin-top: 0 !important;
 }
 
+.ball{
+    border-radius: 1px solid red;
+}
+
+.text-red-500.text-8xl.mt-5.text-lg{
+    margin: 10px 50px;
+    font-weight: normal;
+    font-style: italic;
+    color: #faa953 !important;
+}
 @media (min-width: 1024px) {
     .lg\:pb-20 {
         padding-bottom: 0 !important;
+    }
+
+    .ml-6 {
+        margin-top: 0 !important;
     }
 }
 </style>
