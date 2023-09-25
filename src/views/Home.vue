@@ -23,7 +23,8 @@
               <div class="profileImg" title="Kelvin Njoro Owino">
                 <img
                   v-bind:src="darkModeToggleImage"
-                  alt="Kelvin Njoro | Principal Kelvo"
+                  alt="Kelvin Njoro Owino"
+                  lazy
                 />
               </div>
             </div>
@@ -85,6 +86,9 @@ import MyWork from "@/components/myWork.vue";
 import Skills from "@/components/skills.vue";
 import Contact from "@/components/contact.vue";
 
+import darkModeImage from "@/assets/profilePic/Portfolio-Kelvin-Njoro-Owino-darkmode-resized.png";
+import regularImage from "@/assets/profilePic/Portfolio-Kelvin-Njoro-Owino-orange-hood-resized.png";
+
 export default {
   name: "Home",
   components: {
@@ -95,27 +99,13 @@ export default {
     Contact,
   },
   computed: {
-    // darkModeToggleImage() {
-    //   return !this.$store.state.isDarkModeActive
-    //     ? (this.imgUrl = new URL(
-    //         "../assets/profilePic/Portfolio-Kelvin-Njoro-Owino-orange-hood-resized.png",
-    //         import.meta.url
-    //       ).href)
-    //     : (this.imgUrl = new URL(
-    //         "../assets/profilePic/Portfolio-Kelvin-Njoro-Owino-darkmode-resized.png",
-    //         import.meta.url
-    //       ).href);
-    //   //   console.log(this.imgUrl)
-    // },
     darkModeToggleImage() {
-      const baseImgUrl = "../assets/profilePic/Portfolio-Kelvin-Njoro-Owino-";
       const imgSuffix = this.$store.state.isDarkModeActive
-        ? "darkmode-resized.png"
-        : "orange-hood-resized.png";
-      return new URL(baseImgUrl + imgSuffix, import.meta.url).href;
+        ? darkModeImage
+        : regularImage;
+      return new URL(imgSuffix, import.meta.url).href;
     },
   },
-  methods: {},
 };
 </script>
 
@@ -228,6 +218,9 @@ export default {
     /* min-height: calc(100vh - 5.25rem); */
     min-height: 100% !important;
   }
+    .column.is-4 {
+  width: auto;
+}
 }
 </style>
 
