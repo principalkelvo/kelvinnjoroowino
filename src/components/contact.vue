@@ -58,19 +58,18 @@ export default {
             const isValid = await this.validateEmail(this.form.email)
             // const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
             // const isValid = false
-            // console.log("send email", isValid)
+            
 
             if (isValid) {
                 this.form.error = '';
                 this.validEmail = false
-                // console.log("sending email", isValid)
                 emailjs.sendForm('service_mvn3n88', 'template_yttdlvj', this.$refs.form, 'Qj_lR13PPkYyF676p')
                     .then((result) => {
                         console.log('SUCCESS!', result.text);
                         this.form.name = ""
                         this.form.email = ""
                         this.form.message = ""
-                        // console.log("sent email", isValid)
+                        
                         alert("Thank you")
                     }, (error) => {
                         console.log('FAILED...', error.text);
@@ -79,7 +78,6 @@ export default {
             else {
                 this.form.error = 'Invalid Email';
                 this.validEmail = true
-                // console.log(this.form.error, this.validEmail)
             }
 
             this.isActive = false
@@ -95,22 +93,13 @@ export default {
             const apiResponse = await fetch(fullURL);
             const data = await apiResponse.json();
             const isValid = data.is_valid_format.value;
-            // console.log("start here", email)
-            // console.log(data)
-            // console.log(data.email, "check email", isValid)
-            // return isValid;
-            // const isValid = true
-            // const deliverability = "UNDELIVERABLE"
+           
             if (data.deliverability === "DELIVERABLE") {
-                // console.log(data.deliverability, "check email", isValid)
                 return isValid;
             }
             else {
-                // console.log(data.deliverability, "wrong email", isValid)
                 return false;
             }
-
-            // return false;
         }
 
     },
@@ -119,9 +108,7 @@ export default {
 </script>
 
 <style scoped>
-/* .section .columns{
-    align-items: flex-start;
-} */
+
 .is-invalid {
     border: 2px solid red;
 }
