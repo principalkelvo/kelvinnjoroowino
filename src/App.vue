@@ -1,26 +1,4 @@
 <script>
-// window.onscroll = () => {
-//   let current = "";
-
-//   sections.forEach((section) => {
-//     const sectionTop = section.offsetTop;
-//     console.log(sectionTop);
-//     if (scrollY >= sectionTop - 60) {
-//       current = section.getAttribute("id");
-//       console.log(current);
-//     }
-//   });
-//   navLi.forEach((li) => {
-//     li.classList.remove("active");
-//     console.log(li);
-
-//     if (li.classList.contains(current)) {
-//       li.classList.add("active");
-//       console.log('active')
-//     }
-//   });
-// };
-
 import Navbar from "@/components/navbar.vue";
 import NavbarMobile from "@/components/navbar-mobile.vue";
 
@@ -53,24 +31,20 @@ export default {
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        // console.log(sectionTop);
+
         if (scrollY >= sectionTop - 60) {
           current = section.getAttribute("id");
-          // console.log(current);
         }
       });
       navLi.forEach((li) => {
         li.classList.remove("active");
-        // console.log(li);
 
         if (li.classList.contains(current)) {
           li.classList.add("active");
-          // console.log('active')
         }
       });
     },
     checkAnimation() {
-      // console.log('checking animation ')
       const fadeIn = document.querySelectorAll(".fadeIn");
       const jumpIn = document.querySelectorAll(".jumpIn");
       const rotateIn = document.querySelectorAll(".circle");
