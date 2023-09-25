@@ -100,10 +100,7 @@ export default {
   },
   computed: {
     darkModeToggleImage() {
-      const imgSuffix = this.$store.state.isDarkModeActive
-        ? darkModeImage
-        : regularImage;
-      return new URL(imgSuffix, import.meta.url).href;
+      return this.$store.state.isDarkModeActive ? darkModeImage : regularImage;
     },
   },
 };
@@ -218,9 +215,9 @@ export default {
     /* min-height: calc(100vh - 5.25rem); */
     min-height: 100% !important;
   }
-    .column.is-4 {
-  width: auto;
-}
+  .column.is-4 {
+    width: auto;
+  }
 }
 </style>
 
