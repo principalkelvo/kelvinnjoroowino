@@ -1,7 +1,7 @@
 <template>
   <div class="service">
     <section class="section" id="service">
-      <div class="columns cards ">
+      <div class="columns cards">
         <div class="column is-4 card fadeIn">
           <div class="projects">
             <div class="success">
@@ -42,7 +42,10 @@
                   <p>Graphic designer</p>
                 </div>
                 <div class="lifeEmoji">
-                  <img src="@/assets/socialIcons/life.png" alt="Graphic designer" />
+                  <img
+                    src="@/assets/socialIcons/life.png"
+                    alt="Graphic designer"
+                  />
                 </div>
                 <div class="jobPercentage">
                   <p>100%</p>
@@ -53,7 +56,10 @@
                   <p>UI/UX designer</p>
                 </div>
                 <div class="lifeEmoji">
-                  <img src="@/assets/socialIcons/life.png" alt="UI/UX designer" />
+                  <img
+                    src="@/assets/socialIcons/life.png"
+                    alt="UI/UX designer"
+                  />
                 </div>
                 <div class="jobPercentage">
                   <p>100%</p>
@@ -64,7 +70,10 @@
                   <p>Full-Stack Developer</p>
                 </div>
                 <div class="lifeEmoji">
-                  <img src="@/assets/socialIcons/life.png" alt="Full-Stack Developer" />
+                  <img
+                    src="@/assets/socialIcons/life.png"
+                    alt="Full-Stack Developer"
+                  />
                 </div>
                 <div class="jobPercentage">
                   <p>100%</p>
@@ -84,18 +93,20 @@
             </div>
             <div class="cardContent">
               <p>
-                Offering fully integrated digital and online design services that incorporate strategy, branding, and
-                messaging for our clients. This methods are adaptable to a wide range of B2B business requirements.
+                Offering fully integrated digital and online design services
+                that incorporate strategy, branding, and messaging for our
+                clients. This methods are adaptable to a wide range of B2B
+                business requirements.
               </p>
             </div>
-            <div class="cardFooter">
+            <!-- <div class="cardFooter">
               <div class="buttons">
                 <a href="https://1drv.ms/w/s!AsNXwuWoeJ5krGfzo_kZwaNM9HwT?e=MWszhc"
                   download="Kelvin Njoro's Resume.pdf">
                   <button>Download CV</button>
                 </a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -134,9 +145,11 @@ export default {
 
 .projects .success .firstRectangle {
   height: 4em;
-  background: linear-gradient(205.37deg,
-      rgba(236, 150, 171, 0.35) -2.42%,
-      rgba(169, 137, 229, 0.5) 103.97%);
+  background: linear-gradient(
+    205.37deg,
+    rgba(236, 150, 171, 0.35) -2.42%,
+    rgba(169, 137, 229, 0.5) 103.97%
+  );
   border-radius: 0.6em;
   position: relative;
   display: flex;
@@ -159,19 +172,14 @@ export default {
 .is-dark-mode-active .projects .success .firstRectangle .secondRectangle {
   background-color: #464646;
   border: 1px solid #ffffff32;
-
 }
 
 .projects .success .firstRectangle.yellowed {
-  background: linear-gradient(180deg,
-      #fbc75b80 0%,
-      #fa964d80 100%);
+  background: linear-gradient(180deg, #fbc75b80 0%, #fa964d80 100%);
 }
 
 .is-dark-mode-active .projects .success .firstRectangle.yellowed {
-  background: linear-gradient(180deg,
-      #5a6dfa80 0%,
-      #10209680 100%);
+  background: linear-gradient(180deg, #5a6dfa80 0%, #10209680 100%);
 }
 
 .projects .success .firstRectangle .secondRectangle p {
@@ -207,9 +215,7 @@ export default {
 /* circular progress bar  */
 .circular-progress {
   position: relative;
-  background: linear-gradient(205.37deg,
-      #ec96ab8f -2.42%,
-      #a989e5cc 103.97%);
+  background: linear-gradient(205.37deg, #ec96ab8f -2.42%, #a989e5cc 103.97%);
   height: 5em;
   width: 5em;
   border-radius: 50%;
@@ -218,15 +224,11 @@ export default {
 }
 
 .circular-progress.yellowed {
-  background: linear-gradient(180deg,
-      #fbc75b80 0%,
-      #fa964d80 100%);
+  background: linear-gradient(180deg, #fbc75b80 0%, #fa964d80 100%);
 }
 
 .is-dark-mode-active .circular-progress.yellowed {
-  background: linear-gradient(180deg,
-      #5a6dfa80 0%,
-      #10209680 100%);
+  background: linear-gradient(180deg, #5a6dfa80 0%, #10209680 100%);
 }
 
 .circular-progress:before {
@@ -262,9 +264,7 @@ export default {
 
 /* center card  */
 .serviceCard {
-  background: linear-gradient(205.37deg,
-      #a989e5 -2.42%,
-      #ec96abb3 103.97%);
+  background: linear-gradient(205.37deg, #a989e5 -2.42%, #ec96abb3 103.97%);
   width: 100%;
   height: 120%;
   display: flex;
@@ -279,9 +279,7 @@ export default {
 }
 
 .is-dark-mode-active .serviceCard {
-  background: linear-gradient(205.37deg,
-      #ec96ab59 -2.42%,
-      #a989e580 103.97%);
+  background: linear-gradient(205.37deg, #ec96ab59 -2.42%, #a989e580 103.97%);
 }
 
 .serviceCard .title {
@@ -387,6 +385,5 @@ export default {
     height: 18em;
     width: 20em;
   }
-
 }
 </style>

@@ -35,10 +35,7 @@
 <script>
 const imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href
 const imgUrlDark = new URL('../assets/modeSVG/Land Switch - Dark.svg', import.meta.url).href
-// const imgUrl ="hello"
 
-// const imageurl = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href
-            // console.log(imgUrl)
 
 
 export default {
@@ -46,10 +43,7 @@ export default {
     data() {
 
         return {
-            // imgUrl : new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href,
-            // isDarkModeActive : false,
-            // = new URL('../assets/modeSVG/Land Switch - Dark.svg', import.meta.url).href
-            // = new URL('../assets/modeSVG/Switch - Orange.svg', import.meta.url).href
+           
         }
     },
     computed: {
@@ -57,26 +51,11 @@ export default {
         darkModeToggleIcon() {
 
             return !this.$store.state.isDarkModeActive ? imgUrl : imgUrlDark 
-            //   console.log(this.imgUrl)
+           
         },
     },
     methods: {
-        //     darkmode() {
-        //   console.log("dark");
-        //   if (this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href) {
-
-
-        // this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href
-        //   } else {
-        // this.imgUrl = new URL('../assets/modeSVG/Switch - Orange.svg',import.meta.url).href
-        //   }
-        //   var slider = document.getElementById("dark");
-        //   slider.className += " slideout";
-        //   setTimeout(function () {
-        //     slider.classList.remove("slideout");
-        //   }, 100);
-        //   this.$store.commit('darkModeToggle')
-        // },
+      
         darkModeToggle() {
             var slider = document.getElementById("dark");
             slider.className += " slideout";
