@@ -163,34 +163,32 @@
                       v-bind:alt="project.name"
                     />
                   </div>
-                  <div class="imageFull">
+                  <!-- <div class="imageFull" v-if="project.image1">
                     <img
                       :src="getImgUrl(project.image1)"
                       v-bind:alt="project.name"
                     />
-                  </div>
+                  </div> -->
                 </div>
                 <div class="buttons small">
                   <h1>{{ project.name }}</h1>
                   <h2>{{ project.description }}</h2>
                   <hr style="border: 0.0625rem solid #faaa53; width: 80%" />
                   <div class="btn">
-                    <button>View Design</button>
-                    <button class="no-fill">View Demo</button>
+                    <a
+                      v-if="project.design"
+                      :href="project.design"
+                      target="_blank"
+                    >
+                      <button>View Design</button>
+                    </a>
+                    <a v-if="project.demo" :href="project.demo" target="_blank">
+                      <button class="no-fill">View Demo</button>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- <div class="card">
-
-                        </div>
-                        <div class="card">
-
-                        </div>
-
-                        <div class="card">
-
-                        </div> -->
           </div>
         </div>
       </div>
@@ -211,48 +209,33 @@ export default {
       scrollAmount: 320,
       projects: [
         {
-          name: "Minimal Portfolio Project and Design",
-          image: "minimalist-Portfolio-project-design-source-code-free",
-          image1: "full-minimalist-Portfolio-project-design-source-code-free",
+          name: "Artika Hub Dance",
+          image: "artika_dance.png",
+          image1: "artika_hub_full_page.png",
           description:
-            "This project is done by using HTML, CSS and JS only, to create a cool minimalist Portfolio page. It is a fully developed light mode for all gadgets",
+            "'Introducing 'Artika Hub Limited Dance', a sleek one-page project developed using React and Vite. With its intuitive navigation and a dedicated contact section for email outreach, it's not only visually appealing but also user-friendly",
+          design: "https://artikahub.com/",
+          demo: "https://artikahub.com/",
         },
 
         {
-          name: "Moringa School Project and Design",
-          image: "School-Landing-Page-Moringa-Project",
-          image1: "School Landing Page_moringa-simple-design-for-professionals",
+          name: "Total Wellness International",
+          image: "total_wellness.png",
+          image1: "total_wellness.png",
           description:
-            "This is a landing page for Moringa school. The main purpose of this repository is to share a simple school landing page",
-        },
-        {
-          name: "Interview Hack Project and Design",
-          image: "Hack_interview_simple_design_navbar_hero_landing_page",
-          image1:
-            "register_login_signup_forgot_password_design_source_code_motivation",
-          description:
-            "Crack Interviews with this website content, get interview preparation techniques",
+            "Total Wellness is a comprehensive mental health platform, developed using React, Vite, and Django. It supports appointment scheduling, payments, video calls, and chats with counselors. Admins have access to system analytics. Design visuals were conceptualized with Figma (currently private).",
+          demo: "https://total-wellness.vercel.app/",
         },
         {
           name: "Anonymous File Sharing Project",
-          image: "home-anonymous-file-sharing-project-design-source-code",
-          image1: "Anonymously_send_images_and_files_upload_download_big_files",
-          description:
-            "Transmit files to other individuals using this anonymous file-sharing service without revealing any personal information about you or the recipient",
-        },
-        {
-          name: "Point of Sale Project and Design",
-          image: "point-of-sale-design-Add-Product-simple-source-code-free",
+          image: "home-anonymous-file-sharing-project-design-source-code.jpg",
           image1:
-            "Point_of_sale_ecommerce_Dashboard_admin_employee_and_products",
-          description: "",
-        },
-        {
-          name: "Tumaini Church Project and Design",
-          image:
-            "Simple_Contact_form_with_vue_html_css_js_design_for_tumaini_church",
-          image1: "Support_Donate_church_motivation_community_youth",
-          description: "",
+            "Anonymously_send_images_and_files_upload_download_big_files.jpg",
+          description:
+            "A secure and user-friendly file-sharing platform crafted with HTML, CSS, and JS. Seamlessly drag-and-drop or browse to upload, ensuring your data remains private and anonymous. Hosted effortlessly on GitHub pages and optimized for all devices.",
+          design:
+            "https://www.figma.com/file/gy6b2ASwlPJkb0W9UsPyIE/Anonymous-file-sharing-and-text?type=design&node-id=0%3A1&mode=design&t=zuKD1Dm4TRBhWfTR-1",
+          demo: "https://principalkelvo.github.io/anonymous-file-sharing/",
         },
       ],
     };
@@ -267,8 +250,7 @@ export default {
       }
     },
     getImgUrl(project) {
-      return new URL(`../assets/myDesigns/${project}.jpg`, import.meta.url)
-        .href;
+      return new URL(`../assets/myDesigns/${project}`, import.meta.url).href;
     },
   },
 };
@@ -395,8 +377,8 @@ export default {
 }
 
 .columns .cards .card .images .imageHero {
-  width: 65%;
-  height: 100%;
+  width: 95%;
+  /* height: 100%; */
   /* position: absolute; */
 }
 
