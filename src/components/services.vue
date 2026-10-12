@@ -11,7 +11,7 @@
                     </div>
                     <div class="buttons jumpIn">
                         <a href="https://1drv.ms/w/s!AsNXwuWoeJ5krGfzo_kZwaNM9HwT?e=MWszhc"
-                            target="_blank">
+                            target="_blank" rel="noopener noreferrer">
                             <button>Download CV</button>
                         </a>
                     </div>
@@ -111,7 +111,7 @@
     flex-direction: column;
     align-items: center;
     width: 15em;
-    transition: all .5s ease-in-out 0s;
+    transition: transform .5s cubic-bezier(0.22, 1, 0.36, 1), opacity .5s ease, box-shadow .5s ease, background-color .4s ease;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     /* height: 16em; 
     */

@@ -1,51 +1,30 @@
 import { createStore } from "vuex";
+
+const DARK_CLASS = "is-dark-mode-active";
+
 export default createStore({
   state: {
-    // Dark Mode
-    isDarkModeActive: " ",
+    // public/head.js applies the saved/system theme before first paint
+    isDarkModeActive: document.documentElement.classList.contains(DARK_CLASS),
+    // id of the section currently in view, drives nav highlighting
+    activeSection: "home",
   },
   mutations: {
-    // Dark Mode toggle
-    /* Dark Mode */
-    initialiseStore(state) {
-      if (localStorage.getItem("Dark")) {
-        const htmlClassName = "is-dark-mode-active";
-        // Replace the state object with the stored item
-        state.isDarkModeActive = JSON.parse(localStorage.getItem("Dark"));
-        if (state.isDarkModeActive) {
-          document.documentElement.classList.add(htmlClassName);
-        } else {
-          document.documentElement.classList.remove(htmlClassName);
-        }
-      } else if (window.matchMedia("(prefers-color-scheme: dark)")) {
-        console.log(window.matchMedia, " is dark");
-        const htmlClassName = "is-dark-mode-active";
-        state.isDarkModeActive = true;
-        if (state.isDarkModeActive) {
-          document.documentElement.classList.add(htmlClassName);
-        } else {
-          document.documentElement.classList.remove(htmlClassName);
-        }
-        localStorage.setItem("Dark", state.isDarkModeActive);
-      } else {
-        state.isDarkModeActive = false;
+    darkModeToggle(state) {
+      state.isDarkModeActive = !state.isDarkModeActive;
+      document.documentElement.classList.toggle(
+        DARK_CLASS,
+        state.isDarkModeActive
+      );
+      try {
+        localStorage.setItem("Dark", JSON.stringify(state.isDarkModeActive));
+      } catch (e) {
+        // storage blocked (private mode etc.) - theme still works for this visit
       }
     },
 
-    darkModeToggle(state, payload = null) {
-      const htmlClassName = "is-dark-mode-active";
-
-      state.isDarkModeActive = !state.isDarkModeActive;
-
-      localStorage.setItem("Dark", state.isDarkModeActive);
-
-      if (state.isDarkModeActive) {
-        document.documentElement.classList.add(htmlClassName);
-      } else {
-        document.documentElement.classList.remove(htmlClassName);
-      }
+    setActiveSection(state, id) {
+      state.activeSection = id;
     },
   },
-  actions: {},
-  getters: {},
 });

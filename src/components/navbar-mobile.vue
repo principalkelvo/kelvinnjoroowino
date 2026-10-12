@@ -1,108 +1,52 @@
 <template>
-    <div class="navigation">
+    <nav class="navigation" aria-label="Sections">
         <ul>
             <!-- list rendering -->
-            <li v-for="item in items" 
-            @click="toggleList(item)" 
-            :class="[{ active: item.active},item.activeClass]">
-                <a :href="`${item.routed}`">
+            <li v-for="item in items" :key="item.section"
+            @click="$store.commit('setActiveSection', item.section)"
+            :class="{ active: activeSection === item.section }">
+                <a :href="`#${item.section}`" :aria-current="activeSection === item.section ? 'location' : null">
                     <span class="icon">
-                        <i :class="[faClass(item.icon)]" 
-                        style="width:auto" 
-                        aria-hidden="true"></i>
+                        <svg :viewBox="`0 0 ${item.icon[0]} ${item.icon[1]}`" aria-hidden="true">
+                            <path :d="item.icon[4]" fill="currentColor" />
+                        </svg>
                     </span>
                     <span class="text">{{ item.text }}</span>
                 </a>
             </li>
-            <div class="indicator"></div>
+            <li class="indicator" aria-hidden="true"></li>
         </ul>
-    </div>
+    </nav>
 </template>
 
 <script>
+// individual icon imports are tree-shaken: only these five paths get bundled
+import { faHouse, faWrench, faDiagramProject, faGears, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 export default {
     name: "navbarMobile",
     data() {
         return {
-            //listItems
+            //listItems ([width, height, ligatures, unicode, path] = icon.icon)
             items: [
-                {
-                    text: 'Home',
-                    icon: 'home',
-                    active: false,
-                    routed: "#",
-                    activeClass: 'home'
-                },
-               
-                {
-                    text: 'Services',
-                    icon: 'wrench',
-                    active: false,
-                    routed: "#services",
-                    activeClass: 'services'
-                },
-               
-                {
-                    text: 'Projects',
-                    icon: 'project-diagram',
-                    active: false,
-                    routed: "#myWork",
-                    activeClass: 'myWork'
-                },
-                  {
-                    text: 'Skills',
-                    icon: 'cogs',
-                    active: false,
-                    routed: "#skills",
-                    activeClass: 'skills'
-
-
-                },
-                {
-                    text: 'Contact',
-                    icon: 'phone',
-                    active: false,
-                    routed: "#contact",
-                    activeClass: 'contact',
-                }
+                { text: 'Home', icon: faHouse.icon, section: 'home' },
+                { text: 'Services', icon: faWrench.icon, section: 'services' },
+                { text: 'Projects', icon: faDiagramProject.icon, section: 'myWork' },
+                { text: 'Skills', icon: faGears.icon, section: 'skills' },
+                { text: 'Contact', icon: faPhone.icon, section: 'contact' },
             ]
         }
     },
-   
-    methods: {
-        toggleList(item) {
-            //remove active class to any active items
-            this.items.forEach((item) =>
-                item.active = false);
-            //add active class to current item
-            item.active = true;
+    computed: {
+        activeSection() {
+            return this.$store.state.activeSection
         },
-        faClass(icon) {
-            return `fa fa-${icon}`;
-          }
-    }
-
+    },
 }
 
 </script>
 
 <style scoped>
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-:root{
-    --clr: #FA964D;
-}
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: black;
-} */
 .navigation {
     width: 25rem;
     height: 4.375rem;
@@ -149,9 +93,14 @@ body{
     line-height: 4.6875rem;
     font-size: 1.5em;
     /* text-align: center; */
-    transition: 0.5s;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
     color: #000;
+}
 
+.navigation ul li a .icon svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
 }
 
 .navigation ul li.active a .icon {
@@ -168,7 +117,7 @@ body{
     font-size: .75em;
     border-radius: .75rem;
     letter-spacing: 0.05em;
-    transition: 0.5s;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
     opacity:0;
     transform: translateY(.9375rem);
 }
@@ -179,7 +128,7 @@ body{
     transform: translateY(-0.25rem);
 }
 
-.indicator {
+.navigation ul li.indicator {
     position: absolute;
     top: -2.1875rem;
     width: 4.375rem;
@@ -187,8 +136,8 @@ body{
     background: #fff;
     border-radius: 50%;
     z-index: 1;
-    /* border: .375rem solid #000; */
-    transition: 0.5s;
+    list-style: none;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .indicator::before {

@@ -23,7 +23,7 @@
 <script>
 import { defineComponent, ref } from "vue";
 // import image in vite
-import imageUrl from "@/assets/profilePic/default.jpg";
+import imageUrl from "@/assets/optimized/avatar-default.webp";
 
 export default defineComponent({
   name: "CustomersFeedback",

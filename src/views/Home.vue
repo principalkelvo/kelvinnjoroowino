@@ -21,19 +21,32 @@
           <div class="profile">
             <div class="image is-large">
               <div class="profileImg" title="Kelvin Njoro Owino">
-                <img
-                  v-bind:src="darkModeToggleImage"
-                  alt="Kelvin Njoro Owino"
-                  lazy
-                />
+                <Transition name="profile-swap" mode="out-in">
+                  <img
+                    :key="darkModeToggleImage"
+                    :src="darkModeToggleImage"
+                    alt="Kelvin Njoro Owino"
+                    width="672"
+                    height="1000"
+                    fetchpriority="high"
+                    decoding="async"
+                  />
+                </Transition>
               </div>
             </div>
             <div class="bigCircle">
               <div class="github">
-                <a href="https://github.com/principalkelvo" class="socialLink">
+                <a
+                  href="https://github.com/principalkelvo"
+                  class="socialLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src="@/assets/socialIcons/github.png"
-                    alt="github profile"
+                    alt="GitHub profile"
+                    width="32"
+                    height="32"
                   />
                 </a>
               </div>
@@ -43,10 +56,14 @@
                 <a
                   href="https://www.linkedin.com/in/kelvin-njoro-8abab4210/"
                   class="socialLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src="@/assets/socialIcons/linkedin.png"
-                    alt="linkedin profile"
+                    alt="LinkedIn profile"
+                    width="32"
+                    height="32"
                   />
                 </a>
               </div>
@@ -54,10 +71,14 @@
                 <a
                   href="https://twitter.com/KelvinPrincipal"
                   class="socialLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src="@/assets/socialIcons/twitter.png"
-                    alt="twitter profile"
+                    alt="Twitter profile"
+                    width="32"
+                    height="32"
                   />
                 </a>
               </div>
@@ -86,8 +107,8 @@ import MyWork from "@/components/myWork.vue";
 import Skills from "@/components/skills.vue";
 import Contact from "@/components/contact.vue";
 
-import darkModeImage from "@/assets/profilePic/Portfolio-Kelvin-Njoro-Owino-darkmode-resized.png";
-import regularImage from "@/assets/profilePic/Portfolio-Kelvin-Njoro-Owino-orange-hood-resized.png";
+import darkModeImage from "@/assets/optimized/profile-dark.webp";
+import regularImage from "@/assets/optimized/profile-light.webp";
 
 export default {
   name: "Home",
@@ -243,6 +264,17 @@ export default {
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+/* profile photo cross-fade on theme switch */
+.profile-swap-enter-active,
+.profile-swap-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.profile-swap-enter-from,
+.profile-swap-leave-to {
+  opacity: 0;
 }
 
 .profile .bigCircle {
