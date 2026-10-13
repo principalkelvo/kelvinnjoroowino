@@ -1,0 +1,161 @@
+{
+  "$schema": "./site.schema.json",
+
+  "meta": {
+    "title": "Kelvin Njoro Owino | UI/UX Designer | Full-Stack Developer",
+    "description": "A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product",
+    "shareTitle": "Kelvin Njoro Owino | Principal Kelvo | Full-Stack Developer",
+    "shareDescription": "I design and develop beautifully simple things, and I love what I do.",
+    "author": "Kelvin Njoro Owino",
+    "keywords": "Web design and development, free source code, portfolio, full stack dev,software engineer, React, Vue, HTML, Django, Wordpress, Figma, Python, Rails, Javascript",
+    "url": "https://principalkelvo.netlify.app/",
+    "themeColor": "#fa964d",
+    "googleAnalyticsId": "G-W3WEHXQMVX",
+    "googleSiteVerification": "aRsRRIpcg8zrdVKSNUn7wIr8oaq2eaSJmDXolJAEnGI"
+  },
+
+  "nav": {
+    "brand": "Portfolio",
+    "links": [
+      { "label": "Home", "section": "home", "icon": "home" },
+      { "label": "Services", "section": "services", "icon": "services" },
+      { "label": "Projects", "section": "myWork", "icon": "projects" },
+      { "label": "Skills", "section": "skills", "icon": "skills" },
+      { "label": "Contact", "section": "contact", "icon": "contact" }
+    ]
+  },
+
+  "hero": {
+    "greeting": "Hy! I Am",
+    "name": "Kelvin Njoro",
+    "tagline": "I design and develop beautifully simple things, and I love what I do.",
+    "button": { "label": "Hire me", "href": "#contact" },
+    "photo": {
+      "alt": "Kelvin Njoro Owino",
+      "light": "profile/light.webp",
+      "dark": "profile/dark.webp"
+    },
+    "socials": [
+      { "name": "GitHub", "url": "https://github.com/principalkelvo", "icon": "icons/github.png" },
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/kelvin-njoro-8abab4210/", "icon": "icons/linkedin.png" },
+      { "name": "Twitter", "url": "https://twitter.com/KelvinPrincipal", "icon": "icons/twitter.png" }
+    ]
+  },
+
+  "highlights": {
+    "stats": [
+      { "label": "Projects done successfull", "value": "26" },
+      { "label": "Jobs completed", "value": "12" }
+    ],
+    "experience": {
+      "title": "Service",
+      "icon": "icons/emoji.svg",
+      "roleIcon": "icons/life.png",
+      "roles": [
+        { "title": "Graphic designer", "level": "100%" },
+        { "title": "UI/UX designer", "level": "100%" },
+        { "title": "Full-Stack Developer", "level": "100%" }
+      ],
+      "footer": "Experience working"
+    },
+    "about": {
+      "title": "My awesome",
+      "highlight": "Services",
+      "text": "Offering fully integrated digital and online design services that incorporate strategy, branding, and messaging for our clients. This methods are adaptable to a wide range of B2B business requirements."
+    }
+  },
+
+  "services": {
+    "title": "My awesome",
+    "highlight": "Services",
+    "button": {
+      "label": "Download CV",
+      "href": "https://1drv.ms/w/s!AsNXwuWoeJ5krGfzo_kZwaNM9HwT?e=MWszhc"
+    },
+    "items": [
+      {
+        "title": "Design",
+        "icon": "icons/love.png",
+        "text": "Design, which is sometimes misunderstood as the superficial process of creating, executing, or constructing a product's appearance, actually involves a lot more. It is a cross-functional task that entails market research, concept design, and technological research.",
+        "button": { "label": "My Designs", "href": "#myWork" }
+      },
+      {
+        "title": "Developer",
+        "icon": "icons/celebrate.png",
+        "text": "In charge of developing and improving software and apps. This comprises software research, design, and development. Collaboration between analysts and computer engineers to achieve the proposed software application performance",
+        "button": { "label": "View Projects", "href": "#myWork" }
+      },
+      {
+        "title": "Ui/Ux",
+        "icon": "icons/ok.png",
+        "text": "Enhance the usability of the user interface to increase user satisfaction. Work on linguistic and visual input to translate the brand into a sophisticated and user-friendly website that communicates information fast.",
+        "button": { "label": "Web Designs", "href": "#myWork" }
+      }
+    ]
+  },
+
+  "projects": {
+    "title": "Clients get",
+    "highlight": "always exceptional",
+    "subtitle": "works from me....",
+    "items": [
+      {
+        "name": "Artika Hub Dance",
+        "image": "projects/artika-dance.webp",
+        "description": "'Introducing 'Artika Hub Limited Dance', a sleek one-page project developed using React and Vite. With its intuitive navigation and a dedicated contact section for email outreach, it's not only visually appealing but also user-friendly",
+        "design": "https://artikahub.com/",
+        "demo": "https://artikahub.com/"
+      },
+      {
+        "name": "Total Wellness International",
+        "image": "projects/total-wellness.webp",
+        "description": "Total Wellness is a comprehensive mental health platform, developed using React, Vite, and Django. It supports appointment scheduling, payments, video calls, and chats with counselors. Admins have access to system analytics. Design visuals were conceptualized with Figma (currently private).",
+        "demo": "https://total-wellness.vercel.app/"
+      },
+      {
+        "name": "Anonymous File Sharing Project",
+        "image": "projects/anonymous-file-sharing.webp",
+        "description": "A secure and user-friendly file-sharing platform crafted with HTML, CSS, and JS. Seamlessly drag-and-drop or browse to upload, ensuring your data remains private and anonymous. Hosted effortlessly on GitHub pages and optimized for all devices.",
+        "design": "https://www.figma.com/file/gy6b2ASwlPJkb0W9UsPyIE/Anonymous-file-sharing-and-text?type=design&node-id=0%3A1&mode=design&t=zuKD1Dm4TRBhWfTR-1",
+        "demo": "https://principalkelvo.github.io/anonymous-file-sharing/"
+      }
+    ]
+  },
+
+  "testimonials": [
+    {
+      "title": "Timely Support",
+      "content": "The support I received was fast and my issue was addressed with a single interaction. Awesome!",
+      "author": "Total Wellness",
+      "image": "testimonials/default.webp"
+    },
+    {
+      "title": "Thank you",
+      "content": "Thank you so much for your good work",
+      "author": "Pokot Tours",
+      "image": "testimonials/default.webp"
+    }
+  ],
+
+  "skills": {
+    "title": "Skills Used For All This",
+    "highlight": "Design & Development",
+    "paragraphs": [
+      "Understand the topic matter of the customer completely and build on previous expertise, becoming intimately familiar with the subject area. Determine how to respond to the demands and requirements of a certain consumer.",
+      "The results of research are being used to technological solutions product, such as materials, systems, and procedures. Engineer who uses research to create commercial items for a client."
+    ],
+    "button": { "label": "Hire Me", "href": "#contact" }
+  },
+
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Contact Me",
+    "successMessage": "Thank you! Your message is on its way.",
+    "errorMessage": "Sorry, the message couldn't be sent. Please try again in a moment.",
+    "emailjs": {
+      "serviceId": "service_mvn3n88",
+      "templateId": "template_yttdlvj",
+      "publicKey": "Qj_lR13PPkYyF676p"
+    }
+  }
+}

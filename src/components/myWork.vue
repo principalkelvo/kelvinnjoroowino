@@ -3,8 +3,10 @@
     <section class="section" id="myWork">
       <div class="columns jumpIn">
         <div class="title">
-          <h1>Clients get <span>always exceptional</span></h1>
-          <h2>works from me....</h2>
+          <h1>
+            {{ projects.title }} <span>{{ projects.highlight }}</span>
+          </h1>
+          <h2>{{ projects.subtitle }}</h2>
         </div>
       </div>
       <div class="columns jumpIn">
@@ -168,12 +170,12 @@
             </div>
           </div>
           <div class="allCards" ref="cards">
-            <div v-for="project in projects" :key="project.name">
+            <div v-for="project in projects.items" :key="project.name">
               <div class="card">
                 <div class="images">
                   <div class="imageHero">
                     <img
-                      :src="project.image"
+                      :src="img(project.image)"
                       :alt="project.name"
                       width="760"
                       height="367"
@@ -216,11 +218,8 @@
 </template>
 <script>
 import CustomersFeedback from "@/components/customersFeedback.vue";
+import content, { img } from "@/content";
 
-// static imports so Vite only bundles the screenshots actually shown
-import artikaDance from "@/assets/optimized/artika-dance.webp";
-import totalWellness from "@/assets/optimized/total-wellness.webp";
-import anonymousFileSharing from "@/assets/optimized/anonymous-file-sharing.webp";
 export default {
   name: "myWork",
   components: {
@@ -228,36 +227,11 @@ export default {
   },
   data() {
     return {
-      projects: [
-        {
-          name: "Artika Hub Dance",
-          image: artikaDance,
-          description:
-            "'Introducing 'Artika Hub Limited Dance', a sleek one-page project developed using React and Vite. With its intuitive navigation and a dedicated contact section for email outreach, it's not only visually appealing but also user-friendly",
-          design: "https://artikahub.com/",
-          demo: "https://artikahub.com/",
-        },
-
-        {
-          name: "Total Wellness International",
-          image: totalWellness,
-          description:
-            "Total Wellness is a comprehensive mental health platform, developed using React, Vite, and Django. It supports appointment scheduling, payments, video calls, and chats with counselors. Admins have access to system analytics. Design visuals were conceptualized with Figma (currently private).",
-          demo: "https://total-wellness.vercel.app/",
-        },
-        {
-          name: "Anonymous File Sharing Project",
-          image: anonymousFileSharing,
-          description:
-            "A secure and user-friendly file-sharing platform crafted with HTML, CSS, and JS. Seamlessly drag-and-drop or browse to upload, ensuring your data remains private and anonymous. Hosted effortlessly on GitHub pages and optimized for all devices.",
-          design:
-            "https://www.figma.com/file/gy6b2ASwlPJkb0W9UsPyIE/Anonymous-file-sharing-and-text?type=design&node-id=0%3A1&mode=design&t=zuKD1Dm4TRBhWfTR-1",
-          demo: "https://principalkelvo.github.io/anonymous-file-sharing/",
-        },
-      ],
+      projects: content.projects,
     };
   },
   methods: {
+    img,
     scrollCards(direction) {
       this.$refs.cards.scrollBy({ left: direction * 350, behavior: "smooth" });
     },

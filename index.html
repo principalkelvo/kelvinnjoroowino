@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- {{ ... }} placeholders are filled from src/content/site.json at build time -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kelvin Njoro Owino | UI/UX Designer | Full-Stack Developer</title>
+    <title>{{ meta.title }}</title>
 
     <!-- theme + analytics bootstrap (kept external so the CSP needs no 'unsafe-inline') -->
-    <script src="/head.js"></script>
+    <script src="/head.js" data-ga-id="{{ meta.googleAnalyticsId }}"></script>
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-W3WEHXQMVX"
+      src="https://www.googletagmanager.com/gtag/js?id={{ meta.googleAnalyticsId }}"
     ></script>
 
     <link rel="icon" href="/favicon.ico" />
@@ -20,33 +21,18 @@
       href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap"
     />
 
-    <meta
-      name="google-site-verification"
-      content="aRsRRIpcg8zrdVKSNUn7wIr8oaq2eaSJmDXolJAEnGI"
-    />
-    <meta
-      name="description"
-      content="A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product"
-    />
-    <meta name="author" content="Kelvin Njoro Owino" />
-    <meta
-      name="keywords"
-      content="Web design and development, free source code, portfolio, full stack dev,software engineer, React, Vue, HTML, Django, Wordpress, Figma, Python, Rails, Javascript"
-    />
-    <meta name="theme-color" content="#fa964d" />
-    <link rel="canonical" href="https://principalkelvo.netlify.app/" />
+    <meta name="google-site-verification" content="{{ meta.googleSiteVerification }}" />
+    <meta name="description" content="{{ meta.description }}" />
+    <meta name="author" content="{{ meta.author }}" />
+    <meta name="keywords" content="{{ meta.keywords }}" />
+    <meta name="theme-color" content="{{ meta.themeColor }}" />
+    <link rel="canonical" href="{{ meta.url }}" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Kelvin Njoro Owino Portfolio" />
-    <meta
-      property="og:title"
-      content="Kelvin Njoro Owino | Principal Kelvo | Full-Stack Developer"
-    />
-    <meta
-      property="og:description"
-      content="I design and develop beautifully simple things, and I love what I do."
-    />
-    <meta property="og:url" content="https://principalkelvo.netlify.app/" />
+    <meta property="og:site_name" content="{{ meta.author }}" />
+    <meta property="og:title" content="{{ meta.shareTitle }}" />
+    <meta property="og:description" content="{{ meta.shareDescription }}" />
+    <meta property="og:url" content="{{ meta.url }}" />
   </head>
 
   <body>

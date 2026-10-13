@@ -4,7 +4,7 @@
         <nav class="navbar">
             <!-- navbar logo  -->
             <div class="navbar-logo">
-                <p>Portfolio</p>
+                <p>{{ content.nav.brand }}</p>
                 <button class="mode" type="button" @click="darkModeToggle"
                     :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
                     :aria-pressed="isDark">
@@ -17,13 +17,13 @@
             <!-- navbar items  -->
             <div class="navbar-items">
                 <ul>
-                    <li v-for="link in links" :key="link.id">
-                        <a :href="link.href" :class="{ active: activeSection === link.id }"
-                            :aria-current="activeSection === link.id ? 'location' : null">{{ link.text }}</a>
+                    <li v-for="link in textLinks" :key="link.section">
+                        <a :href="`#${link.section}`" :class="{ active: activeSection === link.section }"
+                            :aria-current="activeSection === link.section ? 'location' : null">{{ link.label }}</a>
                     </li>
                     <!-- navbar items button -->
-                    <li><a href="#contact" class="buttons is-large">
-                            <button tabindex="-1">Contact</button>
+                    <li v-if="contactLink"><a href="#contact" class="buttons is-large">
+                            <button tabindex="-1">{{ contactLink.label }}</button>
                         </a></li>
                 </ul>
             </div>
@@ -36,17 +36,16 @@
 <script>
 import imgUrl from '@/assets/modeSVG/Switch - Orange.svg'
 import imgUrlDark from '@/assets/modeSVG/Land Switch - Dark.svg'
+import content from '@/content'
 
 export default {
     name: 'navbar',
     data() {
         return {
-            links: [
-                { id: 'home', href: '#home', text: 'Home' },
-                { id: 'skills', href: '#skills', text: 'Skills' },
-                { id: 'services', href: '#services', text: 'Services' },
-                { id: 'myWork', href: '#myWork', text: 'Projects' },
-            ],
+            content,
+            // the contact link is shown as a button, the rest as text links
+            textLinks: content.nav.links.filter((link) => link.section !== 'contact'),
+            contactLink: content.nav.links.find((link) => link.section === 'contact'),
         }
     },
     computed: {

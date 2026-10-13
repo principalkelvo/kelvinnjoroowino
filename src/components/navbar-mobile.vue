@@ -2,16 +2,16 @@
     <nav class="navigation" aria-label="Sections">
         <ul>
             <!-- list rendering -->
-            <li v-for="item in items" :key="item.section"
+            <li v-for="item in items.slice(0, 5)" :key="item.section"
             @click="$store.commit('setActiveSection', item.section)"
             :class="{ active: activeSection === item.section }">
                 <a :href="`#${item.section}`" :aria-current="activeSection === item.section ? 'location' : null">
                     <span class="icon">
-                        <svg :viewBox="`0 0 ${item.icon[0]} ${item.icon[1]}`" aria-hidden="true">
-                            <path :d="item.icon[4]" fill="currentColor" />
+                        <svg :viewBox="`0 0 ${icon(item)[0]} ${icon(item)[1]}`" aria-hidden="true">
+                            <path :d="icon(item)[4]" fill="currentColor" />
                         </svg>
                     </span>
-                    <span class="text">{{ item.text }}</span>
+                    <span class="text">{{ item.label }}</span>
                 </a>
             </li>
             <li class="indicator" aria-hidden="true"></li>
@@ -20,26 +20,31 @@
 </template>
 
 <script>
-// individual icon imports are tree-shaken: only these five paths get bundled
-import { faHouse, faWrench, faDiagramProject, faGears, faPhone } from '@fortawesome/free-solid-svg-icons'
+// individual icon imports are tree-shaken: only these paths get bundled
+import { faHouse, faWrench, faDiagramProject, faGears, faPhone, faUser, faStar, faCircle } from '@fortawesome/free-solid-svg-icons'
+import content from '@/content'
+
+// icon names usable for nav.links[].icon in site.json
+const ICONS = {
+    home: faHouse, services: faWrench, projects: faDiagramProject, skills: faGears,
+    contact: faPhone, about: faUser, testimonials: faStar,
+}
 
 export default {
     name: "navbarMobile",
     data() {
-        return {
-            //listItems ([width, height, ligatures, unicode, path] = icon.icon)
-            items: [
-                { text: 'Home', icon: faHouse.icon, section: 'home' },
-                { text: 'Services', icon: faWrench.icon, section: 'services' },
-                { text: 'Projects', icon: faDiagramProject.icon, section: 'myWork' },
-                { text: 'Skills', icon: faGears.icon, section: 'skills' },
-                { text: 'Contact', icon: faPhone.icon, section: 'contact' },
-            ]
-        }
+        // the indicator CSS has slots for 5 items
+        return { items: content.nav.links }
     },
     computed: {
         activeSection() {
             return this.$store.state.activeSection
+        },
+    },
+    methods: {
+        // [width, height, ligatures, unicode, path]
+        icon(item) {
+            return (ICONS[item.icon] || faCircle).icon
         },
     },
 }

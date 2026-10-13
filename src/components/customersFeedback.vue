@@ -1,5 +1,5 @@
 <template>
-  <div class="customer">
+  <div class="customer" v-if="items.length">
     <section class="section" id="customer">
       <div class="columns">
         <div class="column is-12">
@@ -21,33 +21,16 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
-// import image in vite
-import imageUrl from "@/assets/optimized/avatar-default.webp";
+import content, { img } from "@/content";
 
-export default defineComponent({
+export default {
   name: "CustomersFeedback",
-  components: {},
-  setup() {
-    const items = ref([
-      {
-        title: "Timely Support",
-        content:
-          "The support I received was fast and my issue was addressed with a single interaction. Awesome!",
-        image: imageUrl,
-        author: "Total Wellness",
-      },
-      {
-        title: "Thank you",
-        content: "Thank you so much for your good work",
-        image: imageUrl,
-        author: "Pokot Tours",
-      },
-    ]);
-    return { items };
+  data() {
+    return {
+      items: content.testimonials.map((t) => ({ ...t, image: img(t.image) })),
+    };
   },
-
-});
+};
 </script>
 
 <style scoped>

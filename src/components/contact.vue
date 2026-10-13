@@ -5,8 +5,8 @@
             <div class="columns">
                 <div class="column is-6 jumpIn">
                     <div class="title fadeIn">
-                        <h1>Get In Touch</h1>
-                        <h2>Contact Me</h2>
+                        <h1>{{ contact.title }}</h1>
+                        <h2>{{ contact.subtitle }}</h2>
                     </div>
                 </div>
                 <div class="column is-6">
@@ -39,13 +39,10 @@
 
 <script>
 import emailjs from '@emailjs/browser';
+import content from '@/content';
 
 // EmailJS IDs are public by design; lock the key to this site's domain in the EmailJS dashboard
-const EMAILJS = {
-    serviceId: 'service_mvn3n88',
-    templateId: 'template_yttdlvj',
-    publicKey: 'Qj_lR13PPkYyF676p',
-};
+const EMAILJS = content.contact.emailjs;
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -53,6 +50,7 @@ export default {
     name: "Contact",
     data() {
         return {
+            contact: content.contact,
             form: {
                 name: "",
                 email: "",
@@ -86,9 +84,9 @@ export default {
                 this.form.name = ""
                 this.form.email = ""
                 this.form.message = ""
-                this.status = { type: 'success', text: "Thank you! Your message is on its way." }
+                this.status = { type: 'success', text: this.contact.successMessage }
             } catch (error) {
-                this.status = { type: 'error', text: "Sorry, the message couldn't be sent. Please try again in a moment." }
+                this.status = { type: 'error', text: this.contact.errorMessage }
             } finally {
                 this.isLoading = false
             }

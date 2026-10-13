@@ -12,9 +12,13 @@
   if (dark) document.documentElement.classList.add("is-dark-mode-active");
 })();
 
+// measurement id comes from site.json via the data-ga-id attribute in index.html
+var gaId = document.currentScript && document.currentScript.dataset.gaId;
 window.dataLayer = window.dataLayer || [];
 function gtag() {
   dataLayer.push(arguments);
 }
-gtag("js", new Date());
-gtag("config", "G-W3WEHXQMVX");
+if (gaId) {
+  gtag("js", new Date());
+  gtag("config", gaId);
+}
