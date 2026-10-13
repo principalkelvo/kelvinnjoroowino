@@ -3,16 +3,13 @@
     <section class="section" id="home">
       <div class="columns">
         <div class="column is-6 content">
-          <p class="title is-large pb-0 dark">Hy! I Am</p>
-          <p class="title is-large pb-0">Kelvin Njoro</p>
-          <p class="content">
-            I design and develop beautifully simple things, and I love what I
-            do.
-          </p>
+          <p class="title is-large pb-0 dark">{{ hero.greeting }}</p>
+          <p class="title is-large pb-0">{{ hero.name }}</p>
+          <p class="content">{{ hero.tagline }}</p>
           <div class="paybtn">
             <div class="buttons small">
-              <a href="#contact">
-                <button>Hire me</button>
+              <a :href="hero.button.href">
+                <button tabindex="-1">{{ hero.button.label }}</button>
               </a>
             </div>
           </div>
@@ -20,44 +17,59 @@
         <div class="column is-6 myProfile">
           <div class="profile">
             <div class="image is-large">
-              <div class="profileImg" title="Kelvin Njoro Owino">
-                <img
-                  v-bind:src="darkModeToggleImage"
-                  alt="Kelvin Njoro Owino"
-                  lazy
-                />
+              <div class="profileImg" :title="hero.photo.alt">
+                <Transition name="profile-swap" mode="out-in">
+                  <img
+                    :key="profileImage"
+                    :src="profileImage"
+                    :alt="hero.photo.alt"
+                    width="672"
+                    height="1000"
+                    fetchpriority="high"
+                    decoding="async"
+                  />
+                </Transition>
               </div>
             </div>
+            <!-- three fixed social slots: first on the big circle, next two on the small one -->
             <div class="bigCircle">
-              <div class="github">
-                <a href="https://github.com/principalkelvo" class="socialLink">
+              <div
+                v-for="social in socials.slice(0, 1)"
+                :key="social.url"
+                class="social-1"
+              >
+                <a
+                  :href="social.url"
+                  class="socialLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
-                    src="@/assets/socialIcons/github.png"
-                    alt="github profile"
+                    :src="img(social.icon)"
+                    :alt="`${social.name} profile`"
+                    width="32"
+                    height="32"
                   />
                 </a>
               </div>
             </div>
             <div class="smallCircle">
-              <div class="linkedin">
+              <div
+                v-for="(social, i) in socials.slice(1, 3)"
+                :key="social.url"
+                :class="`social-${i + 2}`"
+              >
                 <a
-                  href="https://www.linkedin.com/in/kelvin-njoro-8abab4210/"
+                  :href="social.url"
                   class="socialLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img
-                    src="@/assets/socialIcons/linkedin.png"
-                    alt="linkedin profile"
-                  />
-                </a>
-              </div>
-              <div class="twitter">
-                <a
-                  href="https://twitter.com/KelvinPrincipal"
-                  class="socialLink"
-                >
-                  <img
-                    src="@/assets/socialIcons/twitter.png"
-                    alt="twitter profile"
+                    :src="img(social.icon)"
+                    :alt="`${social.name} profile`"
+                    width="32"
+                    height="32"
                   />
                 </a>
               </div>
@@ -85,9 +97,7 @@ import Services from "@/components/services.vue";
 import MyWork from "@/components/myWork.vue";
 import Skills from "@/components/skills.vue";
 import Contact from "@/components/contact.vue";
-
-import darkModeImage from "@/assets/profilePic/Portfolio-Kelvin-Njoro-Owino-darkmode-resized.png";
-import regularImage from "@/assets/profilePic/Portfolio-Kelvin-Njoro-Owino-orange-hood-resized.png";
+import content, { img } from "@/content";
 
 export default {
   name: "Home",
@@ -98,9 +108,19 @@ export default {
     Skills,
     Contact,
   },
+  data() {
+    return {
+      hero: content.hero,
+      socials: content.hero.socials.slice(0, 3),
+    };
+  },
+  methods: {
+    img,
+  },
   computed: {
-    darkModeToggleImage() {
-      return this.$store.state.isDarkModeActive ? darkModeImage : regularImage;
+    profileImage() {
+      const { light, dark } = this.hero.photo;
+      return img(this.$store.state.isDarkModeActive ? dark : light);
     },
   },
 };
@@ -245,6 +265,17 @@ export default {
   object-fit: contain;
 }
 
+/* profile photo cross-fade on theme switch */
+.profile-swap-enter-active,
+.profile-swap-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.profile-swap-enter-from,
+.profile-swap-leave-to {
+  opacity: 0;
+}
+
 .profile .bigCircle {
   width: 15em;
   height: 15em;
@@ -275,7 +306,7 @@ export default {
   background: #364cf3;
 }
 
-.profile .smallCircle .twitter img {
+.profile .smallCircle .social-3 img {
   width: 2.5em;
   height: 2.5em;
   background: #fff;
@@ -289,13 +320,13 @@ export default {
   z-index: 2;
 }
 
-.is-dark-mode-active .profile .smallCircle .twitter img {
+.is-dark-mode-active .profile .smallCircle .social-3 img {
   background: transparent;
   border: 2px solid #fff;
   filter: sepia(100%) hue-rotate(220deg) brightness(59%) saturate(500%);
 }
 
-.profile .bigCircle .github img {
+.profile .bigCircle .social-1 img {
   width: 2.5em;
   height: 2.5em;
   background: #fff;
@@ -308,13 +339,13 @@ export default {
     -0 0 10px 0 #faaa5310, 0 -0 10px 0 #faaa5310;
 }
 
-.is-dark-mode-active .profile .bigCircle .github img {
+.is-dark-mode-active .profile .bigCircle .social-1 img {
   background: #686868;
   /* border: 2px solid #fff; */
   filter: sepia(10%) hue-rotate(190deg) brightness(60%) saturate(400%);
 }
 
-.profile .smallCircle .linkedin img {
+.profile .smallCircle .social-2 img {
   width: 2.5em;
   height: 2.5em;
   /* border: 1px solid #141414; */
@@ -332,18 +363,18 @@ export default {
     -0 0 10px 0 #00000010, 0 -0 10px 0 #00000010;
 }
 
-.is-dark-mode-active .profile .smallCircle .linkedin img {
+.is-dark-mode-active .profile .smallCircle .social-2 img {
   background: #686868;
   border: none;
   filter: sepia(10%) hue-rotate(190deg) brightness(60%) saturate(400%);
 }
 
-.profile .smallCircle .twitter:hover img,
-.profile .bigCircle .github:hover img,
-.profile .smallCircle .linkedin:hover img,
-.profile .smallCircle .twitter:active img,
-.profile .bigCircle .github:active img,
-.profile .smallCircle .linkedin:active img {
+.profile .smallCircle .social-3:hover img,
+.profile .bigCircle .social-1:hover img,
+.profile .smallCircle .social-2:hover img,
+.profile .smallCircle .social-3:active img,
+.profile .bigCircle .social-1:active img,
+.profile .smallCircle .social-2:active img {
   box-shadow: 0em 0em 1rem 0.2rem #faaa53;
 }
 

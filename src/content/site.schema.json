@@ -1,0 +1,257 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Portfolio content",
+  "description": "Everything the site shows. Image paths are relative to src/content/images/.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "nav", "hero", "highlights", "services", "projects", "testimonials", "skills", "contact"],
+  "definitions": {
+    "text": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "pattern": "^(https?://|#|/|mailto:)", "description": "Full URL (https://...), page section (#contact) or mailto: link" },
+    "button": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "href"],
+      "properties": {
+        "label": { "$ref": "#/definitions/text" },
+        "href": { "$ref": "#/definitions/url" }
+      }
+    },
+    "image": { "type": "string", "pattern": "^[\\w./-]+\\.(png|jpe?g|webp)$", "description": "Path inside src/content/images/ (png, jpg or webp - resized and converted to WebP at build)" },
+    "icon": { "type": "string", "pattern": "^icons/[\\w.-]+\\.(png|jpe?g|webp|svg)$", "description": "Path inside src/content/images/icons/ (used as-is, SVG allowed)" }
+  },
+  "properties": {
+    "$schema": { "type": "string" },
+    "meta": {
+      "description": "Browser tab, search engine and link-preview details",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "description", "author", "url"],
+      "properties": {
+        "title": { "$ref": "#/definitions/text", "description": "Browser tab / Google result title" },
+        "description": { "$ref": "#/definitions/text", "description": "Google result snippet" },
+        "shareTitle": { "$ref": "#/definitions/text", "description": "Title on link previews (WhatsApp, LinkedIn, ...)" },
+        "shareDescription": { "$ref": "#/definitions/text", "description": "Text on link previews" },
+        "author": { "$ref": "#/definitions/text" },
+        "keywords": { "type": "string" },
+        "url": { "type": "string", "pattern": "^https://", "description": "Live site address" },
+        "themeColor": { "type": "string", "pattern": "^#[0-9a-fA-F]{3,8}$", "description": "Mobile browser bar colour" },
+        "googleAnalyticsId": { "type": "string", "pattern": "^G-[A-Z0-9]+$" },
+        "googleSiteVerification": { "type": "string" }
+      }
+    },
+    "nav": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["brand", "links"],
+      "properties": {
+        "brand": { "$ref": "#/definitions/text", "description": "Text at the top-left" },
+        "links": {
+          "description": "Menu links. The 'contact' one is shown as a button on desktop. The phone menu fits 5.",
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "section", "icon"],
+            "properties": {
+              "label": { "$ref": "#/definitions/text" },
+              "section": { "enum": ["home", "service", "services", "myWork", "customer", "skills", "contact"], "description": "Section of the page to jump to" },
+              "icon": { "enum": ["home", "services", "projects", "skills", "contact", "about", "testimonials"], "description": "Phone menu icon" }
+            }
+          }
+        }
+      }
+    },
+    "hero": {
+      "description": "First screen",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["greeting", "name", "tagline", "button", "photo", "socials"],
+      "properties": {
+        "greeting": { "$ref": "#/definitions/text" },
+        "name": { "$ref": "#/definitions/text" },
+        "tagline": { "$ref": "#/definitions/text" },
+        "button": { "$ref": "#/definitions/button" },
+        "photo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["alt", "light", "dark"],
+          "properties": {
+            "alt": { "$ref": "#/definitions/text", "description": "Describes the photo for screen readers" },
+            "light": { "$ref": "#/definitions/image", "description": "Shown in light mode, e.g. profile/light.webp (transparent background works best)" },
+            "dark": { "$ref": "#/definitions/image", "description": "Shown in dark mode" }
+          }
+        },
+        "socials": {
+          "description": "Up to 3 bubbles around the photo, in this order: big circle, then small circle (x2)",
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "url", "icon"],
+            "properties": {
+              "name": { "$ref": "#/definitions/text" },
+              "url": { "$ref": "#/definitions/url" },
+              "icon": { "$ref": "#/definitions/icon" }
+            }
+          }
+        }
+      }
+    },
+    "highlights": {
+      "description": "Three cards under the hero",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stats", "experience", "about"],
+      "properties": {
+        "stats": {
+          "type": "array",
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "value"],
+            "properties": {
+              "label": { "$ref": "#/definitions/text" },
+              "value": { "type": "string", "maxLength": 4, "description": "Short number, e.g. \"26\"" }
+            }
+          }
+        },
+        "experience": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "icon", "roleIcon", "roles", "footer"],
+          "properties": {
+            "title": { "$ref": "#/definitions/text" },
+            "icon": { "$ref": "#/definitions/icon" },
+            "roleIcon": { "$ref": "#/definitions/icon", "description": "Icon shown beside every role" },
+            "roles": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["title", "level"],
+                "properties": {
+                  "title": { "$ref": "#/definitions/text" },
+                  "level": { "type": "string", "description": "e.g. \"100%\"" }
+                }
+              }
+            },
+            "footer": { "$ref": "#/definitions/text" }
+          }
+        },
+        "about": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "highlight", "text"],
+          "properties": {
+            "title": { "$ref": "#/definitions/text" },
+            "highlight": { "$ref": "#/definitions/text", "description": "Second, coloured line of the title" },
+            "text": { "$ref": "#/definitions/text" }
+          }
+        }
+      }
+    },
+    "services": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "highlight", "items"],
+      "properties": {
+        "title": { "$ref": "#/definitions/text" },
+        "highlight": { "$ref": "#/definitions/text", "description": "Second, coloured line of the title" },
+        "button": { "$ref": "#/definitions/button", "description": "e.g. the CV download link" },
+        "items": {
+          "description": "First card sits beside the title, the rest go in the row below",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title", "icon", "text"],
+            "properties": {
+              "title": { "$ref": "#/definitions/text" },
+              "icon": { "$ref": "#/definitions/icon" },
+              "text": { "$ref": "#/definitions/text" },
+              "button": { "$ref": "#/definitions/button" }
+            }
+          }
+        }
+      }
+    },
+    "projects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "highlight", "subtitle", "items"],
+      "properties": {
+        "title": { "$ref": "#/definitions/text" },
+        "highlight": { "$ref": "#/definitions/text", "description": "Coloured part of the title" },
+        "subtitle": { "$ref": "#/definitions/text" },
+        "items": {
+          "description": "Project cards, in display order (newest first works well)",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "image", "description"],
+            "properties": {
+              "name": { "$ref": "#/definitions/text" },
+              "image": { "$ref": "#/definitions/image", "description": "Screenshot in projects/, any size - it's resized to 760px wide" },
+              "description": { "$ref": "#/definitions/text" },
+              "design": { "$ref": "#/definitions/url", "description": "Optional 'View Design' link (Figma etc.)" },
+              "demo": { "$ref": "#/definitions/url", "description": "Optional 'View Demo' link" }
+            }
+          }
+        }
+      }
+    },
+    "testimonials": {
+      "description": "Client feedback carousel. Leave empty ([]) to hide it.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "content", "author", "image"],
+        "properties": {
+          "title": { "$ref": "#/definitions/text" },
+          "content": { "$ref": "#/definitions/text" },
+          "author": { "$ref": "#/definitions/text" },
+          "image": { "$ref": "#/definitions/image", "description": "Avatar in testimonials/, cropped to a 160px square" }
+        }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "highlight", "paragraphs"],
+      "properties": {
+        "title": { "$ref": "#/definitions/text" },
+        "highlight": { "$ref": "#/definitions/text", "description": "Second, coloured line of the title" },
+        "paragraphs": { "type": "array", "items": { "$ref": "#/definitions/text" } },
+        "button": { "$ref": "#/definitions/button" }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "subtitle", "successMessage", "errorMessage", "emailjs"],
+      "properties": {
+        "title": { "$ref": "#/definitions/text" },
+        "subtitle": { "$ref": "#/definitions/text" },
+        "successMessage": { "$ref": "#/definitions/text" },
+        "errorMessage": { "$ref": "#/definitions/text" },
+        "emailjs": {
+          "description": "From your EmailJS dashboard (these are public by design)",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["serviceId", "templateId", "publicKey"],
+          "properties": {
+            "serviceId": { "type": "string", "pattern": "^service_" },
+            "templateId": { "type": "string", "pattern": "^template_" },
+            "publicKey": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

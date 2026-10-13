@@ -3,16 +3,25 @@
     <section class="section" id="myWork">
       <div class="columns jumpIn">
         <div class="title">
-          <h1>Clients get <span>always exceptional</span></h1>
-          <h2>works from me....</h2>
+          <h1>
+            {{ projects.title }} <span>{{ projects.highlight }}</span>
+          </h1>
+          <h2>{{ projects.subtitle }}</h2>
         </div>
       </div>
       <div class="columns jumpIn">
         <div class="cards">
           <div class="buttons">
-            <div class="prevBtn fadeIn" @click="scrollHorizantlly(1)">
-              <!-- <img src="../assets/emoji/prev.svg" alt=""> -->
+            <div
+              class="prevBtn fadeIn"
+              role="button"
+              tabindex="0"
+              aria-label="Previous projects"
+              @click="scrollCards(-1)"
+              @keydown.enter.space.prevent="scrollCards(-1)"
+            >
               <svg
+                aria-hidden="true"
                 width="257"
                 height="184"
                 viewBox="0 0 257 184"
@@ -81,9 +90,16 @@
                 </defs>
               </svg>
             </div>
-            <div class="nextBtn fadeIn" @click="scrollHorizantlly(-1)">
-              <!-- <img src="../assets/emoji/next.svg" alt=""> -->
+            <div
+              class="nextBtn fadeIn"
+              role="button"
+              tabindex="0"
+              aria-label="Next projects"
+              @click="scrollCards(1)"
+              @keydown.enter.space.prevent="scrollCards(1)"
+            >
               <svg
+                aria-hidden="true"
                 width="257"
                 height="184"
                 viewBox="0 0 257 184"
@@ -153,22 +169,20 @@
               </svg>
             </div>
           </div>
-          <div class="allCards">
-            <div v-for="project in projects">
+          <div class="allCards" ref="cards">
+            <div v-for="project in projects.items" :key="project.name">
               <div class="card">
                 <div class="images">
                   <div class="imageHero">
                     <img
-                      :src="getImgUrl(project.image)"
-                      v-bind:alt="project.name"
+                      :src="img(project.image)"
+                      :alt="project.name"
+                      width="760"
+                      height="367"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
-                  <!-- <div class="imageFull" v-if="project.image1">
-                    <img
-                      :src="getImgUrl(project.image1)"
-                      v-bind:alt="project.name"
-                    />
-                  </div> -->
                 </div>
                 <div class="buttons small">
                   <h1>{{ project.name }}</h1>
@@ -179,10 +193,16 @@
                       v-if="project.design"
                       :href="project.design"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <button>View Design</button>
                     </a>
-                    <a v-if="project.demo" :href="project.demo" target="_blank">
+                    <a
+                      v-if="project.demo"
+                      :href="project.demo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <button class="no-fill">View Demo</button>
                     </a>
                   </div>
@@ -198,6 +218,8 @@
 </template>
 <script>
 import CustomersFeedback from "@/components/customersFeedback.vue";
+import content, { img } from "@/content";
+
 export default {
   name: "myWork",
   components: {
@@ -205,52 +227,13 @@ export default {
   },
   data() {
     return {
-      currentScrollPosition: 0,
-      scrollAmount: 320,
-      projects: [
-        {
-          name: "Artika Hub Dance",
-          image: "artika_dance.png",
-          image1: "artika_hub_full_page.png",
-          description:
-            "'Introducing 'Artika Hub Limited Dance', a sleek one-page project developed using React and Vite. With its intuitive navigation and a dedicated contact section for email outreach, it's not only visually appealing but also user-friendly",
-          design: "https://artikahub.com/",
-          demo: "https://artikahub.com/",
-        },
-
-        {
-          name: "Total Wellness International",
-          image: "total_wellness.png",
-          image1: "total_wellness.png",
-          description:
-            "Total Wellness is a comprehensive mental health platform, developed using React, Vite, and Django. It supports appointment scheduling, payments, video calls, and chats with counselors. Admins have access to system analytics. Design visuals were conceptualized with Figma (currently private).",
-          demo: "https://total-wellness.vercel.app/",
-        },
-        {
-          name: "Anonymous File Sharing Project",
-          image: "home-anonymous-file-sharing-project-design-source-code.jpg",
-          image1:
-            "Anonymously_send_images_and_files_upload_download_big_files.jpg",
-          description:
-            "A secure and user-friendly file-sharing platform crafted with HTML, CSS, and JS. Seamlessly drag-and-drop or browse to upload, ensuring your data remains private and anonymous. Hosted effortlessly on GitHub pages and optimized for all devices.",
-          design:
-            "https://www.figma.com/file/gy6b2ASwlPJkb0W9UsPyIE/Anonymous-file-sharing-and-text?type=design&node-id=0%3A1&mode=design&t=zuKD1Dm4TRBhWfTR-1",
-          demo: "https://principalkelvo.github.io/anonymous-file-sharing/",
-        },
-      ],
+      projects: content.projects,
     };
   },
   methods: {
-    scrollHorizantlly(val) {
-      const sScroll = document.querySelector(".allCards");
-      if (val < 0) {
-        sScroll.scrollBy(350, 0);
-      } else {
-        sScroll.scrollBy(-350, 0);
-      }
-    },
-    getImgUrl(project) {
-      return new URL(`../assets/myDesigns/${project}`, import.meta.url).href;
+    img,
+    scrollCards(direction) {
+      this.$refs.cards.scrollBy({ left: direction * 350, behavior: "smooth" });
     },
   },
 };
@@ -314,7 +297,7 @@ export default {
 
 .columns .cards .buttons .prevBtn svg .text-color,
 .columns .cards .buttons .nextBtn svg .text-color {
-  transition: all 0.3s ease-in-out 0s;
+  transition: fill 0.3s ease-in-out;
 }
 
 .columns .cards .buttons .prevBtn:hover svg .text-color {
@@ -337,7 +320,7 @@ export default {
   overflow-x: scroll;
   overflow-y: hidden;
   margin: 0 1rem;
-  /* scroll-snap-type: x mandatory; */
+  scrollbar-width: none;
 }
 
 .columns .cards .allCards::-webkit-scrollbar {
@@ -358,11 +341,12 @@ export default {
   height: 16em;
   min-height: 13em;
   position: relative;
-  transition: all 0.5s ease-in-out 0s;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   scroll-snap-align: start;
 }
 
-.columns .cards .card:hover {
+.columns .cards .card:hover,
+.columns .cards .card:focus-within {
   transform: scale(1.1);
 }
 
@@ -394,7 +378,7 @@ export default {
   height: 100%;
   position: absolute;
   transform: rotateY(0);
-  transition: all 0.5s ease-in-out 0s;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -407,7 +391,8 @@ export default {
   object-fit: contain;
 }
 
-.columns .cards .card:hover .images {
+.columns .cards .card:hover .images,
+.columns .cards .card:focus-within .images {
   transform: rotateY(-90deg);
 }
 
@@ -420,7 +405,7 @@ export default {
   top: 0;
   border-radius: 10px;
   transform: rotateY(90deg);
-  transition: all 0.5s ease-in-out 0s;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   justify-content: space-evenly;
 }
 
@@ -442,7 +427,8 @@ export default {
   font-size: 0.7em;
 }
 
-.columns .cards .card:hover .buttons {
+.columns .cards .card:hover .buttons,
+.columns .cards .card:focus-within .buttons {
   transform: rotateY(0);
 }
 

@@ -5,26 +5,20 @@
         <div class="column is-6">
           <!-- title  -->
           <div class="title jumpIn">
-            <h1>Skills Used For All This</h1>
-            <h1>Design & Development</h1>
+            <h1>{{ skills.title }}</h1>
+            <h1>{{ skills.highlight }}</h1>
           </div>
           <!-- content  -->
           <div class="content jumpIn">
-            <p>
-              Understand the topic matter of the customer completely and build
-              on previous expertise, becoming intimately familiar with the
-              subject area. Determine how to respond to the demands and
-              requirements of a certain consumer.
-            </p>
-            <p>
-              The results of research are being used to technological solutions
-              product, such as materials, systems, and procedures. Engineer who
-              uses research to create commercial items for a client.
+            <p v-for="(paragraph, i) in skills.paragraphs" :key="i">
+              {{ paragraph }}
             </p>
           </div>
           <!-- hire button  -->
-          <div class="buttons fadeIn">
-            <button>Hire Me</button>
+          <div class="buttons fadeIn" v-if="skills.button">
+            <a :href="skills.button.href">
+              <button tabindex="-1">{{ skills.button.label }}</button>
+            </a>
           </div>
         </div>
         <div class="column is-6">
@@ -122,7 +116,16 @@
     </section>
   </div>
 </template>
-<script></script>
+<script>
+import content from "@/content";
+
+export default {
+  name: "Skills",
+  data() {
+    return { skills: content.skills };
+  },
+};
+</script>
 <style scoped>
 .columns .column .title {
   margin-bottom: 2rem;

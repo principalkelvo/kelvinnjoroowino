@@ -4,26 +4,18 @@
       <div class="columns cards">
         <div class="column is-4 card fadeIn">
           <div class="projects">
-            <div class="success">
-              <div class="firstRectangle">
+            <div
+              v-for="(stat, i) in highlights.stats"
+              :key="stat.label"
+              class="success"
+            >
+              <div class="firstRectangle" :class="{ yellowed: i % 2 }">
                 <div class="secondRectangle">
-                  <p>Projects done successfull</p>
+                  <p>{{ stat.label }}</p>
                 </div>
                 <div class="circle">
-                  <div class="circular-progress">
-                    <div class="value-container">26</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="success">
-              <div class="firstRectangle yellowed">
-                <div class="secondRectangle">
-                  <p>Jobs completed</p>
-                </div>
-                <div class="circle">
-                  <div class="circular-progress yellowed">
-                    <div class="value-container">12</div>
+                  <div class="circular-progress" :class="{ yellowed: i % 2 }">
+                    <div class="value-container">{{ stat.value }}</div>
                   </div>
                 </div>
               </div>
@@ -33,89 +25,61 @@
         <div class="column is-4 card fadeIn">
           <div class="serviceCard">
             <div class="title">
-              <img src="../assets/modeSVG/emoji.svg" alt="services" />
-              <h2>Service</h2>
+              <img :src="img(experience.icon)" alt="" />
+              <h2>{{ experience.title }}</h2>
             </div>
             <div class="cardContent">
-              <div class="jobs">
+              <div
+                v-for="role in experience.roles"
+                :key="role.title"
+                class="jobs"
+              >
                 <div class="jobTitle">
-                  <p>Graphic designer</p>
+                  <p>{{ role.title }}</p>
                 </div>
                 <div class="lifeEmoji">
-                  <img
-                    src="@/assets/socialIcons/life.png"
-                    alt="Graphic designer"
-                  />
+                  <img :src="img(experience.roleIcon)" alt="" />
                 </div>
                 <div class="jobPercentage">
-                  <p>100%</p>
-                </div>
-              </div>
-              <div class="jobs">
-                <div class="jobTitle">
-                  <p>UI/UX designer</p>
-                </div>
-                <div class="lifeEmoji">
-                  <img
-                    src="@/assets/socialIcons/life.png"
-                    alt="UI/UX designer"
-                  />
-                </div>
-                <div class="jobPercentage">
-                  <p>100%</p>
-                </div>
-              </div>
-              <div class="jobs">
-                <div class="jobTitle">
-                  <p>Full-Stack Developer</p>
-                </div>
-                <div class="lifeEmoji">
-                  <img
-                    src="@/assets/socialIcons/life.png"
-                    alt="Full-Stack Developer"
-                  />
-                </div>
-                <div class="jobPercentage">
-                  <p>100%</p>
+                  <p>{{ role.level }}</p>
                 </div>
               </div>
             </div>
             <div class="cardFooter">
-              <p>Experience working</p>
+              <p>{{ experience.footer }}</p>
             </div>
           </div>
         </div>
         <div class="column is-4 card fadeIn">
           <div class="awesomeCard">
             <div class="title">
-              <h2>My awesome</h2>
-              <h2>Services</h2>
+              <h2>{{ highlights.about.title }}</h2>
+              <h2>{{ highlights.about.highlight }}</h2>
             </div>
             <div class="cardContent">
-              <p>
-                Offering fully integrated digital and online design services
-                that incorporate strategy, branding, and messaging for our
-                clients. This methods are adaptable to a wide range of B2B
-                business requirements.
-              </p>
+              <p>{{ highlights.about.text }}</p>
             </div>
-            <!-- <div class="cardFooter">
-              <div class="buttons">
-                <a href="https://1drv.ms/w/s!AsNXwuWoeJ5krGfzo_kZwaNM9HwT?e=MWszhc"
-                  download="Kelvin Njoro's Resume.pdf">
-                  <button>Download CV</button>
-                </a>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
     </section>
   </div>
 </template>
+
 <script>
+import content, { img } from "@/content";
+
 export default {
   name: "Service",
+  data() {
+    return {
+      highlights: content.highlights,
+      experience: content.highlights.experience,
+    };
+  },
+  methods: {
+    img,
+  },
 };
 </script>
 

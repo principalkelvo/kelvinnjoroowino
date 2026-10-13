@@ -6,84 +6,77 @@
                 <!-- main title  -->
                 <div class="column is-6 awesome">
                     <div class="title jumpIn">
-                        <h1>My awesome</h1>
-                        <h2>Services</h2>
+                        <h1>{{ services.title }}</h1>
+                        <h2>{{ services.highlight }}</h2>
                     </div>
-                    <div class="buttons jumpIn">
-                        <a href="https://1drv.ms/w/s!AsNXwuWoeJ5krGfzo_kZwaNM9HwT?e=MWszhc"
-                            target="_blank">
-                            <button>Download CV</button>
+                    <div class="buttons jumpIn" v-if="services.button">
+                        <a :href="services.button.href" v-bind="linkAttrs(services.button.href)">
+                            <button tabindex="-1">{{ services.button.label }}</button>
                         </a>
                     </div>
                 </div>
-                <!-- card  -->
-                <div class="column is-6 pb-0 fadeIn">
+                <!-- first card sits beside the title -->
+                <div class="column is-6 pb-0 fadeIn" v-for="item in services.items.slice(0, 1)" :key="item.title">
                     <div class="card">
                         <div class="cardTitle">
-                            <img src="../assets/emoji/love.png" alt="Graphic Design">
-                            <h2>Design</h2>
+                            <img :src="img(item.icon)" alt="">
+                            <h2>{{ item.title }}</h2>
                         </div>
                         <div class="cardContent">
-                            <p>Design, which is sometimes misunderstood as the superficial process of creating,
-                                executing, or constructing a product's appearance, actually involves a lot more. It is a
-                                cross-functional task that entails market research, concept design, and technological
-                                research.</p>
+                            <p>{{ item.text }}</p>
                         </div>
-                        <div class="cardFooter">
+                        <div class="cardFooter" v-if="item.button">
                             <div class="buttons">
-                                <button class="no-fill">My Designs</button>
+                                <a :href="item.button.href" v-bind="linkAttrs(item.button.href)">
+                                    <button class="no-fill" tabindex="-1">{{ item.button.label }}</button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="columns">
-                <div class="column is-4 pt-0 fadeIn">
-                    <div class="card jumpIn">
+            <!-- remaining cards go in the row below -->
+            <div class="columns wrap">
+                <div v-for="(item, i) in services.items.slice(1)" :key="item.title"
+                    class="column fadeIn" :class="{ 'is-4 pt-0': i === 0 }">
+                    <div class="card" :class="{ jumpIn: i === 0 }">
                         <div class="cardTitle">
-                            <img src="../assets/emoji/celebrate.png" alt="Software Engineer">
-                            <h2>Developer</h2>
+                            <img :src="img(item.icon)" alt="">
+                            <h2>{{ item.title }}</h2>
                         </div>
                         <div class="cardContent">
-                            <p>In charge of developing and improving software and apps. This comprises software
-                                research, design, and development. Collaboration between analysts and computer engineers
-                                to achieve the proposed software application performance</p>
+                            <p>{{ item.text }}</p>
                         </div>
-                        <div class="cardFooter ">
+                        <div class="cardFooter" v-if="item.button">
                             <div class="buttons">
-                                <button class="no-fill">View Projects</button>
+                                <a :href="item.button.href" v-bind="linkAttrs(item.button.href)">
+                                    <button class="no-fill" tabindex="-1">{{ item.button.label }}</button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="column fadeIn">
-                    <div class="card ">
-                        <div class="cardTitle">
-                            <img src="../assets/emoji/ok.png" alt="Ui/Ux">
-                            <h2>Ui/Ux</h2>
-                        </div>
-                        <div class="cardContent">
-                            <p>Enhance the usability of the user interface to increase user satisfaction. Work on
-                                linguistic and visual input to translate the brand into a sophisticated and
-                                user-friendly website that communicates information fast.</p>
-                        </div>
-                        <div class="cardFooter ">
-                            <div class="buttons ">
-                                <button class="no-fill">Web Designs</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
     </div>
 </template>
 
 <script>
+import content, { img } from "@/content";
 
-
+export default {
+    name: "Services",
+    data() {
+        return { services: content.services }
+    },
+    methods: {
+        img,
+        // off-site links open in a new tab; in-page anchors (#section) don't
+        linkAttrs(href) {
+            return /^https?:/.test(href) ? { target: "_blank", rel: "noopener noreferrer" } : {}
+        },
+    },
+}
 </script>
 
 <style scoped>
@@ -102,6 +95,10 @@
     color: #364cf3;
 }
 
+.columns.wrap {
+    flex-wrap: wrap;
+}
+
 .card {
     background-color: #fff;
     border-radius: 10px;
@@ -111,7 +108,7 @@
     flex-direction: column;
     align-items: center;
     width: 15em;
-    transition: all .5s ease-in-out 0s;
+    transition: transform .5s cubic-bezier(0.22, 1, 0.36, 1), opacity .5s ease, box-shadow .5s ease, background-color .4s ease;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     /* height: 16em; 
     */

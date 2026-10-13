@@ -2,82 +2,71 @@
 import Navbar from "@/components/navbar.vue";
 import NavbarMobile from "@/components/navbar-mobile.vue";
 
+// element selector -> class added once it scrolls into view
+const REVEALS = {
+  ".fadeIn, .jumpIn": "fade-in",
+  ".circle": "rotateIn",
+};
+
 export default {
   components: {
     Navbar,
     NavbarMobile,
   },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener("scroll", this.checkAnimation);
+  async mounted() {
+    // the router resolves the first route asynchronously; wait for the page to render
+    await this.$router.isReady();
+    await this.$nextTick();
+
+    // Reveal animations: add the class when an element's top passes 80% of the
+    // viewport; only remove it again when it drops back below (not when it
+    // scrolls off the top), so content doesn't vanish while reading.
+    // The observer watches each element's nearest non-animated ancestor:
+    // a .jumpIn starts translated off-screen and is clipped by #app's
+    // overflow-x, so watching it directly would never report it visible.
+    const animated = Object.keys(REVEALS).join(", ");
+    const targetsByAnchor = new Map();
+    for (const [selector, cls] of Object.entries(REVEALS)) {
+      document.querySelectorAll(selector).forEach((el) => {
+        el.dataset.reveal = cls;
+        let anchor = el.parentElement;
+        while (anchor.matches(animated)) anchor = anchor.parentElement;
+        if (!targetsByAnchor.has(anchor)) targetsByAnchor.set(anchor, []);
+        targetsByAnchor.get(anchor).push(el);
+      });
+    }
+    this.revealObserver = new IntersectionObserver(
+      (entries) => {
+        for (const { target, isIntersecting, boundingClientRect } of entries) {
+          for (const el of targetsByAnchor.get(target)) {
+            if (isIntersecting) el.classList.add(el.dataset.reveal);
+            else if (boundingClientRect.top > 0)
+              el.classList.remove(el.dataset.reveal);
+          }
+        }
+      },
+      { rootMargin: "0px 0px -20% 0px" }
+    );
+    targetsByAnchor.forEach((_, anchor) => this.revealObserver.observe(anchor));
+
+    // Nav highlighting: whichever section crosses a line near the top of the viewport
+    this.sectionObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            this.$store.commit("setActiveSection", entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-20% 0px -75% 0px" }
+    );
+    document
+      .querySelectorAll("section[id]")
+      .forEach((section) => this.sectionObserver.observe(section));
   },
-  destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("scroll", this.checkAnimation);
-  },
-  beforeCreate() {
-    this.$store.commit("initialiseStore");
-  },
-  mounted() {
-    this.checkAnimation();
-  },
-  methods: {
-    handleScroll(event) {
-      const sections = document.querySelectorAll("section[id]");
-      const navLi = document.querySelectorAll(".navigation ul li");
-      let scrollY = window.pageYOffset;
-      // Any code to be executed when the window is scrolled
-      let current = "";
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-
-        if (scrollY >= sectionTop - 60) {
-          current = section.getAttribute("id");
-        }
-      });
-      navLi.forEach((li) => {
-        li.classList.remove("active");
-
-        if (li.classList.contains(current)) {
-          li.classList.add("active");
-        }
-      });
-    },
-    checkAnimation() {
-      const fadeIn = document.querySelectorAll(".fadeIn");
-      const jumpIn = document.querySelectorAll(".jumpIn");
-      const rotateIn = document.querySelectorAll(".circle");
-      const trigger = (window.innerHeight / 5) * 4;
-
-      fadeIn.forEach((fade) => {
-        const top = fade.getBoundingClientRect().top;
-
-        if (trigger > top) {
-          fade.classList.add("fade-in");
-        } else {
-          fade.classList.remove("fade-in");
-        }
-      });
-      jumpIn.forEach((jump) => {
-        const top = jump.getBoundingClientRect().top;
-
-        if (trigger > top) {
-          jump.classList.add("fade-in");
-        } else {
-          jump.classList.remove("fade-in");
-        }
-      });
-      rotateIn.forEach((rotate) => {
-        const top = rotate.getBoundingClientRect().top;
-
-        if (trigger > top) {
-          rotate.classList.add("rotateIn");
-        } else {
-          rotate.classList.remove("rotateIn");
-        }
-      });
-    },
+  unmounted() {
+    this.revealObserver?.disconnect();
+    this.sectionObserver?.disconnect();
   },
 };
 </script>
@@ -91,14 +80,11 @@ export default {
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Istok+Web&display=swap");
-
 * {
   font-family: "Istok Web", sans-serif;
   font-size: 20px;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
 }
 
 #app {
@@ -318,63 +304,87 @@ export default {
   }
 }
 
-/* animation on scroll */
-/* fade in animation for first div */
-.fadeIn {
-  opacity: 0;
-  transform: translateY(-20%);
-  overflow: hidden;
-  transition: 0.5s ease-in-out transform, 0.5s ease-in-out opacity;
+/* animation on scroll (classes added by the IntersectionObserver in App.vue) */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-duration: 0.7s;
 }
 
-/* fade in animation for scond div */
-.fadeIn:nth-of-type(even) {
+.fadeIn,
+.jumpIn {
+  opacity: 0;
+  transition: transform var(--reveal-duration) var(--ease-out),
+    opacity var(--reveal-duration) var(--ease-out);
+}
+
+/* fade in: odd items drop down, even items rise up */
+.fadeIn {
+  transform: translateY(-20%);
+  overflow: hidden;
+}
+
+.fadeIn:nth-of-type(even),
+.fadeIn:last-child {
   transform: translateY(20%);
-  transition: 0.5s ease-in-out transform, 0.5s ease-in-out opacity;
 }
 
 .fadeIn:last-child {
-  transform: translateY(20%);
-  transition: 0.8s ease-in-out transform, 0.8s ease-in-out opacity;
+  --reveal-duration: 0.9s;
 }
 
-/* jump in animation for first div */
+/* jump in: odd items from the left, even from the right */
 .jumpIn {
   transform: translateX(-100%);
-  opacity: 0;
-  transition: 0.5s ease-in-out transform, 0.5s ease-in-out opacity;
 }
 
-/* jump in animation for second div */
 .jumpIn:nth-of-type(even) {
   transform: translateX(100%);
-  transition: 0.5s ease-in-out transform, 0.5s ease-in-out opacity;
 }
 
-/* rotate in animation for first div */
+/* revealed state - doubled class so it outranks the :nth-of-type/:last-child offsets */
+.fade-in.fade-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* rotate in */
 .rotateIn {
-  animation: rotate 3s linear;
+  animation: rotate 3s var(--ease-out);
 }
 
 @keyframes rotate {
-  0% {
+  from {
     transform: rotate(0);
   }
 
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
-/* add all animations */
-.fade-in {
-  opacity: 1;
-  transform: translateX(0);
-  transform: translateY(0);
-  /* transition: all 3s ease-out; */
+/* smooth theme switch (head.js sets the initial theme before paint, so no flash) */
+html {
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-.fade-in:nth-of-type(even) {
-  transform: translateY(0);
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fadeIn,
+  .jumpIn {
+    opacity: 1;
+    transform: none;
+  }
 }
 </style>
