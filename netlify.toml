@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "dist"
 
+# Vite 8 / vite-imagetools need Node >= 22.12; Netlify's default image is older
+[build.environment]
+  NODE_VERSION = "22"
+
 [[headers]]
   for = "/*"
   [headers.values]

@@ -21,5 +21,8 @@
     "vite": "^8.3.4",
     "vite-imagetools": "^12.0.1"
   },
-  "type": "module"
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  }
 }
